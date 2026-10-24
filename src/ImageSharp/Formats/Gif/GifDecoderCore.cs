@@ -776,19 +776,8 @@ namespace SixLabors.ImageSharp.Formats.Gif
                     // Read the global color table data from the stream and preserve it in the gif metadata
                     Span<byte> globalColorTableSpan = this.globalColorTable.GetSpan();
                     stream.Read(globalColorTableSpan);
-
-                    //Color[] colorTable = new Color[this.logicalScreenDescriptor.GlobalColorTableSize];
-                    //ReadOnlySpan<Rgb24> rgbTable = MemoryMarshal.Cast<byte, Rgb24>(globalColorTableSpan);
-                    //for (int i = 0; i < colorTable.Length; i++)
-                    //{
-                    //    colorTable[i] = new Color(rgbTable[i]);
-                    //}
-
-                    //this.gifMetadata.GlobalColorTable = colorTable;
                 }
             }
-
-            //this.gifMetadata.BackgroundColorIndex = this.logicalScreenDescriptor.BackgroundColorIndex;
         }
     }
 }
