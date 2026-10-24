@@ -151,11 +151,6 @@ namespace SixLabors.ImageSharp.Tests.Formats
                     {
                         image.SaveAsTga(output);
                     }
-
-                    using (FileStream output = File.OpenWrite(Path.Combine(path, $"{file.FileNameWithoutExtension}.tiff")))
-                    {
-                        image.SaveAsTiff(output);
-                    }
                 }
             }
         }
@@ -207,9 +202,6 @@ namespace SixLabors.ImageSharp.Tests.Formats
         [InlineData(100, 100, "tga")]
         [InlineData(100, 10, "tga")]
         [InlineData(10, 100, "tga")]
-        [InlineData(100, 100, "tiff")]
-        [InlineData(100, 10, "tiff")]
-        [InlineData(10, 100, "tiff")]
 
         public void CanIdentifyImageLoadedFromBytes(int width, int height, string extension)
         {

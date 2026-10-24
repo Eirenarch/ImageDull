@@ -19,7 +19,6 @@ using SixLabors.ImageSharp.Advanced;
         "Png",
         "Tga",
         "Webp",
-        "Tiff",
     };
 
     foreach (string fmt in formats)

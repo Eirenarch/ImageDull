@@ -6,7 +6,6 @@ using System.IO;
 using Microsoft.DotNet.RemoteExecutor;
 using SixLabors.ImageSharp.Advanced;
 using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Memory;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using Xunit;
@@ -46,7 +45,6 @@ namespace SixLabors.ImageSharp.Tests
         [InlineData("png")]
         [InlineData("jpeg")]
         [InlineData("gif")]
-        [InlineData("tiff")]
         [InlineData("webp")]
         public void PreferContiguousImageBuffers_LoadImage_BufferIsContiguous(string formatOuter)
         {

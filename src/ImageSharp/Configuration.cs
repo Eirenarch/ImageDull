@@ -11,7 +11,6 @@ using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Pbm;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.Formats.Tiff;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.IO;
 using SixLabors.ImageSharp.Memory;
@@ -212,7 +211,6 @@ namespace SixLabors.ImageSharp
         /// <see cref="BmpConfigurationModule"/>.
         /// <see cref="PbmConfigurationModule"/>.
         /// <see cref="TgaConfigurationModule"/>.
-        /// <see cref="TiffConfigurationModule"/>.
         /// <see cref="WebpConfigurationModule"/>.
         /// </summary>
         /// <returns>The default configuration of <see cref="Configuration"/>.</returns>
@@ -223,7 +221,6 @@ namespace SixLabors.ImageSharp
                 new BmpConfigurationModule(),
                 new PbmConfigurationModule(),
                 new TgaConfigurationModule(),
-                new TiffConfigurationModule(),
                 new WebpConfigurationModule());
     }
 }

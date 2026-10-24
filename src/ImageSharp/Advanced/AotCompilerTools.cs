@@ -13,7 +13,6 @@ using SixLabors.ImageSharp.Formats.Jpeg.Components;
 using SixLabors.ImageSharp.Formats.Pbm;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.Formats.Tiff;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Memory;
 using SixLabors.ImageSharp.PixelFormats;
@@ -206,7 +205,6 @@ namespace SixLabors.ImageSharp.Advanced
             default(PbmEncoderCore).Encode<TPixel>(default, default, default);
             default(PngEncoderCore).Encode<TPixel>(default, default, default);
             default(TgaEncoderCore).Encode<TPixel>(default, default, default);
-            default(TiffEncoderCore).Encode<TPixel>(default, default, default);
         }
 
         /// <summary>
@@ -224,7 +222,6 @@ namespace SixLabors.ImageSharp.Advanced
             default(PbmDecoderCore).Decode<TPixel>(default, default, default);
             default(PngDecoderCore).Decode<TPixel>(default, default, default);
             default(TgaDecoderCore).Decode<TPixel>(default, default, default);
-            default(TiffDecoderCore).Decode<TPixel>(default, default, default);
         }
 
         /// <summary>
@@ -242,7 +239,6 @@ namespace SixLabors.ImageSharp.Advanced
             AotCompileImageEncoder<TPixel, PbmEncoder>();
             AotCompileImageEncoder<TPixel, PngEncoder>();
             AotCompileImageEncoder<TPixel, TgaEncoder>();
-            AotCompileImageEncoder<TPixel, TiffEncoder>();
         }
 
         /// <summary>
@@ -260,7 +256,6 @@ namespace SixLabors.ImageSharp.Advanced
             AotCompileImageDecoder<TPixel, PbmDecoder>();
             AotCompileImageDecoder<TPixel, PngDecoder>();
             AotCompileImageDecoder<TPixel, TgaDecoder>();
-            AotCompileImageDecoder<TPixel, TiffDecoder>();
         }
 
         /// <summary>

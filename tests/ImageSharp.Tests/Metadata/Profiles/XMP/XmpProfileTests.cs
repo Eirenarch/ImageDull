@@ -10,7 +10,6 @@ using SixLabors.ImageSharp.Formats;
 using SixLabors.ImageSharp.Formats.Gif;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Formats.Tiff;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Metadata.Profiles.Xmp;
 using SixLabors.ImageSharp.PixelFormats;
@@ -25,8 +24,6 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
         private static JpegDecoder JpegDecoder => new() { IgnoreMetadata = false };
 
         private static PngDecoder PngDecoder => new() { IgnoreMetadata = false };
-
-        private static TiffDecoder TiffDecoder => new() { IgnoreMetadata = false };
 
         private static WebpDecoder WebpDecoder => new() { IgnoreMetadata = false };
 
@@ -62,18 +59,6 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
             where TPixel : unmanaged, IPixel<TPixel>
         {
             using (Image<TPixel> image = await provider.GetImageAsync(PngDecoder))
-            {
-                XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
-                XmpProfileContainsExpectedValues(actual);
-            }
-        }
-
-        [Theory]
-        [WithFile(TestImages.Tiff.SampleMetadata, PixelTypes.Rgba32)]
-        public async Task ReadXmpMetadata_FromTiff_Works<TPixel>(TestImageProvider<TPixel> provider)
-            where TPixel : unmanaged, IPixel<TPixel>
-        {
-            using (Image<TPixel> image = await provider.GetImageAsync(TiffDecoder))
             {
                 XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
                 XmpProfileContainsExpectedValues(actual);
@@ -183,24 +168,6 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
             XmpProfile original = CreateMinimalXmlProfile();
             image.Metadata.XmpProfile = original;
             var encoder = new PngEncoder();
-
-            // act
-            using Image<Rgba32> reloadedImage = WriteAndRead(image, encoder);
-
-            // assert
-            XmpProfile actual = reloadedImage.Metadata.XmpProfile ?? reloadedImage.Frames.RootFrame.Metadata.XmpProfile;
-            XmpProfileContainsExpectedValues(actual);
-            Assert.Equal(original.Data, actual.Data);
-        }
-
-        [Fact]
-        public void WritingTiff_PreservesXmpProfile()
-        {
-            // arrange
-            var image = new Image<Rgba32>(1, 1);
-            XmpProfile original = CreateMinimalXmlProfile();
-            image.Frames.RootFrame.Metadata.XmpProfile = original;
-            var encoder = new TiffEncoder();
 
             // act
             using Image<Rgba32> reloadedImage = WriteAndRead(image, encoder);

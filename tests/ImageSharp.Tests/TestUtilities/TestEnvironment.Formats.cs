@@ -10,7 +10,6 @@ using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Formats.Pbm;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.Formats.Tiff;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
@@ -60,8 +59,7 @@ namespace SixLabors.ImageSharp.Tests
                 new GifConfigurationModule(),
                 new PbmConfigurationModule(),
                 new TgaConfigurationModule(),
-                new WebpConfigurationModule(),
-                new TiffConfigurationModule());
+                new WebpConfigurationModule());
 
             cfg.ConfigureCodecs(
                 PngFormat.Instance,

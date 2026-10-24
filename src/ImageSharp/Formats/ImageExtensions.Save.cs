@@ -14,7 +14,6 @@ using SixLabors.ImageSharp.Formats.Pbm;
 using SixLabors.ImageSharp.Formats.Png;
 using SixLabors.ImageSharp.Formats.Tga;
 using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.Formats.Tiff;
 
 namespace SixLabors.ImageSharp
 {
@@ -735,108 +734,6 @@ namespace SixLabors.ImageSharp
             source.SaveAsync(
                 stream,
                 encoder ?? source.GetConfiguration().ImageFormatsManager.FindEncoder(WebpFormat.Instance),
-                cancellationToken);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="path">The file path to save the image to.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the path is null.</exception>
-        public static void SaveAsTiff(this Image source, string path) => SaveAsTiff(source, path, null);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="path">The file path to save the image to.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the path is null.</exception>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static Task SaveAsTiffAsync(this Image source, string path) => SaveAsTiffAsync(source, path, null);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="path">The file path to save the image to.</param>
-        /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the path is null.</exception>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static Task SaveAsTiffAsync(this Image source, string path, CancellationToken cancellationToken)
-            => SaveAsTiffAsync(source, path, null, cancellationToken);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="path">The file path to save the image to.</param>
-        /// <param name="encoder">The encoder to save the image with.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the path is null.</exception>
-        public static void SaveAsTiff(this Image source, string path, TiffEncoder encoder) =>
-            source.Save(
-                path,
-                encoder ?? source.GetConfiguration().ImageFormatsManager.FindEncoder(TiffFormat.Instance));
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="path">The file path to save the image to.</param>
-        /// <param name="encoder">The encoder to save the image with.</param>
-        /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the path is null.</exception>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static Task SaveAsTiffAsync(this Image source, string path, TiffEncoder encoder, CancellationToken cancellationToken = default) =>
-            source.SaveAsync(
-                path,
-                encoder ?? source.GetConfiguration().ImageFormatsManager.FindEncoder(TiffFormat.Instance),
-                cancellationToken);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="stream">The stream to save the image to.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the stream is null.</exception>
-        public static void SaveAsTiff(this Image source, Stream stream)
-            => SaveAsTiff(source, stream, null);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="stream">The stream to save the image to.</param>
-        /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the stream is null.</exception>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static Task SaveAsTiffAsync(this Image source, Stream stream, CancellationToken cancellationToken = default)
-            => SaveAsTiffAsync(source, stream, null, cancellationToken);
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="stream">The stream to save the image to.</param>
-        /// <param name="encoder">The encoder to save the image with.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the stream is null.</exception>
-        public static void SaveAsTiff(this Image source, Stream stream, TiffEncoder encoder)
-            => source.Save(
-                stream,
-                encoder ?? source.GetConfiguration().ImageFormatsManager.FindEncoder(TiffFormat.Instance));
-
-        /// <summary>
-        /// Saves the image to the given stream with the Tiff format.
-        /// </summary>
-        /// <param name="source">The image this method extends.</param>
-        /// <param name="stream">The stream to save the image to.</param>
-        /// <param name="encoder">The encoder to save the image with.</param>
-        /// <param name="cancellationToken">The token to monitor for cancellation requests.</param>
-        /// <exception cref="System.ArgumentNullException">Thrown if the stream is null.</exception>
-        /// <returns>A <see cref="Task"/> representing the asynchronous operation.</returns>
-        public static Task SaveAsTiffAsync(this Image source, Stream stream, TiffEncoder encoder, CancellationToken cancellationToken = default) =>
-            source.SaveAsync(
-                stream,
-                encoder ?? source.GetConfiguration().ImageFormatsManager.FindEncoder(TiffFormat.Instance),
                 cancellationToken);
 
     }
