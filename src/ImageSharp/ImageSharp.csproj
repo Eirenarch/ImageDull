@@ -20,43 +20,11 @@
     <MinVerMinimumMajorMinor>2.0</MinVerMinimumMajorMinor>
   </PropertyGroup>
 
-  <Choose>
-    <When Condition="$(SIXLABORS_TESTING_PREVIEW) == true">
-      <PropertyGroup>
-        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;netcoreapp2.1;netstandard2.1;netstandard2.0;net472</TargetFrameworks>
-      </PropertyGroup>
-    </When>
-    <When Condition="$(SIXLABORS_TESTING) == true">
-      <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;netcoreapp2.1;netstandard2.1;netstandard2.0;net472</TargetFrameworks>
-      </PropertyGroup>
-    </When>
-    <When Condition="$(Configuration.EndsWith('InnerLoop')) == true">
-      <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1;netcoreapp2.1;netstandard2.1;netstandard2.0;net472</TargetFrameworks>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
 
-  <ItemGroup>
-    <None Include="..\..\shared-infrastructure\branding\icons\imagesharp\sixlabors.imagesharp.128.png" Pack="true" PackagePath="" />
-  </ItemGroup>
 
-  <ItemGroup>
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="5.0.0" />
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" $(TargetFramework.StartsWith('netstandard')) OR '$(TargetFramework)' == 'net472'">
-    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
-    <PackageReference Include="System.Buffers" Version="4.5.1" />
-    <PackageReference Include="System.Memory" Version="4.5.4" />
-  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Formats\Jpeg\Components\Block8x8F.Generated.cs">
@@ -237,6 +205,10 @@
 
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
 
   <Import Project="..\..\shared-infrastructure\src\SharedInfrastructure\SharedInfrastructure.projitems" Label="Shared" />

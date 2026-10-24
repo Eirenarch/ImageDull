@@ -13,4 +13,7 @@
   <!-- Import the shared global .props file -->
   <Import Project="$(MSBuildThisFileDirectory)shared-infrastructure\msbuild\targets\SixLabors.Global.targets"/>
 
+  <PropertyGroup>
+    <LangVersion>12.0</LangVersion>
+  </PropertyGroup>
 </Project>

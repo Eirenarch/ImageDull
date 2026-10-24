@@ -14,23 +14,9 @@
     <!--<SignAssembly>false</SignAssembly>-->
   </PropertyGroup>
 
-  <Choose>
-    <When Condition="$(SIXLABORS_TESTING_PREVIEW) == true">
-      <PropertyGroup>
-        <TargetFrameworks>net6.0;net5.0;netcoreapp3.1;netcoreapp2.1;net472</TargetFrameworks>
-      </PropertyGroup>
-    </When>
-    <When Condition="$(Configuration.EndsWith('InnerLoop')) == true">
-      <PropertyGroup>
-        <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
-      </PropertyGroup>
-    </When>
-    <Otherwise>
-      <PropertyGroup>
-        <TargetFrameworks>net5.0;netcoreapp3.1;netcoreapp2.1;net472</TargetFrameworks>
-      </PropertyGroup>
-    </Otherwise>
-  </Choose>
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+  </PropertyGroup>
 
   <ItemGroup>
     <Compile Include="..\ImageSharp.Tests\TestImages.cs" Link="Tests\TestImages.cs" />
@@ -67,6 +53,9 @@
     <Compile Remove="General\BasicMath\ModuloPowerOfTwoVariable.cs" />
     <Compile Remove="PixelBlenders\**" />
     <Compile Remove="Processing\Resize.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="obj\" />
   </ItemGroup>
 
 </Project>
