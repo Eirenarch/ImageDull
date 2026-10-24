@@ -6,11 +6,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Threading;
 using System.Threading.Tasks;
 using PhotoSauce.MagicScaler;
 using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Memory;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Tests;
 using SkiaSharp;
@@ -229,12 +227,11 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
         {
             using var original = SKBitmap.Decode(input);
             this.LogImageProcessed(original.Width, original.Height);
-            (int Width, int Height) scaled = this.ScaledSize(original.Width, original.Height, this.ThumbnailSize);
-            using var surface = SKSurface.Create(new SKImageInfo(scaled.Width, scaled.Height, original.ColorType, original.AlphaType));
-            using var paint = new SKPaint() { FilterQuality = SKFilterQuality.High };
+            (int width, int height) = this.ScaledSize(original.Width, original.Height, this.ThumbnailSize);
+            using var surface = SKSurface.Create(new SKImageInfo(width, height, original.ColorType, original.AlphaType));
             SKCanvas canvas = surface.Canvas;
-            canvas.Scale((float)scaled.Width / original.Width);
-            canvas.DrawBitmap(original, 0, 0, paint);
+            canvas.Scale((float)width / original.Width);
+            canvas.DrawBitmap(original, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
             canvas.Flush();
 
             using FileStream output = File.OpenWrite(this.OutputPath(input));
@@ -247,11 +244,13 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
         {
             using var original = SKBitmap.Decode(input);
             this.LogImageProcessed(original.Width, original.Height);
-            (int Width, int Height) scaled = this.ScaledSize(original.Width, original.Height, this.ThumbnailSize);
-            using var resized = original.Resize(new SKImageInfo(scaled.Width, scaled.Height), SKFilterQuality.High);
-            if (resized == null)
+            (int width, int height) = this.ScaledSize(original.Width, original.Height, this.ThumbnailSize);
+            using var resized = new SKBitmap(new SKImageInfo(width, height, original.ColorType, original.AlphaType));
+            using (var canvas = new SKCanvas(resized))
             {
-                return;
+                canvas.Scale((float)width / original.Width, (float)height / original.Height);
+                canvas.DrawBitmap(original, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
+                canvas.Flush();
             }
 
             using var image = SKImage.FromBitmap(resized);
@@ -270,10 +269,12 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
             SKSizeI supportedScale = codec.GetScaledDimensions((float)scaled.Width / info.Width);
 
             using var original = SKBitmap.Decode(codec, new SKImageInfo(supportedScale.Width, supportedScale.Height));
-            using SKBitmap resized = original.Resize(new SKImageInfo(scaled.Width, scaled.Height), SKFilterQuality.High);
-            if (resized == null)
+            using var resized = new SKBitmap(new SKImageInfo(scaled.Width, scaled.Height, original.ColorType, original.AlphaType));
+            using (var canvas = new SKCanvas(resized))
             {
-                return;
+                canvas.Scale((float)scaled.Width / original.Width, (float)scaled.Height / original.Height);
+                canvas.DrawBitmap(original, 0, 0, new SKSamplingOptions(SKFilterMode.Linear, SKMipmapMode.Linear));
+                canvas.Flush();
             }
 
             using var image = SKImage.FromBitmap(resized);

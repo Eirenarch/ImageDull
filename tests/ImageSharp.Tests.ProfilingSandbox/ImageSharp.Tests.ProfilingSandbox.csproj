@@ -30,8 +30,8 @@
     <PackageReference Include="NetVips" />
     <PackageReference Include="NetVips.Native" />
     <PackageReference Include="PhotoSauce.MagicScaler" />
-    <PackageReference Include="SharpZipLib" Version="1.4.2" />
-    <PackageReference Include="SkiaSharp" Version="4.153.1" />
+    <PackageReference Include="SharpZipLib" />
+    <PackageReference Include="SkiaSharp" />
     <PackageReference Include="CommandLineParser" Version="2.8.0" />
   </ItemGroup>
 

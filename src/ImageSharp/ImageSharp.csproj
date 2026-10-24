@@ -6,7 +6,6 @@
     <AssemblyTitle>SixLabors.ImageSharp</AssemblyTitle>
     <RootNamespace>SixLabors.ImageSharp</RootNamespace>
     <PackageId>SixLabors.ImageSharp</PackageId>
-    <PackageIcon>sixlabors.imagesharp.128.png</PackageIcon>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl Condition="'$(RepositoryUrl)' == ''">https://github.com/SixLabors/ImageSharp/</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
