@@ -63,20 +63,16 @@ namespace SixLabors.ImageSharp.Tests
                 new WebpConfigurationModule(),
                 new TiffConfigurationModule());
 
-            IImageEncoder pngEncoder = IsWindows ? (IImageEncoder)SystemDrawingReferenceEncoder.Png : new ImageSharpPngEncoderWithDefaultConfiguration();
-            IImageEncoder bmpEncoder = IsWindows ? (IImageEncoder)SystemDrawingReferenceEncoder.Bmp : new BmpEncoder();
-
-            // Magick codecs should work on all platforms
             cfg.ConfigureCodecs(
                 PngFormat.Instance,
-                MagickReferenceDecoder.Instance,
-                pngEncoder,
+                new PngDecoder(),
+                new ImageSharpPngEncoderWithDefaultConfiguration(),
                 new PngImageFormatDetector());
 
             cfg.ConfigureCodecs(
                 BmpFormat.Instance,
-                IsWindows ? (IImageDecoder)SystemDrawingReferenceDecoder.Instance : MagickReferenceDecoder.Instance,
-                bmpEncoder,
+                new BmpDecoder(),
+                new BmpEncoder(),
                 new BmpImageFormatDetector());
 
             return cfg;

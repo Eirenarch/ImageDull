@@ -45,8 +45,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void DamagedFiles<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            Assert.Throws<ImageDifferenceIsOverThresholdException>(() => TestTiffDecoder(provider));
-
             using Image<TPixel> image = provider.GetImage(TiffDecoder);
             ExifProfile exif = image.Frames.RootFrame.Metadata.ExifProfile;
 

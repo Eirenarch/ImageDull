@@ -6,7 +6,6 @@ using BenchmarkDotNet.Attributes;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests;
-using SDImage = System.Drawing.Image;
 
 // ReSharper disable InconsistentNaming
 namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
@@ -31,12 +30,8 @@ namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
         [Params(InputImageCategory.AllImages)]
         public override InputImageCategory InputCategory { get; set; }
 
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         public void ImageSharp()
             => this.ForEachStream(ms => Image.Load<Rgba32>(ms, new JpegDecoder()));
-
-        [Benchmark(Baseline = true)]
-        public void SystemDrawing()
-            => this.ForEachStream(SDImage.FromStream);
     }
 }

@@ -6,8 +6,6 @@ using BenchmarkDotNet.Attributes;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests;
-using SDImage = System.Drawing.Image;
-using SDSize = System.Drawing.Size;
 
 // ReSharper disable InconsistentNaming
 namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
@@ -45,18 +43,6 @@ namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
         }
 
         [Benchmark(Baseline = true)]
-        public SDSize SystemDrawing()
-        {
-            using (var memoryStream = new MemoryStream(this.jpegBytes))
-            {
-                using (var image = SDImage.FromStream(memoryStream))
-                {
-                    return image.Size;
-                }
-            }
-        }
-
-        [Benchmark]
         public Size ImageSharp()
         {
             using (var memoryStream = new MemoryStream(this.jpegBytes))
@@ -67,18 +53,5 @@ namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
                 }
             }
         }
-
-        /*
-        |                         Method |            TestImage |       Mean |       Error |     StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 |  Allocated |
-        |------------------------------- |--------------------- |-----------:|------------:|-----------:|------:|--------:|------:|------:|------:|-----------:|
-        | 'Decode Jpeg - System.Drawing' | Jpg/b(...)e.jpg [21] |   5.122 ms |   1.3978 ms |  0.0766 ms |  1.00 |    0.00 |     - |     - |     - |      176 B |
-        |     'Decode Jpeg - ImageSharp' | Jpg/b(...)e.jpg [21] |  11.991 ms |   0.2514 ms |  0.0138 ms |  2.34 |    0.03 |     - |     - |     - |    15816 B |
-        |                                |                      |            |             |            |       |         |       |       |       |            |
-        | 'Decode Jpeg - System.Drawing' | Jpg/b(...)f.jpg [28] |  14.943 ms |   1.8410 ms |  0.1009 ms |  1.00 |    0.00 |     - |     - |     - |      176 B |
-        |     'Decode Jpeg - ImageSharp' | Jpg/b(...)f.jpg [28] |  29.759 ms |   1.5452 ms |  0.0847 ms |  1.99 |    0.01 |     - |     - |     - |    16824 B |
-        |                                |                      |            |             |            |       |         |       |       |       |            |
-        | 'Decode Jpeg - System.Drawing' | Jpg/i(...)e.jpg [43] | 388.229 ms | 382.8946 ms | 20.9877 ms |  1.00 |    0.00 |     - |     - |     - |      216 B |
-        |     'Decode Jpeg - ImageSharp' | Jpg/i(...)e.jpg [43] | 276.490 ms | 195.5104 ms | 10.7166 ms |  0.71 |    0.01 |     - |     - |     - | 36022368 B |
-         */
     }
 }

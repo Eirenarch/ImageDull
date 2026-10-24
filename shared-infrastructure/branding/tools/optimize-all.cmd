@@ -1,1 +1,0 @@
-optipng.exe -strip "all" -o 7 ../icons/**/*.png

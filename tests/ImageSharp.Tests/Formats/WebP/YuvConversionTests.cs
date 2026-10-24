@@ -9,7 +9,6 @@ using SixLabors.ImageSharp.Formats.Webp.Lossy;
 using SixLabors.ImageSharp.Memory;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 using Xunit;
 
 namespace SixLabors.ImageSharp.Tests.Formats.Webp
@@ -19,8 +18,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
     {
         private static WebpDecoder WebpDecoder => new();
 
-        private static MagickReferenceDecoder ReferenceDecoder => new();
-
         private static string TestImageLossyFullPath => Path.Combine(TestEnvironment.InputImagesDirectoryFullPath, TestImages.Webp.Lossy.NoFilter06);
 
         public static void RunUpSampleYuvToRgbTest()
@@ -29,7 +26,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<Rgba32> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 

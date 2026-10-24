@@ -136,7 +136,8 @@ namespace SixLabors.ImageSharp.Tests.Formats.Pbm
                     memStream.Position = 0;
                     using (var encodedImage = (Image<TPixel>)Image.Load(memStream))
                     {
-                        ImageComparingUtils.CompareWithReferenceDecoder(provider, encodedImage, useExactComparer, compareTolerance);
+                        ImageComparer comparer = useExactComparer ? ImageComparer.Exact : ImageComparer.Tolerant(compareTolerance);
+                        comparer.VerifySimilarity(image, encodedImage);
                     }
                 }
             }

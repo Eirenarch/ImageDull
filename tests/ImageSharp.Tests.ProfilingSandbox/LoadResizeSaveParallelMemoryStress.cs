@@ -68,7 +68,6 @@ namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
                 lrs.leakFrequency = options.LeakFrequency;
                 lrs.gcFrequency = options.GcFrequency;
 
-
                 timer = Stopwatch.StartNew();
                 try
                 {
@@ -142,17 +141,15 @@ namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
         {
             Console.WriteLine(@"Choose a library for image resizing stress test:
 
-1. System.Drawing
-2. ImageSharp
-3. MagicScaler
-4. SkiaSharp
-5. SkiaSharp - Decode to target size
-6. NetVips
-7. ImageMagick
+1. ImageSharp
+2. MagicScaler
+3. SkiaSharp
+4. SkiaSharp - Decode to target size
+5. NetVips
 ");
 
             ConsoleKey key = Console.ReadKey().Key;
-            if (key < ConsoleKey.D1 || key > ConsoleKey.D6)
+            if (key < ConsoleKey.D1 || key > ConsoleKey.D5)
             {
                 Console.WriteLine("Unrecognized command.");
                 Environment.Exit(-1);
@@ -163,25 +160,19 @@ namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
             switch (key)
             {
                 case ConsoleKey.D1:
-                    lrs.SystemDrawingBenchmarkParallel();
-                    break;
-                case ConsoleKey.D2:
                     lrs.ImageSharpBenchmarkParallel();
                     break;
-                case ConsoleKey.D3:
+                case ConsoleKey.D2:
                     lrs.MagicScalerBenchmarkParallel();
                     break;
-                case ConsoleKey.D4:
+                case ConsoleKey.D3:
                     lrs.SkiaBitmapBenchmarkParallel();
                     break;
-                case ConsoleKey.D5:
+                case ConsoleKey.D4:
                     lrs.SkiaBitmapDecodeToTargetSizeBenchmarkParallel();
                     break;
-                case ConsoleKey.D6:
+                case ConsoleKey.D5:
                     lrs.NetVipsBenchmarkParallel();
-                    break;
-                case ConsoleKey.D7:
-                    lrs.MagickBenchmarkParallel();
                     break;
             }
 
@@ -320,8 +311,6 @@ namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
 
         private void ForEachImage(Action<string> action) => this.Benchmarks.ForEachImageParallel(action);
 
-        private void SystemDrawingBenchmarkParallel() => this.ForEachImage(this.Benchmarks.SystemDrawingResize);
-
         private void ImageSharpBenchmarkParallel() =>
             this.ForEachImage(f =>
             {
@@ -346,8 +335,6 @@ namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
             this.Benchmarks.ForEachImageParallelAsync(f => this.Benchmarks.ImageSharpResizeAsync(f))
                 .GetAwaiter()
                 .GetResult();
-
-        private void MagickBenchmarkParallel() => this.ForEachImage(this.Benchmarks.MagickResize);
 
         private void MagicScalerBenchmarkParallel() => this.ForEachImage(this.Benchmarks.MagicScalerResize);
 

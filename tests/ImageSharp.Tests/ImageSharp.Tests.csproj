@@ -26,14 +26,11 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Magick.NET-Q16-AnyCPU" />
     <PackageReference Include="Microsoft.DotNet.RemoteExecutor" />
     <PackageReference Include="Microsoft.DotNet.XUnitExtensions" />
     <PackageReference Include="Moq" />
-    <PackageReference Include="runtime.osx.10.10-x64.CoreCompat.System.Drawing" Condition="'$(IsOSX)'=='true'" />
     <PackageReference Include="SharpZipLib" />
-    <PackageReference Include="System.Drawing.Common" />
-    </ItemGroup>
+  </ItemGroup>
 
   <ItemGroup>
     <None Update="PixelFormats\PixelOperations\Generated\PixelOperationsTests.Specialized.Generated.tt">

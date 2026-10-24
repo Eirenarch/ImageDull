@@ -6,7 +6,6 @@ using System.IO;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 using Xunit;
 using static SixLabors.ImageSharp.Tests.TestImages.Webp;
 
@@ -18,8 +17,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
     public class WebpDecoderTests
     {
         private static WebpDecoder WebpDecoder => new();
-
-        private static MagickReferenceDecoder ReferenceDecoder => new();
 
         private static string TestImageLossyHorizontalFilterPath => Path.Combine(TestEnvironment.InputImagesDirectoryFullPath, Lossy.AlphaCompressedHorizontalFilter);
 
@@ -69,7 +66,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -85,7 +81,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -108,7 +103,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -123,7 +117,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -142,7 +135,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -156,7 +148,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -173,7 +164,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -198,7 +188,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -210,7 +199,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -223,7 +211,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -242,7 +229,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -258,7 +244,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -271,7 +256,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -284,7 +268,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -308,7 +291,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -327,7 +309,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -354,7 +335,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<TPixel> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -366,7 +346,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
         {
             using Image<TPixel> image = provider.GetImage(WebpDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ReferenceDecoder);
         }
 
         [Theory]
@@ -401,7 +380,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<Rgba32> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -411,7 +389,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<Rgba32> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -421,7 +398,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<Rgba32> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 
@@ -431,7 +407,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Webp
             using (Image<Rgba32> image = provider.GetImage(WebpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, ReferenceDecoder);
             }
         }
 

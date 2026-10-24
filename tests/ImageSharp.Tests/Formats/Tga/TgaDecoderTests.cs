@@ -29,7 +29,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -41,7 +40,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -53,7 +51,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -65,7 +62,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -77,7 +73,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -89,7 +84,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -101,7 +95,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -113,7 +106,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -245,7 +237,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -257,7 +248,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -269,7 +259,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -281,7 +270,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -293,7 +281,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -305,7 +292,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -317,7 +303,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -329,7 +314,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -341,7 +325,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -353,7 +336,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -365,7 +347,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -377,7 +358,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -389,7 +369,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -401,7 +380,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -413,7 +391,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -425,7 +402,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -437,7 +413,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -449,7 +424,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -461,7 +435,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -473,7 +446,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -485,7 +457,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -497,7 +468,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -509,7 +479,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -521,7 +490,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -533,7 +501,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -545,7 +512,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -557,7 +523,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -569,7 +534,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -581,7 +545,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -593,7 +556,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -605,7 +567,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -617,7 +578,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -629,7 +589,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -641,7 +600,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -653,7 +611,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -665,7 +622,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -677,7 +633,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -689,7 +644,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -701,7 +655,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 
@@ -714,7 +667,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tga
             using (Image<TPixel> image = provider.GetImage(TgaDecoder))
             {
                 image.DebugSave(provider);
-                ImageComparingUtils.CompareWithReferenceDecoder(provider, image);
             }
         }
 

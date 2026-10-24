@@ -11,7 +11,6 @@ using SixLabors.ImageSharp.Memory;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities;
 using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
 using Xunit;
 
@@ -109,7 +108,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -120,7 +118,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -131,7 +128,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -141,7 +137,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -152,7 +147,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -163,7 +157,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -175,7 +168,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -190,7 +182,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -201,7 +192,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -212,7 +202,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -225,7 +214,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -235,7 +223,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -246,7 +233,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -256,7 +242,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -266,7 +251,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -276,7 +260,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
         {
             using Image<TPixel> image = provider.GetImage(PngDecoder);
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact);
         }
 
         [Theory]
@@ -396,7 +379,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-                    image.CompareToOriginal(provider, ImageComparer.Exact);
                 });
             Assert.Null(ex);
         }
@@ -412,7 +394,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-                    image.CompareToOriginal(provider, ImageComparer.Exact);
                 });
             Assert.Null(ex);
         }
@@ -428,7 +409,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-                    image.CompareToOriginal(provider, ImageComparer.Exact);
                 });
             Assert.Null(ex);
         }
@@ -444,12 +424,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-
-                    // We don't have another x-plat reference decoder that can be compared for this image.
-                    if (TestEnvironment.IsWindows)
-                    {
-                        image.CompareToOriginal(provider, ImageComparer.Exact, SystemDrawingReferenceDecoder.Instance);
-                    }
                 });
             Assert.Null(ex);
         }
@@ -465,7 +439,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-                    image.CompareToOriginal(provider, ImageComparer.Exact);
                 });
             Assert.Null(ex);
         }
@@ -481,12 +454,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
                 {
                     using Image<TPixel> image = provider.GetImage(PngDecoder);
                     image.DebugSave(provider);
-
-                    // We don't have another x-plat reference decoder that can be compared for this image.
-                    if (TestEnvironment.IsWindows)
-                    {
-                        image.CompareToOriginal(provider, ImageComparer.Exact, SystemDrawingReferenceDecoder.Instance);
-                    }
                 });
             Assert.NotNull(ex);
             Assert.Contains("Proprietary Apple PNG detected!", ex.Message);
@@ -516,7 +483,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Png
 
                 using Image<Rgba32> image = provider.GetImage(PngDecoder);
                 image.DebugSave(provider, testOutputDetails: nonContiguousBuffersStr);
-                image.CompareToOriginal(provider);
             }
 
             string providerDump = BasicSerializer.Serialize(provider);

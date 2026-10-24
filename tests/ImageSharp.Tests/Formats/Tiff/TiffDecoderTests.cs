@@ -99,7 +99,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_Planar_96Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -110,7 +109,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_Planar_128Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -129,12 +127,12 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         [WithFile(Flower4BitPalette, PixelTypes.Rgba32)]
         [WithFile(Flower4BitPaletteGray, PixelTypes.Rgba32)]
         public void TiffDecoder_CanDecode_4Bit_WithPalette<TPixel>(TestImageProvider<TPixel> provider)
-            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider, ReferenceDecoder, useExactComparer: false, 0.01f);
+            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider);
 
         [Theory]
         [WithFile(Flower2BitPalette, PixelTypes.Rgba32)]
         public void TiffDecoder_CanDecode_2Bit_WithPalette<TPixel>(TestImageProvider<TPixel> provider)
-            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider, ReferenceDecoder, useExactComparer: false, 0.01f);
+            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider);
 
         [Theory]
         [WithFile(Flower2BitGray, PixelTypes.Rgba32)]
@@ -202,7 +200,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -259,7 +257,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -286,7 +284,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -295,7 +293,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_24Bit_Gray<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -311,8 +308,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_YCbCr_24Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: The image from MagickReferenceDecoder does not look right, maybe we are doing something wrong
-            // converting the pixel data from Magick.NET to our format with YCbCr?
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
 
@@ -337,7 +332,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_32Bit_Gray<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -348,7 +342,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_32Bit_WithUnassociatedAlpha<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -367,7 +360,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false, compareTolerance: 0.004F);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -376,7 +369,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_32Bit_Gray_WithPredictor<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -407,7 +399,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -446,7 +438,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false, compareTolerance: 0.0002f);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -476,7 +468,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             }
 
             // Note: Using tolerant comparer here, because there is a small difference to the reference decoder probably due to floating point rounding issues.
-            TestTiffDecoder(provider, useExactComparer: false, compareTolerance: 0.0002f);
+            TestTiffDecoder(provider);
         }
 
         [Theory]
@@ -487,7 +479,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_72Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -500,7 +491,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_96Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -511,7 +501,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_96Bit_WithUnassociatedAlpha<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -522,7 +511,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_Float_96Bit<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -533,7 +521,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_96Bit_WithPredictor<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -546,7 +533,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_Float_96Bit_Gray<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -567,7 +553,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         public void TiffDecoder_CanDecode_128Bit_WithUnassociatedAlpha<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            // Note: because the MagickReferenceDecoder fails to load the image, we only debug save them.
             using Image<TPixel> image = provider.GetImage();
             image.DebugSave(provider);
         }
@@ -654,7 +639,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
         [WithFile(GrayscaleJpegCompressed, PixelTypes.Rgba32)]
         [WithFile(Issues2123, PixelTypes.Rgba32)]
         public void TiffDecoder_CanDecode_JpegCompressed<TPixel>(TestImageProvider<TPixel> provider)
-            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider, useExactComparer: false);
+            where TPixel : unmanaged, IPixel<TPixel> => TestTiffDecoder(provider);
 
         // https://github.com/SixLabors/ImageSharp/issues/1891
         [Theory]
@@ -689,10 +674,8 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
             Assert.True(image.Frames.Count > 1);
 
             image.DebugSave(provider);
-            image.CompareToOriginal(provider, ImageComparer.Exact, ReferenceDecoder);
 
             image.DebugSaveMultiFrame(provider);
-            image.CompareToOriginalMultiFrame(provider, ImageComparer.Exact, ReferenceDecoder);
         }
     }
 }

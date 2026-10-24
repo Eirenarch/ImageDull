@@ -5,8 +5,6 @@ using System.IO;
 using BenchmarkDotNet.Attributes;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests;
-using SDImage = System.Drawing.Image;
-using SDSize = System.Drawing.Size;
 
 namespace SixLabors.ImageSharp.Benchmarks.Codecs
 {
@@ -30,15 +28,7 @@ namespace SixLabors.ImageSharp.Benchmarks.Codecs
             }
         }
 
-        [Benchmark(Baseline = true, Description = "System.Drawing Png")]
-        public SDSize PngSystemDrawing()
-        {
-            using var memoryStream = new MemoryStream(this.pngBytes);
-            using var image = SDImage.FromStream(memoryStream);
-            return image.Size;
-        }
-
-        [Benchmark(Description = "ImageSharp Png")]
+        [Benchmark(Baseline = true, Description = "ImageSharp Png")]
         public Size PngImageSharp()
         {
             using var memoryStream = new MemoryStream(this.pngBytes);

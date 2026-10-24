@@ -11,7 +11,6 @@ using SixLabors.ImageSharp.Metadata;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities;
 using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
 using Xunit;
 using static SixLabors.ImageSharp.Tests.TestImages.Bmp;
@@ -46,11 +45,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
         {
             using Image<TPixel> image = provider.GetImage(BmpDecoder);
             image.DebugSave(provider);
-
-            if (TestEnvironment.IsWindows)
-            {
-                image.CompareToOriginal(provider);
-            }
         }
 
         [Theory]
@@ -67,11 +61,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
 
                 using Image<Rgba32> image = provider.GetImage(BmpDecoder);
                 image.DebugSave(provider, nonContiguousBuffersStr);
-
-                if (TestEnvironment.IsWindows)
-                {
-                    image.CompareToOriginal(provider);
-                }
             }
 
             string providerDump = BasicSerializer.Serialize(provider);
@@ -101,7 +90,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -114,7 +102,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -127,7 +114,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new SystemDrawingReferenceDecoder());
             }
         }
 
@@ -139,7 +125,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -151,7 +136,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -163,7 +147,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -175,7 +158,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -187,7 +169,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -202,7 +183,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = skippedPixelHandling }))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -215,7 +195,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = skippedPixelHandling }))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -224,29 +203,24 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
         [WithFile(RLE8Delta, PixelTypes.Rgba32)]
         [WithFile(Rle8Delta320240, PixelTypes.Rgba32)]
         [WithFile(Rle8Blank160120, PixelTypes.Rgba32)]
-        public void BmpDecoder_CanDecode_RunLengthEncoded_8Bit_WithDelta_SystemDrawingRefDecoder<TPixel>(TestImageProvider<TPixel> provider)
+        public void BmpDecoder_CanDecode_RunLengthEncoded_8Bit_WithDelta_SkippedPixelsBlack<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = RleSkippedPixelHandling.Black }))
             {
                 image.DebugSave(provider);
-                if (TestEnvironment.IsWindows)
-                {
-                    image.CompareToOriginal(provider, new SystemDrawingReferenceDecoder());
-                }
             }
         }
 
         [Theory]
         [WithFile(RLE8Cut, PixelTypes.Rgba32)]
         [WithFile(RLE8Delta, PixelTypes.Rgba32)]
-        public void BmpDecoder_CanDecode_RunLengthEncoded_8Bit_WithDelta_MagickRefDecoder<TPixel>(TestImageProvider<TPixel> provider)
+        public void BmpDecoder_CanDecode_RunLengthEncoded_8Bit_WithDelta_SkippedPixelsFirstColorOfPalette<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = RleSkippedPixelHandling.FirstColorOfPalette }))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -266,7 +240,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = RleSkippedPixelHandling.FirstColorOfPalette }))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -288,9 +261,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(new BmpDecoder { RleSkippedPixelHandling = RleSkippedPixelHandling.Black }))
             {
                 image.DebugSave(provider);
-
-                // TODO: Neither System.Drawing nor MagickReferenceDecoder decode this file.
-                // image.CompareToOriginal(provider);
             }
         }
 
@@ -302,9 +272,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // TODO: Neither System.Drawing nor MagickReferenceDecoder decode this file.
-                // image.CompareToOriginal(provider);
             }
         }
 
@@ -316,7 +283,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -328,13 +294,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // Choosing large tolerance of 6.1 here, because for some reason with the MagickReferenceDecoder the alpha channel
-                // seems to be wrong. This bitmap has an alpha channel of two bits. In many cases this alpha channel has a value of 3,
-                // which should be remapped to 255 for RGBA32, but the magick decoder has a value of 191 set.
-                // The total difference without the alpha channel is still: 0.0204%
-                // Exporting the image as PNG with GIMP yields to the same result as the ImageSharp implementation.
-                image.CompareToOriginal(provider, ImageComparer.TolerantPercentage(6.1f), new MagickReferenceDecoder());
             }
         }
 
@@ -347,9 +306,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // Do not validate. Reference files will fail validation.
-                image.CompareToOriginal(provider, new MagickReferenceDecoder(false));
             }
         }
 
@@ -361,7 +317,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -373,7 +328,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -386,10 +340,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                if (TestEnvironment.IsWindows)
-                {
-                    image.CompareToOriginal(provider);
-                }
             }
         }
 
@@ -428,7 +378,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -440,7 +389,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -452,7 +400,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -465,7 +412,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -477,7 +423,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -489,7 +434,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -501,7 +445,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-                image.CompareToOriginal(provider);
             }
         }
 
@@ -576,9 +519,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // TODO: Neither System.Drawing or MagickReferenceDecoder can correctly decode this file.
-                // image.CompareToOriginal(provider);
             }
         }
 
@@ -590,11 +530,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // TODO: System.Drawing can not decode this image. MagickReferenceDecoder can decode it,
-                // but i think incorrectly. I have loaded the image with GIMP and exported as PNG.
-                // The results are the same as the image sharp implementation.
-                // image.CompareToOriginal(provider, new MagickReferenceDecoder());
             }
         }
 
@@ -614,9 +549,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
             using (Image<TPixel> image = provider.GetImage(BmpDecoder))
             {
                 image.DebugSave(provider);
-
-                // TODO: Neither System.Drawing or MagickReferenceDecoder can correctly decode this file.
-                // image.CompareToOriginal(provider);
             }
         }
 

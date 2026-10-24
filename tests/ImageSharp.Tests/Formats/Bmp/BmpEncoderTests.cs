@@ -9,7 +9,6 @@ using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Processing;
 using SixLabors.ImageSharp.Processing.Processors.Quantization;
 using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
 using Xunit;
 using static SixLabors.ImageSharp.Tests.TestImages.Bmp;
@@ -256,7 +255,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
                         provider,
                         extension: "bmp",
                         appendPixelTypeToFileName: false,
-                        decoder: new MagickReferenceDecoder(false));
+                        decoder: new BmpDecoder());
                 }
             }
         }
@@ -290,7 +289,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Bmp
                         provider,
                         extension: "bmp",
                         appendPixelTypeToFileName: false,
-                        decoder: new MagickReferenceDecoder(false));
+                        decoder: new BmpDecoder());
                 }
             }
         }

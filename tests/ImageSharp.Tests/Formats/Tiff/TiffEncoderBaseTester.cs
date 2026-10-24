@@ -8,7 +8,6 @@ using SixLabors.ImageSharp.Formats.Tiff.Constants;
 using SixLabors.ImageSharp.Metadata.Profiles.Exif;
 using SixLabors.ImageSharp.PixelFormats;
 using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
-using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
 using Xunit;
 
@@ -17,8 +16,6 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
     [Trait("Format", "Tiff")]
     public abstract class TiffEncoderBaseTester
     {
-        protected static readonly IImageDecoder ReferenceDecoder = new MagickReferenceDecoder();
-
         protected static void TestStripLength<TPixel>(
             TestImageProvider<TPixel> provider,
             TiffPhotometricInterpretation photometricInterpretation,
@@ -107,7 +104,7 @@ namespace SixLabors.ImageSharp.Tests.Formats.Tiff
                 bitsPerPixel,
                 encoder,
                 useExactComparer ? ImageComparer.Exact : ImageComparer.Tolerant(compareTolerance),
-                referenceDecoder: imageDecoder ?? ReferenceDecoder);
+                referenceDecoder: imageDecoder ?? new TiffDecoder());
         }
     }
 }

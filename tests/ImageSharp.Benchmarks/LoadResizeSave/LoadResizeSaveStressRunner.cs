@@ -3,16 +3,11 @@
 
 using System;
 using System.Collections.Generic;
-using System.Drawing;
-using System.Drawing.Drawing2D;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
 using System.Threading;
 using System.Threading.Tasks;
-using ImageMagick;
 using PhotoSauce.MagicScaler;
 using SixLabors.ImageSharp.Formats.Jpeg;
 using SixLabors.ImageSharp.Memory;
@@ -22,7 +17,6 @@ using SkiaSharp;
 using ImageSharpImage = SixLabors.ImageSharp.Image;
 using ImageSharpSize = SixLabors.ImageSharp.Size;
 using NetVipsImage = NetVips.Image;
-using SystemDrawingImage = System.Drawing.Image;
 
 namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
 {
@@ -39,8 +33,6 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
 
         // Set the quality for ImagSharp
         private readonly JpegEncoder imageSharpJpegEncoder = new() { Quality = Quality };
-        private readonly ImageCodecInfo systemDrawingJpegCodec =
-            ImageCodecInfo.GetImageEncoders().First(codec => codec.FormatID == ImageFormat.Jpeg.Guid);
 
         public string[] Images { get; private set; }
 
@@ -95,12 +87,6 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
 
         public void Init()
         {
-            if (RuntimeInformation.OSArchitecture is Architecture.X86 or Architecture.X64)
-            {
-                // Workaround ImageMagick issue
-                OpenCL.IsEnabled = false;
-            }
-
             string imageDirectory = Path.Combine(TestEnvironment.InputImagesDirectoryFullPath, "MemoryStress");
             if (!Directory.Exists(imageDirectory) || !Directory.EnumerateFiles(imageDirectory).Any())
             {
@@ -181,29 +167,6 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
             return (width, height);
         }
 
-        public void SystemDrawingResize(string input)
-        {
-            using var image = SystemDrawingImage.FromFile(input, true);
-            this.LogImageProcessed(image.Width, image.Height);
-
-            (int Width, int Height) scaled = this.ScaledSize(image.Width, image.Height, this.ThumbnailSize);
-            var resized = new Bitmap(scaled.Width, scaled.Height);
-            using var graphics = Graphics.FromImage(resized);
-            using var attributes = new ImageAttributes();
-            attributes.SetWrapMode(WrapMode.TileFlipXY);
-            graphics.PixelOffsetMode = PixelOffsetMode.HighQuality;
-            graphics.CompositingMode = CompositingMode.SourceCopy;
-            graphics.CompositingQuality = CompositingQuality.AssumeLinear;
-            graphics.InterpolationMode = InterpolationMode.HighQualityBicubic;
-            graphics.DrawImage(image, System.Drawing.Rectangle.FromLTRB(0, 0, resized.Width, resized.Height), 0, 0, image.Width, image.Height, GraphicsUnit.Pixel, attributes);
-
-            // Save the results
-            using var encoderParams = new EncoderParameters(1);
-            using var qualityParam = new EncoderParameter(Encoder.Quality, (long)Quality);
-            encoderParams.Param[0] = qualityParam;
-            resized.Save(this.OutputPath(input), this.systemDrawingJpegCodec, encoderParams);
-        }
-
         public void ImageSharpResize(string input)
         {
             using FileStream output = File.Open(this.OutputPath(input), FileMode.Create);
@@ -243,24 +206,6 @@ namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
 
             // Save the results
             await image.SaveAsync(output, this.imageSharpJpegEncoder);
-        }
-
-        public void MagickResize(string input)
-        {
-            using var image = new MagickImage(input);
-            this.LogImageProcessed(image.Width, image.Height);
-
-            // Resize it to fit a 150x150 square
-            image.Resize(this.ThumbnailSize, this.ThumbnailSize);
-
-            // Reduce the size of the file
-            image.Strip();
-
-            // Set the quality
-            image.Quality = Quality;
-
-            // Save the results
-            image.Write(this.OutputPath(input));
         }
 
         public void MagicScalerResize(string input)
