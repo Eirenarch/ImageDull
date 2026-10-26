@@ -17,6 +17,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         /// <returns>The read matrix</returns>
         public float[,] ReadMatrix(int xCount, int yCount, bool isSingle)
         {
+            this.EnsureAvailable((long)xCount * yCount, sizeof(float));
             var matrix = new float[xCount, yCount];
             for (int y = 0; y < yCount; y++)
             {
@@ -44,6 +45,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         /// <returns>The read matrix</returns>
         public float[] ReadMatrix(int yCount, bool isSingle)
         {
+            this.EnsureAvailable(yCount, sizeof(float));
             var matrix = new float[yCount];
             for (int i = 0; i < yCount; i++)
             {

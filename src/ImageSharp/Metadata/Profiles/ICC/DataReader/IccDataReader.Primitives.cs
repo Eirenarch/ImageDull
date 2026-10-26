@@ -165,6 +165,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         /// <returns>The read bytes</returns>
         public byte[] ReadBytes(int count)
         {
+            this.EnsureAvailable(count, sizeof(byte));
             var bytes = new byte[count];
             Buffer.BlockCopy(this.data, this.AddIndex(count), bytes, 0, count);
             return bytes;

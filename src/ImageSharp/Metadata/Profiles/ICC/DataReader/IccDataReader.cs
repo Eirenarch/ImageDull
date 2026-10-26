@@ -56,6 +56,42 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         }
 
         /// <summary>
+        /// Ensures that the remaining data is large enough to hold the declared number of elements.
+        /// Must be called before allocating memory based on a count read from the profile,
+        /// so that a small malformed profile can't request a huge allocation.
+        /// </summary>
+        /// <param name="count">The declared number of elements.</param>
+        /// <param name="minElementSize">The minimum size in bytes of a single element.</param>
+        /// <exception cref="InvalidIccProfileException">The remaining data is too small.</exception>
+        private void EnsureAvailable(long count, int minElementSize)
+        {
+            long remaining = Math.Max(0, this.data.Length - (long)this.currentIndex);
+            if (count < 0 || count > remaining / minElementSize)
+            {
+                throw new InvalidIccProfileException("The declared data exceeds the size of the profile.");
+            }
+        }
+
+        /// <summary>
+        /// Gets the number of array elements of a tag with the given size, validating the size
+        /// against the available data.
+        /// </summary>
+        /// <param name="size">The size of the tag in bytes, including the 8 byte tag header.</param>
+        /// <param name="elementSize">The size in bytes of a single element.</param>
+        /// <returns>The number of elements.</returns>
+        private uint GetArrayCount(uint size, int elementSize)
+        {
+            if (size < 8)
+            {
+                throw new InvalidIccProfileException($"Invalid tag size of {size}.");
+            }
+
+            uint count = (size - 8) / (uint)elementSize;
+            this.EnsureAvailable(count, elementSize);
+            return count;
+        }
+
+        /// <summary>
         /// Calculates the 4 byte padding and adds it to the <see cref="currentIndex"/> variable
         /// </summary>
         private void AddPadding()

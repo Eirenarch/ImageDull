@@ -18,12 +18,19 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         {
             ushort segmentCount = this.ReadUInt16();
             this.AddIndex(2);   // 2 bytes reserved
+            if (segmentCount == 0)
+            {
+                throw new InvalidIccProfileException("A curve needs at least one segment.");
+            }
+
+            this.EnsureAvailable(segmentCount - 1, sizeof(float));
             var breakPoints = new float[segmentCount - 1];
             for (int i = 0; i < breakPoints.Length; i++)
             {
                 breakPoints[i] = this.ReadSingle();
             }
 
+            this.EnsureAvailable(segmentCount, 8);
             var segments = new IccCurveSegment[segmentCount];
             for (int i = 0; i < segmentCount; i++)
             {
@@ -41,6 +48,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         public IccResponseCurve ReadResponseCurve(int channelCount)
         {
             var type = (IccCurveMeasurementEncodings)this.ReadUInt32();
+            this.EnsureAvailable(channelCount, sizeof(uint) + 12);
             var measurement = new uint[channelCount];
             for (int i = 0; i < channelCount; i++)
             {
@@ -56,6 +64,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
             var response = new IccResponseNumber[channelCount][];
             for (int i = 0; i < channelCount; i++)
             {
+                this.EnsureAvailable(measurement[i], 6);
                 response[i] = new IccResponseNumber[measurement[i]];
                 for (uint j = 0; j < measurement[i]; j++)
                 {
@@ -175,6 +184,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         public IccSampledCurveElement ReadSampledCurveElement()
         {
             uint count = this.ReadUInt32();
+            this.EnsureAvailable(count, sizeof(float));
             var entries = new float[count];
             for (int i = 0; i < count; i++)
             {

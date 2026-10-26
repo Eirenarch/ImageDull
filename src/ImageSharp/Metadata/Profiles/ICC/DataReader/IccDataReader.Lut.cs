@@ -26,6 +26,8 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         /// <returns>The read LUT</returns>
         public IccLut ReadLut16(int count)
         {
+            this.EnsureAvailable(count, sizeof(ushort));
+
             var values = new ushort[count];
             for (int i = 0; i < count; i++)
             {
@@ -45,7 +47,10 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         /// <returns>The read CLUT</returns>
         public IccClut ReadClut(int inChannelCount, int outChannelCount, bool isFloat)
         {
+            ValidateClutChannelCounts(inChannelCount, outChannelCount);
+
             // Grid-points are always 16 bytes long but only 0-inChCount are used
+            this.EnsureAvailable(16, sizeof(byte));
             var gridPointCount = new byte[inChannelCount];
             Buffer.BlockCopy(this.data, this.AddIndex(16), gridPointCount, 0, inChannelCount);
 
@@ -78,13 +83,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         public IccClut ReadClut8(int inChannelCount, int outChannelCount, byte[] gridPointCount)
         {
             int start = this.currentIndex;
-            int length = 0;
-            for (int i = 0; i < inChannelCount; i++)
-            {
-                length += (int)Math.Pow(gridPointCount[i], inChannelCount);
-            }
-
-            length /= inChannelCount;
+            int length = this.GetClutLength(inChannelCount, outChannelCount, gridPointCount, sizeof(byte));
 
             const float Max = byte.MaxValue;
 
@@ -112,13 +111,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         public IccClut ReadClut16(int inChannelCount, int outChannelCount, byte[] gridPointCount)
         {
             int start = this.currentIndex;
-            int length = 0;
-            for (int i = 0; i < inChannelCount; i++)
-            {
-                length += (int)Math.Pow(gridPointCount[i], inChannelCount);
-            }
-
-            length /= inChannelCount;
+            int length = this.GetClutLength(inChannelCount, outChannelCount, gridPointCount, sizeof(ushort));
 
             const float Max = ushort.MaxValue;
 
@@ -146,13 +139,7 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
         public IccClut ReadClutF32(int inChCount, int outChCount, byte[] gridPointCount)
         {
             int start = this.currentIndex;
-            int length = 0;
-            for (int i = 0; i < inChCount; i++)
-            {
-                length += (int)Math.Pow(gridPointCount[i], inChCount);
-            }
-
-            length /= inChCount;
+            int length = this.GetClutLength(inChCount, outChCount, gridPointCount, sizeof(float));
 
             var values = new float[length][];
             for (int i = 0; i < length; i++)
@@ -166,6 +153,44 @@ namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
 
             this.currentIndex = start + (length * outChCount * 4);
             return new IccClut(values, gridPointCount, IccClutDataType.Float);
+        }
+
+        private static void ValidateClutChannelCounts(int inChannelCount, int outChannelCount)
+        {
+            if (inChannelCount < 1 || inChannelCount > 15 || outChannelCount < 1 || outChannelCount > 15)
+            {
+                throw new InvalidIccProfileException($"Invalid CLUT channel counts of {inChannelCount} input and {outChannelCount} output channels.");
+            }
+        }
+
+        /// <summary>
+        /// Calculates the number of CLUT entries and verifies that the profile contains enough data for all of them,
+        /// before any memory is allocated for them.
+        /// </summary>
+        private int GetClutLength(int inChannelCount, int outChannelCount, byte[] gridPointCount, int bytesPerValue)
+        {
+            ValidateClutChannelCounts(inChannelCount, outChannelCount);
+            if (gridPointCount.Length < inChannelCount)
+            {
+                throw new InvalidIccProfileException("Missing CLUT grid point counts.");
+            }
+
+            long length = 0;
+            for (int i = 0; i < inChannelCount; i++)
+            {
+                double term = Math.Pow(gridPointCount[i], inChannelCount);
+                if (term > int.MaxValue)
+                {
+                    throw new InvalidIccProfileException("The CLUT is too large.");
+                }
+
+                length += (int)term;
+            }
+
+            length /= inChannelCount;
+
+            this.EnsureAvailable(length * outChannelCount, bytesPerValue);
+            return (int)length;
         }
     }
 }
