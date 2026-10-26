@@ -13,67 +13,66 @@ using SixLabors.ImageSharp.Formats.Tga;
 using SixLabors.ImageSharp.Formats.Webp;
 using SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs;
 
-namespace SixLabors.ImageSharp.Tests
+namespace SixLabors.ImageSharp.Tests;
+
+public static partial class TestEnvironment
 {
-    public static partial class TestEnvironment
+    private static readonly Lazy<Configuration> ConfigurationLazy = new(CreateDefaultConfiguration);
+
+    internal static Configuration Configuration => ConfigurationLazy.Value;
+
+    internal static IImageDecoder GetReferenceDecoder(string filePath)
     {
-        private static readonly Lazy<Configuration> ConfigurationLazy = new Lazy<Configuration>(CreateDefaultConfiguration);
+        IImageFormat format = GetImageFormat(filePath);
+        return Configuration.ImageFormatsManager.FindDecoder(format);
+    }
 
-        internal static Configuration Configuration => ConfigurationLazy.Value;
+    internal static IImageEncoder GetReferenceEncoder(string filePath)
+    {
+        IImageFormat format = GetImageFormat(filePath);
+        return Configuration.ImageFormatsManager.FindEncoder(format);
+    }
 
-        internal static IImageDecoder GetReferenceDecoder(string filePath)
-        {
-            IImageFormat format = GetImageFormat(filePath);
-            return Configuration.ImageFormatsManager.FindDecoder(format);
-        }
+    internal static IImageFormat GetImageFormat(string filePath)
+    {
+        string extension = Path.GetExtension(filePath);
 
-        internal static IImageEncoder GetReferenceEncoder(string filePath)
-        {
-            IImageFormat format = GetImageFormat(filePath);
-            return Configuration.ImageFormatsManager.FindEncoder(format);
-        }
+        return Configuration.ImageFormatsManager.FindFormatByFileExtension(extension);
+    }
 
-        internal static IImageFormat GetImageFormat(string filePath)
-        {
-            string extension = Path.GetExtension(filePath);
+    private static void ConfigureCodecs(
+        this Configuration cfg,
+        IImageFormat imageFormat,
+        IImageDecoder decoder,
+        IImageEncoder encoder,
+        IImageFormatDetector detector)
+    {
+        cfg.ImageFormatsManager.SetDecoder(imageFormat, decoder);
+        cfg.ImageFormatsManager.SetEncoder(imageFormat, encoder);
+        cfg.ImageFormatsManager.AddImageFormatDetector(detector);
+    }
 
-            return Configuration.ImageFormatsManager.FindFormatByFileExtension(extension);
-        }
+    private static Configuration CreateDefaultConfiguration()
+    {
+        var cfg = new Configuration(
+            new JpegConfigurationModule(),
+            new GifConfigurationModule(),
+            new PbmConfigurationModule(),
+            new TgaConfigurationModule(),
+            new WebpConfigurationModule());
 
-        private static void ConfigureCodecs(
-            this Configuration cfg,
-            IImageFormat imageFormat,
-            IImageDecoder decoder,
-            IImageEncoder encoder,
-            IImageFormatDetector detector)
-        {
-            cfg.ImageFormatsManager.SetDecoder(imageFormat, decoder);
-            cfg.ImageFormatsManager.SetEncoder(imageFormat, encoder);
-            cfg.ImageFormatsManager.AddImageFormatDetector(detector);
-        }
+        cfg.ConfigureCodecs(
+            PngFormat.Instance,
+            new PngDecoder(),
+            new ImageSharpPngEncoderWithDefaultConfiguration(),
+            new PngImageFormatDetector());
 
-        private static Configuration CreateDefaultConfiguration()
-        {
-            var cfg = new Configuration(
-                new JpegConfigurationModule(),
-                new GifConfigurationModule(),
-                new PbmConfigurationModule(),
-                new TgaConfigurationModule(),
-                new WebpConfigurationModule());
+        cfg.ConfigureCodecs(
+            BmpFormat.Instance,
+            new BmpDecoder(),
+            new BmpEncoder(),
+            new BmpImageFormatDetector());
 
-            cfg.ConfigureCodecs(
-                PngFormat.Instance,
-                new PngDecoder(),
-                new ImageSharpPngEncoderWithDefaultConfiguration(),
-                new PngImageFormatDetector());
-
-            cfg.ConfigureCodecs(
-                BmpFormat.Instance,
-                new BmpDecoder(),
-                new BmpEncoder(),
-                new BmpImageFormatDetector());
-
-            return cfg;
-        }
+        return cfg;
     }
 }

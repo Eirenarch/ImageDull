@@ -32,11 +32,9 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
         public async Task ReadXmpMetadata_FromGif_Works<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            using (Image<TPixel> image = await provider.GetImageAsync(GifDecoder))
-            {
-                XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
-                XmpProfileContainsExpectedValues(actual);
-            }
+            using Image<TPixel> image = await provider.GetImageAsync(GifDecoder);
+            XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
+            XmpProfileContainsExpectedValues(actual);
         }
 
         [Theory]
@@ -46,11 +44,9 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
         public async Task ReadXmpMetadata_FromJpg_Works<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            using (Image<TPixel> image = await provider.GetImageAsync(JpegDecoder))
-            {
-                XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
-                XmpProfileContainsExpectedValues(actual);
-            }
+            using Image<TPixel> image = await provider.GetImageAsync(JpegDecoder);
+            XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
+            XmpProfileContainsExpectedValues(actual);
         }
 
         [Theory]
@@ -58,11 +54,9 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
         public async Task ReadXmpMetadata_FromPng_Works<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            using (Image<TPixel> image = await provider.GetImageAsync(PngDecoder))
-            {
-                XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
-                XmpProfileContainsExpectedValues(actual);
-            }
+            using Image<TPixel> image = await provider.GetImageAsync(PngDecoder);
+            XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
+            XmpProfileContainsExpectedValues(actual);
         }
 
         [Theory]
@@ -70,11 +64,9 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
         public async Task ReadXmpMetadata_FromWebp_Works<TPixel>(TestImageProvider<TPixel> provider)
             where TPixel : unmanaged, IPixel<TPixel>
         {
-            using (Image<TPixel> image = await provider.GetImageAsync(WebpDecoder))
-            {
-                XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
-                XmpProfileContainsExpectedValues(actual);
-            }
+            using Image<TPixel> image = await provider.GetImageAsync(WebpDecoder);
+            XmpProfile actual = image.Metadata.XmpProfile ?? image.Frames.RootFrame.Metadata.XmpProfile;
+            XmpProfileContainsExpectedValues(actual);
         }
 
         [Fact]
@@ -215,14 +207,12 @@ namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
 
         private static Image<Rgba32> WriteAndRead(Image<Rgba32> image, IImageEncoder encoder)
         {
-            using (var memStream = new MemoryStream())
-            {
-                image.Save(memStream, encoder);
-                image.Dispose();
+            using var memStream = new MemoryStream();
+            image.Save(memStream, encoder);
+            image.Dispose();
 
-                memStream.Position = 0;
-                return Image.Load<Rgba32>(memStream);
-            }
+            memStream.Position = 0;
+            return Image.Load<Rgba32>(memStream);
         }
     }
 }

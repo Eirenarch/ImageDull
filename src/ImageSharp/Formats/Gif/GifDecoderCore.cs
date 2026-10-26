@@ -25,7 +25,7 @@ namespace SixLabors.ImageSharp.Formats.Gif
         /// <summary>
         /// The temp buffer.
         /// </summary>
-        private byte[] buffer = new byte[16];
+        private readonly byte[] buffer = new byte[16];
 
         /// <summary>
         /// The global color table.
@@ -192,7 +192,7 @@ namespace SixLabors.ImageSharp.Formats.Gif
         {
             uint frameCount = 0;
             ImageFrameMetadata? previousFrame = null;
-            List<ImageFrameMetadata> framesMetadata = new();
+            List<ImageFrameMetadata> framesMetadata = [];
             try
             {
                 this.ReadLogicalScreenDescriptorAndGlobalColorTable(stream);
@@ -329,10 +329,10 @@ namespace SixLabors.ImageSharp.Formats.Gif
                 bool isXmp = this.buffer.AsSpan().StartsWith(GifConstants.XmpApplicationIdentificationBytes);
                 if (isXmp && !this.skipMetadata)
                 {
-                    GifXmpApplicationExtension extension = GifXmpApplicationExtension.Read(stream, this.memoryAllocator);
+                    var extension = GifXmpApplicationExtension.Read(stream, this.memoryAllocator);
                     if (extension.Data.Length > 0)
                     {
-                        this.metadata!.XmpProfile = new XmpProfile(extension.Data);
+                        this.metadata.XmpProfile = new XmpProfile(extension.Data);
                     }
                     else
                     {
@@ -351,7 +351,7 @@ namespace SixLabors.ImageSharp.Formats.Gif
                 if (subBlockSize == GifConstants.NetscapeLoopingSubBlockSize)
                 {
                     stream.Read(this.buffer, 0, GifConstants.NetscapeLoopingSubBlockSize);
-                    this.gifMetadata!.RepeatCount = GifNetscapeLoopingApplicationExtension.Parse(this.buffer.AsSpan(1)).RepeatCount;
+                    this.gifMetadata.RepeatCount = GifNetscapeLoopingApplicationExtension.Parse(this.buffer.AsSpan(1)).RepeatCount;
                     stream.Skip(1); // Skip the terminator.
                     return;
                 }
@@ -423,7 +423,7 @@ namespace SixLabors.ImageSharp.Formats.Gif
 
             if (stringBuilder.Length > 0)
             {
-                this.gifMetadata!.Comments.Add(stringBuilder.ToString());
+                this.gifMetadata.Comments.Add(stringBuilder.ToString());
             }
         }
 
@@ -687,7 +687,7 @@ namespace SixLabors.ImageSharp.Formats.Gif
                 return;
             }
 
-            Rectangle interest = Rectangle.Intersect(frame.Bounds(), this.restoreArea.Value);
+            var interest = Rectangle.Intersect(frame.Bounds(), this.restoreArea.Value);
             Buffer2DRegion<TPixel> pixelRegion = frame.PixelBuffer.GetRegion(interest);
             pixelRegion.Clear();
 
