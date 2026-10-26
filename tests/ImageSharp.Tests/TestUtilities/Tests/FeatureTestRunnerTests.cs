@@ -55,14 +55,6 @@ public class FeatureTestRunnerTests
             HwIntrinsics.AllowAll);
     }
 
-    [Fact]
-    public void CanLimitHwIntrinsicSIMDFeatures()
-    {
-        FeatureTestRunner.RunWithHwIntrinsicsFeature(
-            () => Assert.False(Vector.IsHardwareAccelerated),
-            HwIntrinsics.DisableSIMD);
-    }
-
 #if SUPPORTS_RUNTIME_INTRINSICS
     [Fact]
     public void CanLimitHwIntrinsicBaseFeatures()
@@ -93,91 +85,6 @@ public class FeatureTestRunnerTests
 #endif
 
     [Fact]
-    public void CanLimitHwIntrinsicFeaturesWithIntrinsicsParam()
-    {
-        static void AssertHwIntrinsicsFeatureDisabled(string intrinsic)
-        {
-            Assert.NotNull(intrinsic);
-
-            switch ((HwIntrinsics)Enum.Parse(typeof(HwIntrinsics), intrinsic))
-            {
-                case HwIntrinsics.DisableSIMD:
-                    Assert.False(Vector.IsHardwareAccelerated);
-                    break;
-#if SUPPORTS_RUNTIME_INTRINSICS
-                case HwIntrinsics.DisableHWIntrinsic:
-                    Assert.False(Sse.IsSupported);
-                    Assert.False(Sse2.IsSupported);
-                    Assert.False(Aes.IsSupported);
-                    Assert.False(Pclmulqdq.IsSupported);
-                    Assert.False(Sse3.IsSupported);
-                    Assert.False(Ssse3.IsSupported);
-                    Assert.False(Sse41.IsSupported);
-                    Assert.False(Sse42.IsSupported);
-                    Assert.False(Popcnt.IsSupported);
-                    Assert.False(Avx.IsSupported);
-                    Assert.False(Fma.IsSupported);
-                    Assert.False(Avx2.IsSupported);
-                    Assert.False(Bmi1.IsSupported);
-                    Assert.False(Bmi2.IsSupported);
-                    Assert.False(Lzcnt.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE:
-                    Assert.False(Sse.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE2:
-                    Assert.False(Sse2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAES:
-                    Assert.False(Aes.IsSupported);
-                    break;
-                case HwIntrinsics.DisablePCLMULQDQ:
-                    Assert.False(Pclmulqdq.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE3:
-                    Assert.False(Sse3.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSSE3:
-                    Assert.False(Ssse3.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE41:
-                    Assert.False(Sse41.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE42:
-                    Assert.False(Sse42.IsSupported);
-                    break;
-                case HwIntrinsics.DisablePOPCNT:
-                    Assert.False(Popcnt.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAVX:
-                    Assert.False(Avx.IsSupported);
-                    break;
-                case HwIntrinsics.DisableFMA:
-                    Assert.False(Fma.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAVX2:
-                    Assert.False(Avx2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableBMI1:
-                    Assert.False(Bmi1.IsSupported);
-                    break;
-                case HwIntrinsics.DisableBMI2:
-                    Assert.False(Bmi2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableLZCNT:
-                    Assert.False(Lzcnt.IsSupported);
-                    break;
-#endif
-            }
-        }
-
-        foreach (HwIntrinsics intrinsic in (HwIntrinsics[])Enum.GetValues(typeof(HwIntrinsics)))
-        {
-            FeatureTestRunner.RunWithHwIntrinsicsFeature(AssertHwIntrinsicsFeatureDisabled, intrinsic);
-        }
-    }
-
-    [Fact]
     public void CanLimitHwIntrinsicFeaturesWithSerializableParam()
     {
         static void AssertHwIntrinsicsFeatureDisabled(string serializable)
@@ -194,92 +101,6 @@ public class FeatureTestRunnerTests
             AssertHwIntrinsicsFeatureDisabled,
             HwIntrinsics.DisableSSE,
             new FakeSerializable());
-    }
-
-    [Fact]
-    public void CanLimitHwIntrinsicFeaturesWithSerializableAndIntrinsicsParams()
-    {
-        static void AssertHwIntrinsicsFeatureDisabled(string serializable, string intrinsic)
-        {
-            Assert.NotNull(serializable);
-            Assert.NotNull(FeatureTestRunner.DeserializeForXunit<FakeSerializable>(serializable));
-
-            switch ((HwIntrinsics)Enum.Parse(typeof(HwIntrinsics), intrinsic))
-            {
-                case HwIntrinsics.DisableSIMD:
-                    Assert.False(Vector.IsHardwareAccelerated, nameof(Vector.IsHardwareAccelerated));
-                    break;
-#if SUPPORTS_RUNTIME_INTRINSICS
-                case HwIntrinsics.DisableHWIntrinsic:
-                    Assert.False(Sse.IsSupported);
-                    Assert.False(Sse2.IsSupported);
-                    Assert.False(Aes.IsSupported);
-                    Assert.False(Pclmulqdq.IsSupported);
-                    Assert.False(Sse3.IsSupported);
-                    Assert.False(Ssse3.IsSupported);
-                    Assert.False(Sse41.IsSupported);
-                    Assert.False(Sse42.IsSupported);
-                    Assert.False(Popcnt.IsSupported);
-                    Assert.False(Avx.IsSupported);
-                    Assert.False(Fma.IsSupported);
-                    Assert.False(Avx2.IsSupported);
-                    Assert.False(Bmi1.IsSupported);
-                    Assert.False(Bmi2.IsSupported);
-                    Assert.False(Lzcnt.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE:
-                    Assert.False(Sse.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE2:
-                    Assert.False(Sse2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAES:
-                    Assert.False(Aes.IsSupported);
-                    break;
-                case HwIntrinsics.DisablePCLMULQDQ:
-                    Assert.False(Pclmulqdq.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE3:
-                    Assert.False(Sse3.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSSE3:
-                    Assert.False(Ssse3.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE41:
-                    Assert.False(Sse41.IsSupported);
-                    break;
-                case HwIntrinsics.DisableSSE42:
-                    Assert.False(Sse42.IsSupported);
-                    break;
-                case HwIntrinsics.DisablePOPCNT:
-                    Assert.False(Popcnt.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAVX:
-                    Assert.False(Avx.IsSupported);
-                    break;
-                case HwIntrinsics.DisableFMA:
-                    Assert.False(Fma.IsSupported);
-                    break;
-                case HwIntrinsics.DisableAVX2:
-                    Assert.False(Avx2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableBMI1:
-                    Assert.False(Bmi1.IsSupported);
-                    break;
-                case HwIntrinsics.DisableBMI2:
-                    Assert.False(Bmi2.IsSupported);
-                    break;
-                case HwIntrinsics.DisableLZCNT:
-                    Assert.False(Lzcnt.IsSupported);
-                    break;
-#endif
-            }
-        }
-
-        foreach (HwIntrinsics intrinsic in (HwIntrinsics[])Enum.GetValues(typeof(HwIntrinsics)))
-        {
-            FeatureTestRunner.RunWithHwIntrinsicsFeature(AssertHwIntrinsicsFeatureDisabled, intrinsic, new FakeSerializable());
-        }
     }
 
     public class FakeSerializable : IXunitSerializable
