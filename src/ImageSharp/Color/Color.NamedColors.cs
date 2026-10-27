@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <content>
     /// Contains static named color values.

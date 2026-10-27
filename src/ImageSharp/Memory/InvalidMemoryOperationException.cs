@@ -4,7 +4,7 @@
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Exception thrown when the library detects an invalid memory allocation request,

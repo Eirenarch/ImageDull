@@ -6,16 +6,16 @@ using System.IO;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.Metadata.Profiles.Xmp;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.Metadata.Profiles.Xmp;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Xmp
+namespace ImageDull.ImageSharp.Tests.Metadata.Profiles.Xmp
 {
     public class XmpProfileTests
     {

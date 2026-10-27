@@ -3,12 +3,12 @@
 
 using System.IO;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Bmp;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Bmp
+namespace ImageDull.ImageSharp.Tests.Formats.Bmp
 {
     public class ImageExtensionsTest
     {

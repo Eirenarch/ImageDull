@@ -7,7 +7,7 @@ using System.Linq;
 using System.Reflection;
 using Xunit.Sdk;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Base class for Theory Data attributes which pass an instance of <see cref="TestImageProvider{TPixel}"/> to the test case.

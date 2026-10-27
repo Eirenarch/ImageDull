@@ -4,7 +4,7 @@
 using System;
 using System.Buffers.Binary;
 
-namespace SixLabors.ImageSharp.Formats.Bmp
+namespace ImageDull.ImageSharp.Formats.Bmp
 {
     /// <summary>
     /// Detects bmp file headers.

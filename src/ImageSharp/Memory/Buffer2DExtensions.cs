@@ -7,7 +7,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Defines extension methods for <see cref="Buffer2D{T}"/>.

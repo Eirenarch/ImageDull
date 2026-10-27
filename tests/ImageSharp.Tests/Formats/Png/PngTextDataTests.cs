@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Png;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Png
+namespace ImageDull.ImageSharp.Tests.Formats.Png
 {
     /// <summary>
     /// Tests the <see cref="PngTextData"/> class.

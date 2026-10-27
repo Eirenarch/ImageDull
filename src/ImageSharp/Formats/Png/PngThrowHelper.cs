@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Cold path optimizations for throwing png format based exceptions.

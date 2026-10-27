@@ -7,11 +7,11 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Normalization
+namespace ImageDull.ImageSharp.Processing.Processors.Normalization
 {
     /// <summary>
     /// Applies an adaptive histogram equalization to the image using an sliding window approach.

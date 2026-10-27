@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Adds extensions that allow the processing of images to the <see cref="Image{TPixel}"/> type.

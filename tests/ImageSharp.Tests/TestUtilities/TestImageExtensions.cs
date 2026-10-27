@@ -6,18 +6,18 @@ using System.Collections.Generic;
 using System.IO;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors;
-using SixLabors.ImageSharp.Tests.Memory;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors;
+using ImageDull.ImageSharp.Tests.Memory;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public static class TestImageExtensions
     {

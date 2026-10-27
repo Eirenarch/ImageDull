@@ -3,9 +3,9 @@
 
 using System.Buffers;
 using System.IO;
-using SixLabors.ImageSharp.IO;
+using ImageDull.ImageSharp.IO;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Extension methods for <see cref="MemoryAllocator"/>.

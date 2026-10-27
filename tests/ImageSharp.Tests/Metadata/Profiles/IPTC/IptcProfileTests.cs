@@ -5,12 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Metadata.Profiles.Iptc;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Metadata.Profiles.Iptc;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.IPTC;
+namespace ImageDull.ImageSharp.Tests.Metadata.Profiles.IPTC;
 
 public class IptcProfileTests
 {

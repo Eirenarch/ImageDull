@@ -8,12 +8,12 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using Microsoft.DotNet.RemoteExecutor;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Memory.Internals;
-using SixLabors.ImageSharp.Tests.Memory.DiscontiguousBuffers;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Tests.Memory.DiscontiguousBuffers;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.Allocators
+namespace ImageDull.ImageSharp.Tests.Memory.Allocators
 {
     public class UniformUnmanagedPoolMemoryAllocatorTests
     {

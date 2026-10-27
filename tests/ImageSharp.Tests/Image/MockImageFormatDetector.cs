@@ -1,10 +1,10 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     ///  You can't mock the "DetectFormat" method due to the  ReadOnlySpan{byte} parameter.

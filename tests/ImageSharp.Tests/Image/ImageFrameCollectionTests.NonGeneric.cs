@@ -3,13 +3,13 @@
 
 using System;
 using System.Linq;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public abstract partial class ImageFrameCollectionTests
     {

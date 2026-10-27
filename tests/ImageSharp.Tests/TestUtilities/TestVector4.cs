@@ -4,7 +4,7 @@
 using System.Numerics;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     public class TestVector4 : IXunitSerializable
     {

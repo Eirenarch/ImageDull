@@ -1,11 +1,11 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public abstract partial class TestImageProvider<TPixel> : IXunitSerializable
         where TPixel : unmanaged, IPixel<TPixel>

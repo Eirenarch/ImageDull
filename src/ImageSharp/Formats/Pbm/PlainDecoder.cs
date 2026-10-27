@@ -3,11 +3,11 @@
 
 using System;
 using System.Buffers;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Pbm
+namespace ImageDull.ImageSharp.Formats.Pbm
 {
     /// <summary>
     /// Pixel decoding methods for the PBM plain encoding.

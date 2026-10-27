@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Provides Png specific metadata information for the image.

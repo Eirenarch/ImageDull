@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class GrayscaleColorConversion : ColorConversionBenchmark

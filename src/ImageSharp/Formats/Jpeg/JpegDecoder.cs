@@ -3,9 +3,9 @@
 
 using System.IO;
 using System.Threading;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg
+namespace ImageDull.ImageSharp.Formats.Jpeg
 {
     /// <summary>
     /// Image decoder for generating an image out of a jpg stream.

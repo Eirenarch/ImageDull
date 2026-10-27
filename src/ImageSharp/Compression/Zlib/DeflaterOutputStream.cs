@@ -4,9 +4,9 @@
 using System;
 using System.Buffers;
 using System.IO;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Compression.Zlib
+namespace ImageDull.ImageSharp.Compression.Zlib
 {
     /// <summary>
     /// A special stream deflating or compressing the bytes that are

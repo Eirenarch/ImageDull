@@ -3,9 +3,9 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <content>
     /// Contains constructors and implicit conversion methods.

@@ -3,14 +3,14 @@
 
 using System;
 using System.IO;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Webp;
+using static ImageDull.ImageSharp.Tests.TestImages.Webp;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     [ValidateDisposedMemoryAllocations]

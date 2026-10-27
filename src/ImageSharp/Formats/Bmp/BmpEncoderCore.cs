@@ -6,15 +6,15 @@ using System.Buffers;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Threading;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Common.Helpers;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Common.Helpers;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Formats.Bmp
+namespace ImageDull.ImageSharp.Formats.Bmp
 {
     /// <summary>
     /// Image encoder for writing an image to a stream as a Windows bitmap.

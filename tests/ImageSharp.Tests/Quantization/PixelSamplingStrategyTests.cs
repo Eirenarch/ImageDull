@@ -2,14 +2,14 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Quantization
+namespace ImageDull.ImageSharp.Tests.Quantization
 {
     public class PixelSamplingStrategyTests
     {

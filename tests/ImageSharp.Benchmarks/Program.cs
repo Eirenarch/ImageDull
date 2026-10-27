@@ -3,7 +3,7 @@
 
 using BenchmarkDotNet.Running;
 
-namespace SixLabors.ImageSharp.Benchmarks
+namespace ImageDull.ImageSharp.Benchmarks
 {
     public class Program
     {

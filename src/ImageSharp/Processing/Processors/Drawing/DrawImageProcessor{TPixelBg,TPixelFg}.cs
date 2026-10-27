@@ -3,11 +3,11 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Drawing
+namespace ImageDull.ImageSharp.Processing.Processors.Drawing
 {
     /// <summary>
     /// Combines two images together by blending the pixels.

@@ -1,13 +1,13 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Linq;
 using System.Reflection;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Provides <see cref="Image{TPixel}" /> instances for parametric unit tests.

@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder
 {
     /// <summary>
     /// Represents decompressed, unprocessed jpeg data with spectral space <see cref="IJpegComponent" />-s.

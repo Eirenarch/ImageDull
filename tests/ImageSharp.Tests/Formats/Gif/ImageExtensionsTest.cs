@@ -3,12 +3,12 @@
 
 using System.IO;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Gif
+namespace ImageDull.ImageSharp.Tests.Formats.Gif
 {
     public class ImageExtensionsTest
     {

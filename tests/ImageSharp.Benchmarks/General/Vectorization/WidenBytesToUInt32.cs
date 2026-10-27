@@ -5,9 +5,9 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.Tuples;
+using ImageDull.ImageSharp.Tuples;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.Vectorization
+namespace ImageDull.ImageSharp.Benchmarks.General.Vectorization
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class WidenBytesToUInt32

@@ -9,7 +9,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossy
+namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
     internal sealed class Vp8Histogram
     {

@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Flags that are mapped to PackedPixel types.

@@ -3,10 +3,10 @@
 
 using System;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Compression.Zlib;
+using ImageDull.ImageSharp.Compression.Zlib;
 using SharpCrc32 = ICSharpCode.SharpZipLib.Checksum.Crc32;
 
-namespace SixLabors.ImageSharp.Benchmarks.General
+namespace ImageDull.ImageSharp.Benchmarks.General
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class Crc32Benchmark

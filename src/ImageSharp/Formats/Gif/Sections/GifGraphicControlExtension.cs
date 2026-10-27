@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     /// <summary>
     /// The Graphic Control Extension contains parameters used when

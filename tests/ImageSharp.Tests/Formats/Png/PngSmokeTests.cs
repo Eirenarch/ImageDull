@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Png
+namespace ImageDull.ImageSharp.Tests.Formats.Png
 {
     [Trait("Format", "Png")]
     public class PngSmokeTests

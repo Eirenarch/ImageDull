@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Pbm;
+using static ImageDull.ImageSharp.Tests.TestImages.Pbm;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Pbm
+namespace ImageDull.ImageSharp.Tests.Formats.Pbm
 {
     [Trait("Format", "Pbm")]
     public class PbmRoundTripTests

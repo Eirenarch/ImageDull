@@ -11,11 +11,11 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Benchmarks.ColorSpaces.Bulk
+namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
     [Config(typeof(Config.ShortCore31))]
     public abstract class FromVector4<TPixel>

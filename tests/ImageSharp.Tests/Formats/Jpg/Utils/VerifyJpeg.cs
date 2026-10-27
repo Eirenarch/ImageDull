@@ -3,13 +3,13 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg.Utils
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg.Utils
 {
     internal static class VerifyJpeg
     {

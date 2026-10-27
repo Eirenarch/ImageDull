@@ -3,10 +3,10 @@
 
 using System;
 using System.Linq;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public partial class ColorTests
     {

@@ -3,9 +3,9 @@
 
 using System;
 using System.Buffers;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// A <see cref="MemoryAllocator"/> implementation that allocates memory on the unmanaged heap

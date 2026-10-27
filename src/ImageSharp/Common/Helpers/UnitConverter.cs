@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
 
-namespace SixLabors.ImageSharp.Common.Helpers
+namespace ImageDull.ImageSharp.Common.Helpers
 {
     /// <summary>
     /// Contains methods for converting values between unit scales.

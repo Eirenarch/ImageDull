@@ -4,11 +4,11 @@
 using System;
 using System.Collections.Generic;
 using System.Numerics;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
 // ReSharper disable MemberHidesStaticFromOuterClass
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Class to perform simple image comparisons.

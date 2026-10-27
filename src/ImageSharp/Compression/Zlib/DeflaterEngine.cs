@@ -4,9 +4,9 @@
 using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Compression.Zlib
+namespace ImageDull.ImageSharp.Compression.Zlib
 {
     /// <summary>
     /// Strategies for deflater

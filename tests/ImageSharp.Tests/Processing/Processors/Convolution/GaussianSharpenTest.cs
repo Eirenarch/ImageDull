@@ -1,10 +1,10 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Convolution
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Convolution
 {
     [Trait("Category", "Processors")]
     [GroupOutput("Convolution")]

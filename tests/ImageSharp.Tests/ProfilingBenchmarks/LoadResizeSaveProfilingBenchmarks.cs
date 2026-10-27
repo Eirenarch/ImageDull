@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing;
 
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.ProfilingBenchmarks
+namespace ImageDull.ImageSharp.Tests.ProfilingBenchmarks
 {
     public class LoadResizeSaveProfilingBenchmarks : MeasureFixture
     {

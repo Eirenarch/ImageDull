@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp.Formats.Tga
+namespace ImageDull.ImageSharp.Formats.Tga
 {
     /// <summary>
     /// Registers the image encoders, decoders and mime type detectors for the tga format.

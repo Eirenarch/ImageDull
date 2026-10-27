@@ -4,12 +4,12 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 #if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     internal static partial class SimdUtils
     {

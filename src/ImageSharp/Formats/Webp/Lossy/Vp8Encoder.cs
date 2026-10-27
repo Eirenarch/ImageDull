@@ -5,12 +5,12 @@ using System;
 using System.Buffers;
 using System.IO;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Formats.Webp.BitWriter;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Webp.BitWriter;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossy
+namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
     /// <summary>
     /// Encoder for lossy webp images.

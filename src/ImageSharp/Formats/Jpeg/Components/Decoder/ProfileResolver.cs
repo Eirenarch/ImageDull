@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder
 {
     /// <summary>
     /// Provides methods for identifying metadata and color profiles within jpeg images.

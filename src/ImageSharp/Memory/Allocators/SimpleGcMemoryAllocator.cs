@@ -3,9 +3,9 @@
 
 using System.Buffers;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Implements <see cref="MemoryAllocator"/> by newing up managed arrays on every allocation request.

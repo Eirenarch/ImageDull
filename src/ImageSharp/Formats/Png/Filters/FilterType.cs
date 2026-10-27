@@ -1,7 +1,7 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-namespace SixLabors.ImageSharp.Formats.Png.Filters
+namespace ImageDull.ImageSharp.Formats.Png.Filters
 {
     /// <summary>
     /// Provides enumeration of the various PNG filter types.

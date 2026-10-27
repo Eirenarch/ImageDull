@@ -1,10 +1,10 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Processing.Processors.Transforms
 {
     /// <summary>
     /// Contains helper methods for working with transforms.

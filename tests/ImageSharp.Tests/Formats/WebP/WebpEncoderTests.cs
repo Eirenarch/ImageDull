@@ -2,15 +2,15 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Webp;
+using static ImageDull.ImageSharp.Tests.TestImages.Webp;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     public class WebpEncoderTests

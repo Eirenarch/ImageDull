@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public class QuantizedImageTests
     {

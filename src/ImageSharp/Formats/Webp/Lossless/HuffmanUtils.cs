@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossless
+namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
     /// <summary>
     /// Utility functions related to creating the huffman tables.

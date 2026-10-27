@@ -1,11 +1,11 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats.Utils;
+using ImageDull.ImageSharp.PixelFormats.Utils;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats
+namespace ImageDull.ImageSharp.Tests.PixelFormats
 {
     [Trait("Category", "PixelFormats")]
     public abstract partial class PixelConverterTests

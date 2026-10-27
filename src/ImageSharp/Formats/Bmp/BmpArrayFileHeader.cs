@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Formats.Bmp
+namespace ImageDull.ImageSharp.Formats.Bmp
 {
     [StructLayout(LayoutKind.Sequential, Pack = 1)]
     internal readonly struct BmpArrayFileHeader

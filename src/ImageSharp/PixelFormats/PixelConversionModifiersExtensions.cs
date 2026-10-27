@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <summary>
     /// Extension and utility methods for <see cref="PixelConversionModifiers"/>.

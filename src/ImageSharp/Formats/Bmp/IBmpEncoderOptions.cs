@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Formats.Bmp
+namespace ImageDull.ImageSharp.Formats.Bmp
 {
     /// <summary>
     /// Configuration options for use during bmp encoding.

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Compression.Zlib
+namespace ImageDull.ImageSharp.Compression.Zlib
 {
     internal static class DeflateThrowHelper
     {

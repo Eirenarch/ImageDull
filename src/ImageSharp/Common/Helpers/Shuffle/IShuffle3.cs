@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <inheritdoc/>
     internal interface IShuffle3 : IComponentShuffle

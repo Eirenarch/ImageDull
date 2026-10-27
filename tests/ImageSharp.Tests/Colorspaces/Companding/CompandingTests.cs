@@ -1,12 +1,12 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Numerics;
-using SixLabors.ImageSharp.ColorSpaces.Companding;
+using ImageDull.ImageSharp.ColorSpaces.Companding;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Colorspaces.Companding
+namespace ImageDull.ImageSharp.Tests.Colorspaces.Companding
 {
     /// <summary>
     /// Tests various companding algorithms. Expanded numbers are hand calculated from formulas online.

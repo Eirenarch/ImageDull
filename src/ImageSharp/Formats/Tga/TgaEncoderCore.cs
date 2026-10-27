@@ -8,12 +8,12 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Tga
+namespace ImageDull.ImageSharp.Formats.Tga
 {
     /// <summary>
     /// Image encoder for writing an image to a stream as a truevision targa image.

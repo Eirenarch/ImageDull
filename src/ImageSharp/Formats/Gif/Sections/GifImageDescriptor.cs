@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     /// <summary>
     /// Each image in the Data Stream is composed of an Image Descriptor,

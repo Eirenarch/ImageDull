@@ -3,12 +3,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Processing.Processors.Transforms
 {
     /// <summary>
     /// Provides methods that allow the rotating of images.

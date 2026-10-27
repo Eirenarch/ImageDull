@@ -10,7 +10,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace SixLabors.ImageSharp.ColorSpaces.Companding
+namespace ImageDull.ImageSharp.ColorSpaces.Companding
 {
     /// <summary>
     /// Implements sRGB companding.

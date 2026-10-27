@@ -4,11 +4,11 @@
 using System.Collections.Generic;
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
     /// <summary>
     /// Benchmark for all available encoding features of the Jpeg file type.

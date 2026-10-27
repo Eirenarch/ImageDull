@@ -7,13 +7,13 @@ using System.Buffers.Binary;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Threading;
-using SixLabors.ImageSharp.Common.Helpers;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Common.Helpers;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Bmp
+namespace ImageDull.ImageSharp.Formats.Bmp
 {
     /// <summary>
     /// Performs the bitmap decoding operation.

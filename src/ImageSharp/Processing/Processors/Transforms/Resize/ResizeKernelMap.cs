@@ -6,9 +6,9 @@ using System.Buffers;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Processing.Processors.Transforms
 {
     /// <summary>
     /// Provides resize kernel values from an optimized contiguous memory region.

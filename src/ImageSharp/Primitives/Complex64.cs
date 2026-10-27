@@ -5,7 +5,7 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Represents a complex number, where the real and imaginary parts are stored as <see cref="float"/> values.

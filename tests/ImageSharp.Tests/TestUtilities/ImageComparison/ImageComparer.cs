@@ -4,9 +4,9 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison
+namespace ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison
 {
     public abstract class ImageComparer
     {

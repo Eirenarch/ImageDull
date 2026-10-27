@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Transforms
 {
     public class AffineTransformBuilderTests : TransformBuilderTestBase<AffineTransformBuilder>
     {

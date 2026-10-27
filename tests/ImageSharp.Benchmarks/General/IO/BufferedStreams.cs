@@ -4,9 +4,9 @@
 using System;
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.IO;
+using ImageDull.ImageSharp.IO;
 
-namespace SixLabors.ImageSharp.Benchmarks.IO
+namespace ImageDull.ImageSharp.Benchmarks.IO
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class BufferedStreams

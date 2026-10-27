@@ -7,14 +7,14 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.Metadata.Profiles.Xmp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Metadata.Profiles.Xmp;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     /// <summary>
     /// Implements the GIF encoding protocol.

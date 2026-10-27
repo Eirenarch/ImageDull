@@ -3,7 +3,7 @@
 
 using System.ComponentModel;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Provides enumeration of available PNG compression levels.

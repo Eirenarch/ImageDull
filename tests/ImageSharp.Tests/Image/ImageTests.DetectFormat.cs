@@ -4,12 +4,12 @@
 using System;
 using System.IO;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public partial class ImageTests
     {

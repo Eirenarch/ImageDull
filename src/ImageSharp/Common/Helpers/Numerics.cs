@@ -10,7 +10,7 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Provides optimized static methods for trigonometric, logarithmic,

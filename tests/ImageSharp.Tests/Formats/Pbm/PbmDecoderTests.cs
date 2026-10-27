@@ -3,14 +3,14 @@
 
 using System.IO;
 using System.Text;
-using SixLabors.ImageSharp.Formats.Pbm;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats.Pbm;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Pbm;
+using static ImageDull.ImageSharp.Tests.TestImages.Pbm;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Pbm
+namespace ImageDull.ImageSharp.Tests.Formats.Pbm
 {
     [Trait("Format", "Pbm")]
     [ValidateDisposedMemoryAllocations]

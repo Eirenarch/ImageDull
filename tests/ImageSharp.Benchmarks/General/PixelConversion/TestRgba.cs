@@ -4,9 +4,9 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.PixelConversion
+namespace ImageDull.ImageSharp.Benchmarks.General.PixelConversion
 {
     [StructLayout(LayoutKind.Sequential)]
     public struct TestRgba : ITestPixel<TestRgba>

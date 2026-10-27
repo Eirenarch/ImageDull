@@ -3,12 +3,12 @@
 
 using System.IO;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public class ImageExtensionsTest

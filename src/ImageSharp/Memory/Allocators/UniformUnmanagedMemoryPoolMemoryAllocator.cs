@@ -5,9 +5,9 @@ using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     internal sealed class UniformUnmanagedMemoryPoolMemoryAllocator : MemoryAllocator
     {

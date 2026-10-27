@@ -5,7 +5,7 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
+namespace ImageDull.ImageSharp.PixelFormats.PixelBlenders
 {
     /// <summary>
     /// Collection of Porter Duff Color Blending and Alpha Composition Functions.

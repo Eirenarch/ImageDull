@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -6,7 +6,7 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.PixelFormats.Utils
+namespace ImageDull.ImageSharp.PixelFormats.Utils
 {
     /// <summary>
     /// Helper class for (bulk) conversion of <see cref="Vector4"/> buffers to/from other buffer types.

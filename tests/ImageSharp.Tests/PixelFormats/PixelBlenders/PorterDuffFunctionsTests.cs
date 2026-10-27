@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
-using SixLabors.ImageSharp.PixelFormats.PixelBlenders;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.PixelFormats.PixelBlenders;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats.PixelBlenders
+namespace ImageDull.ImageSharp.Tests.PixelFormats.PixelBlenders
 {
     public class PorterDuffFunctionsTests
     {

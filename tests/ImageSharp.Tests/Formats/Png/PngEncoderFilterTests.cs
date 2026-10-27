@@ -4,13 +4,13 @@
 // Uncomment this to turn unit tests into benchmarks:
 // #define BENCHMARKING
 using System;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Formats.Png.Filters;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Png.Filters;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Png
+namespace ImageDull.ImageSharp.Tests.Formats.Png
 {
     [Trait("Format", "Png")]
     public class PngEncoderFilterTests : MeasureFixture

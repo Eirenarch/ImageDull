@@ -4,12 +4,12 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.Memory;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.Memory;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public abstract partial class ImageFrameCollectionTests
     {

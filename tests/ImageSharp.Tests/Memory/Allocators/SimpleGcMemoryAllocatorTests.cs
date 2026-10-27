@@ -4,10 +4,10 @@
 using System;
 using System.Buffers;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.Allocators
+namespace ImageDull.ImageSharp.Tests.Memory.Allocators
 {
     public class SimpleGcMemoryAllocatorTests
     {

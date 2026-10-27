@@ -1,13 +1,13 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Transforms
 {
     [Trait("Category", "Processors")]
     [GroupOutput("Transforms")]

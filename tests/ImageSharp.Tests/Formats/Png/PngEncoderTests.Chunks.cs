@@ -5,13 +5,13 @@ using System;
 using System.Buffers.Binary;
 using System.Collections.Generic;
 using System.IO;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Png
+namespace ImageDull.ImageSharp.Tests.Formats.Png
 {
     [Trait("Format", "Png")]
     public partial class PngEncoderTests

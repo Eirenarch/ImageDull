@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Provides enumeration of available PNG optimization methods.

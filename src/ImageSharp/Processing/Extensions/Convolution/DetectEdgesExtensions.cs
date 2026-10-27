@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Convolution;
+using ImageDull.ImageSharp.Processing.Processors.Convolution;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines edge detection extensions applicable on an <see cref="Image"/> using Mutate/Clone.

@@ -6,7 +6,7 @@ using System.Diagnostics;
 using System.Reflection;
 using Xunit.Sdk;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     [AttributeUsage(AttributeTargets.Class | AttributeTargets.Method, AllowMultiple = false, Inherited = true)]
     public class ValidateDisposedMemoryAllocationsAttribute : BeforeAfterTestAttribute

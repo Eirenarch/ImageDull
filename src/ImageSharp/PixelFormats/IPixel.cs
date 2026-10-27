@@ -4,7 +4,7 @@
 using System;
 using System.Numerics;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <summary>
     /// An interface that represents a generic pixel type.

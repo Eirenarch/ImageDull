@@ -3,11 +3,11 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Dithering
+namespace ImageDull.ImageSharp.Processing.Processors.Dithering
 {
     /// <summary>
     /// An ordered dithering matrix with equal sides of arbitrary length

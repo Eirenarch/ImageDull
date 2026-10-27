@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory.Internals;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.DiscontiguousBuffers
+namespace ImageDull.ImageSharp.Tests.Memory.DiscontiguousBuffers
 {
     public partial class MemoryGroupTests
     {

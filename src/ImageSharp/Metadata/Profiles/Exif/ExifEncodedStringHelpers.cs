@@ -4,9 +4,9 @@
 using System;
 using System.Buffers.Binary;
 using System.Text;
-using static SixLabors.ImageSharp.Metadata.Profiles.Exif.EncodedString;
+using static ImageDull.ImageSharp.Metadata.Profiles.Exif.EncodedString;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Metadata.Profiles.Exif
 {
     internal static class ExifEncodedStringHelpers
     {

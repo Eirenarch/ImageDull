@@ -1,14 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
-VisualStudioVersion = 18.11.12315.225 stable
+VisualStudioVersion = 18.11.12315.225
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_root", "_root", "{C317F1B1-D75E-4C6D-83EB-80367343E0D7}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
-		.gitmodules = .gitmodules
 		.runsettings = .runsettings
 		ci-build.ps1 = ci-build.ps1
 		ci-pack.ps1 = ci-pack.ps1
@@ -21,17 +20,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_root", "_root", "{C317F1B1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{1799C43E-5C54-4A8F-8D64-B1475241DB0D}"
-	ProjectSection(SolutionItems) = preProject
-		.github\CONTRIBUTING.md = .github\CONTRIBUTING.md
-		.github\PULL_REQUEST_TEMPLATE.md = .github\PULL_REQUEST_TEMPLATE.md
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ISSUE_TEMPLATE", "ISSUE_TEMPLATE", "{FBE8C1AD-5AEC-4514-9B64-091D8E145865}"
-	ProjectSection(SolutionItems) = preProject
-		.github\ISSUE_TEMPLATE\commercial-bug-report.md = .github\ISSUE_TEMPLATE\commercial-bug-report.md
-		.github\ISSUE_TEMPLATE\config.yml = .github\ISSUE_TEMPLATE\config.yml
-		.github\ISSUE_TEMPLATE\oss-bug-report.md = .github\ISSUE_TEMPLATE\oss-bug-report.md
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{815C0625-CD3D-440F-9F80-2D83856AB7AE}"
 	ProjectSection(SolutionItems) = preProject
@@ -554,12 +542,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageSharp.Tests", "tests\I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageSharp.Benchmarks", "tests\ImageSharp.Benchmarks\ImageSharp.Benchmarks.csproj", "{2BF743D8-2A06-412D-96D7-F448F00C5EA5}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{C0D7754B-5277-438E-ABEB-2BA34401B5A7}"
-	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build-and-test.yml = .github\workflows\build-and-test.yml
-		.github\workflows\code-coverage.yml = .github\workflows\code-coverage.yml
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageSharp.Tests.ProfilingSandbox", "tests\ImageSharp.Tests.ProfilingSandbox\ImageSharp.Tests.ProfilingSandbox.csproj", "{FC527290-2F22-432C-B77B-6E815726B02C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "issues", "issues", "{670DD46C-82E9-499A-B2D2-00A802ED0141}"
@@ -690,7 +672,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{1799C43E-5C54-4A8F-8D64-B1475241DB0D} = {C317F1B1-D75E-4C6D-83EB-80367343E0D7}
-		{FBE8C1AD-5AEC-4514-9B64-091D8E145865} = {1799C43E-5C54-4A8F-8D64-B1475241DB0D}
 		{2AA31A1F-142C-43F4-8687-09ABCA4B3A26} = {815C0625-CD3D-440F-9F80-2D83856AB7AE}
 		{FA55F5DE-11A6-487D-ABA4-BC93A02717DD} = {56801022-D71A-4FBE-BC5B-CBA08E2284EC}
 		{9DA226A1-8656-49A8-A58A-A8B5C081AD66} = {FA55F5DE-11A6-487D-ABA4-BC93A02717DD}
@@ -709,7 +690,6 @@ Global
 		{983A31E2-5E26-4058-BD6E-03B4922D4BBF} = {9DA226A1-8656-49A8-A58A-A8B5C081AD66}
 		{EA3000E9-2A91-4EC4-8A68-E566DEBDC4F6} = {56801022-D71A-4FBE-BC5B-CBA08E2284EC}
 		{2BF743D8-2A06-412D-96D7-F448F00C5EA5} = {56801022-D71A-4FBE-BC5B-CBA08E2284EC}
-		{C0D7754B-5277-438E-ABEB-2BA34401B5A7} = {1799C43E-5C54-4A8F-8D64-B1475241DB0D}
 		{FC527290-2F22-432C-B77B-6E815726B02C} = {56801022-D71A-4FBE-BC5B-CBA08E2284EC}
 		{670DD46C-82E9-499A-B2D2-00A802ED0141} = {E1C42A6F-913B-4A7B-B1A8-2BB62843B254}
 		{5DFC394F-136F-4B76-9BCA-3BA786515EFC} = {9DA226A1-8656-49A8-A58A-A8B5C081AD66}

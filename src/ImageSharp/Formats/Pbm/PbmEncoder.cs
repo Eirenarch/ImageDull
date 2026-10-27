@@ -4,10 +4,10 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Pbm
+namespace ImageDull.ImageSharp.Formats.Pbm
 {
     /// <summary>
     /// Image encoder for writing an image to a stream as PGM, PBM or PPM bitmap. These images are from

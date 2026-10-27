@@ -1,10 +1,10 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Formats.Webp.Lossless;
+using ImageDull.ImageSharp.Formats.Webp.Lossless;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     public class DominantCostRangeTests

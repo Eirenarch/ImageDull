@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.ColorSpaces
+namespace ImageDull.ImageSharp.ColorSpaces
 {
     /// <summary>
     /// Represents an CMYK (cyan, magenta, yellow, keyline) color.

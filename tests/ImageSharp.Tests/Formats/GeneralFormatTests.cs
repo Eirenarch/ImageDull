@@ -6,14 +6,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats
+namespace ImageDull.ImageSharp.Tests.Formats
 {
     public class GeneralFormatTests
     {

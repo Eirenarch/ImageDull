@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Encapsulates the properties and methods that describe an image.

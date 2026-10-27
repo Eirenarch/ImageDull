@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Formats.Webp.BitReader;
-using SixLabors.ImageSharp.Formats.Webp.Lossy;
+using ImageDull.ImageSharp.Formats.Webp.BitReader;
+using ImageDull.ImageSharp.Formats.Webp.Lossy;
 
-namespace SixLabors.ImageSharp.Formats.Webp
+namespace ImageDull.ImageSharp.Formats.Webp
 {
     internal class WebpImageInfo : IDisposable
     {

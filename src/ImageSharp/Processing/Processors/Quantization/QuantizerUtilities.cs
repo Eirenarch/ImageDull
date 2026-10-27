@@ -3,11 +3,11 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Dithering;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Dithering;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Quantization
+namespace ImageDull.ImageSharp.Processing.Processors.Quantization
 {
     /// <summary>
     /// Contains utility methods for <see cref="IQuantizer{TPixel}"/> instances.

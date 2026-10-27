@@ -8,9 +8,9 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Represents discontinuous group of multiple uniformly-sized memory segments.

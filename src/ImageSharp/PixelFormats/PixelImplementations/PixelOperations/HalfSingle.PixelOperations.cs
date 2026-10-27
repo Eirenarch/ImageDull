@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <content>
     /// Provides optimized overrides for bulk operations.

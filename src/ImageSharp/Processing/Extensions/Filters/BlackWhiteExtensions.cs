@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Filters;
+using ImageDull.ImageSharp.Processing.Processors.Filters;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines extension methods that allow the application of black and white toning to an <see cref="Image"/>

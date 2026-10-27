@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing
+namespace ImageDull.ImageSharp.Tests.Processing
 {
     public abstract class BaseImageOperationsExtensionTest : IDisposable
     {

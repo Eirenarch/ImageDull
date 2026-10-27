@@ -4,9 +4,9 @@
 using System;
 using System.Numerics;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
     public abstract class ColorConversionBenchmark
     {

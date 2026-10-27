@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
-using SixLabors.ImageSharp.ColorSpaces;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Colorspaces
+namespace ImageDull.ImageSharp.Tests.Colorspaces
 {
     /// <summary>
     /// Tests the <see cref="Rgb"/> struct.

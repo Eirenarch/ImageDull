@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp.Formats.Tga
+namespace ImageDull.ImageSharp.Formats.Tga
 {
     internal static class TgaConstants
     {

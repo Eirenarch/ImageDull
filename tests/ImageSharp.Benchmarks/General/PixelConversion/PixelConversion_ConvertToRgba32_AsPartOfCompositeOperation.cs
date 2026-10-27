@@ -4,9 +4,9 @@
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.PixelConversion
+namespace ImageDull.ImageSharp.Benchmarks.General.PixelConversion
 {
     public class PixelConversion_ConvertToRgba32_AsPartOfCompositeOperation
     {

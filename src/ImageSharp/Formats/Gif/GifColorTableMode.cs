@@ -1,7 +1,7 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     /// <summary>
     /// Provides enumeration for the available color table modes.

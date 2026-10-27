@@ -3,10 +3,10 @@
 
 using System;
 using System.Threading;
-using SixLabors.ImageSharp.Diagnostics;
+using ImageDull.ImageSharp.Diagnostics;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public static class MemoryAllocatorValidator
     {

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg
+namespace ImageDull.ImageSharp.Formats.Jpeg
 {
     internal static class JpegThrowHelper
     {

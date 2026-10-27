@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 
-namespace SixLabors.ImageSharp.Memory.Internals
+namespace ImageDull.ImageSharp.Memory.Internals
 {
     // CriticalFinalizerObject:
     // In case UniformUnmanagedMemoryPool is finalized, we prefer to run its finalizer after the guard finalizers,

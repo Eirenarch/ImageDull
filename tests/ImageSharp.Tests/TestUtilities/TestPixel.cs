@@ -3,10 +3,10 @@
 
 using System;
 using System.Numerics;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     public class TestPixel<TPixel> : IXunitSerializable
         where TPixel : unmanaged, IPixel<TPixel>

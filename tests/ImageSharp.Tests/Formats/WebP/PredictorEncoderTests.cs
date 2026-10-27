@@ -3,15 +3,15 @@
 
 using System;
 using System.IO;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.Formats.Webp.Lossless;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.Formats.Webp.Lossless;
+using ImageDull.ImageSharp.PixelFormats;
 #if SUPPORTS_RUNTIME_INTRINSICS
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 #endif
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     public class PredictorEncoderTests

@@ -3,12 +3,12 @@
 
 using System;
 using System.Numerics;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Effects
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Effects
 {
     [Trait("Category", "Processors")]
     [GroupOutput("Effects")]

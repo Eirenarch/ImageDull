@@ -1,11 +1,11 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Overlays;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Overlays;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Overlays
+namespace ImageDull.ImageSharp.Tests.Processing.Overlays
 {
     [Trait("Category", "Processors")]
     public class VignetteTest : BaseImageOperationsExtensionTest

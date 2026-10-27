@@ -3,7 +3,7 @@
 
 using BenchmarkDotNet.Attributes;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.BasicMath
+namespace ImageDull.ImageSharp.Benchmarks.General.BasicMath
 {
     [LongRunJob]
     public class ModuloPowerOfTwoConstant

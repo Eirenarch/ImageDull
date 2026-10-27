@@ -3,11 +3,11 @@
 
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs
+namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class EncodePng

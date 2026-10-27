@@ -3,9 +3,9 @@
 
 using System;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
+namespace ImageDull.ImageSharp.Benchmarks.LoadResizeSave
 {
     // See README.md for instructions about initialization.
     [MemoryDiagnoser]

@@ -1,13 +1,13 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Binarization;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Binarization;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Binarization
+namespace ImageDull.ImageSharp.Tests.Processing.Binarization
 {
     [Trait("Category", "Processors")]
     public class AdaptiveThresholdTests : BaseImageOperationsExtensionTest

@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Formats.Webp
+namespace ImageDull.ImageSharp.Formats.Webp
 {
     internal static class WebpThrowHelper
     {

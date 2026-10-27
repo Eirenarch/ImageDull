@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Normalization;
+using ImageDull.ImageSharp.Processing.Processors.Normalization;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines extension that allow the adjustment of the contrast of an image via its histogram.

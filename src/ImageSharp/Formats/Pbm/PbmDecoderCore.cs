@@ -3,13 +3,13 @@
 
 using System;
 using System.Threading;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
-namespace SixLabors.ImageSharp.Formats.Pbm
+namespace ImageDull.ImageSharp.Formats.Pbm
 {
     /// <summary>
     /// Performs the PBM decoding operation.

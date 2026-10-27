@@ -3,12 +3,12 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Binarization;
-using SixLabors.ImageSharp.Processing.Processors.Convolution;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Binarization;
+using ImageDull.ImageSharp.Processing.Processors.Convolution;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Processing.Processors.Transforms
 {
     /// <summary>
     /// Provides methods to allow the cropping of an image to preserve areas of highest entropy.

@@ -4,7 +4,7 @@
 using System;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg.Utils
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg.Utils
 {
     internal static partial class ReferenceImplementations
     {

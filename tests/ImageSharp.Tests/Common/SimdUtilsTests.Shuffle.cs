@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Common
+namespace ImageDull.ImageSharp.Tests.Common
 {
     public partial class SimdUtilsTests
     {

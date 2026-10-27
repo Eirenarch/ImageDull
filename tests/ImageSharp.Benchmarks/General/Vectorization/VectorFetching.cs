@@ -1,7 +1,7 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-namespace SixLabors.ImageSharp.Benchmarks.General.Vectorization
+namespace ImageDull.ImageSharp.Benchmarks.General.Vectorization
 {
     using System;
     using System.Numerics;

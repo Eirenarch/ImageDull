@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.IO;
+using ImageDull.ImageSharp.IO;
 
-namespace SixLabors.ImageSharp.Formats.Pbm
+namespace ImageDull.ImageSharp.Formats.Pbm
 {
     /// <summary>
     /// Extensions methods for <see cref="BufferedReadStream"/>.

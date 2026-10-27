@@ -1,13 +1,13 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.ProfilingBenchmarks
+namespace ImageDull.ImageSharp.Tests.ProfilingBenchmarks
 {
     public class ResizeProfilingBenchmarks : MeasureFixture
     {

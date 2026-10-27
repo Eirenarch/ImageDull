@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -6,7 +6,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     internal class SemaphoreReadMemoryStream : MemoryStream
     {

@@ -4,11 +4,11 @@
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison
+namespace ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison
 {
     public class TolerantImageComparer : ImageComparer
     {

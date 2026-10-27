@@ -1,7 +1,7 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Iptc
+namespace ImageDull.ImageSharp.Metadata.Profiles.Iptc
 {
     /// <summary>
     /// Provides enumeration of all IPTC tags relevant for images.

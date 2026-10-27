@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -6,11 +6,11 @@ using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Threading;
 using Microsoft.DotNet.RemoteExecutor;
-using SixLabors.ImageSharp.Diagnostics;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Diagnostics;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.Allocators
+namespace ImageDull.ImageSharp.Tests.Memory.Allocators
 {
     public class MemoryDiagnosticsTests
     {

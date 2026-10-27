@@ -5,11 +5,11 @@ using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Memory.Allocators
+namespace ImageDull.ImageSharp.Tests.Memory.Allocators
 {
     /// <summary>
     /// Inherit this class to test an <see cref="IMemoryOwner{T}"/> implementation (provided by <see cref="MemoryAllocator"/>).

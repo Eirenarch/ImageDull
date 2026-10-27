@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Metadata.Profiles.Exif
 {
     /// <summary>
     /// Class that represents an exif tag from the Exif standard 2.31.

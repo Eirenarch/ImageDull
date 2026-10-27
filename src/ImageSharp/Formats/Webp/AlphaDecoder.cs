@@ -6,15 +6,15 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Formats.Webp.BitReader;
-using SixLabors.ImageSharp.Formats.Webp.Lossless;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Formats.Webp.BitReader;
+using ImageDull.ImageSharp.Formats.Webp.Lossless;
+using ImageDull.ImageSharp.Memory;
 #if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 
-namespace SixLabors.ImageSharp.Formats.Webp
+namespace ImageDull.ImageSharp.Formats.Webp
 {
     /// <summary>
     /// Implements decoding for lossy alpha chunks which may be compressed.

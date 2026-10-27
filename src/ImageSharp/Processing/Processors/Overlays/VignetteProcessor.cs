@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Overlays
+namespace ImageDull.ImageSharp.Processing.Processors.Overlays
 {
     /// <summary>
     /// Defines a radial vignette effect applicable to an <see cref="Image"/>.

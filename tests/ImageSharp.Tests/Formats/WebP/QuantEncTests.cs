@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Linq;
-using SixLabors.ImageSharp.Formats.Webp.Lossy;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats.Webp.Lossy;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     public class QuantEncTests

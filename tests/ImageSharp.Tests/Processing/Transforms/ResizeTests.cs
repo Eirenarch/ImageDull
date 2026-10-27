@@ -1,13 +1,13 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Transforms
 {
     [Trait("Category", "Processors")]
     public class ResizeTests : BaseImageOperationsExtensionTest

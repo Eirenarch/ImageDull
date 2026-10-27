@@ -4,13 +4,13 @@
 using System;
 using System.Linq;
 using System.Text;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
 
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Transforms
 {
     [Trait("Category", "Processors")]
     public partial class ResizeKernelMapTests

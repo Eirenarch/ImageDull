@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Metadata;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder
 {
     /// <summary>
     /// Provides information about the JFIF marker segment.

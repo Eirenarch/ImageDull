@@ -3,10 +3,10 @@
 
 using System;
 using System.IO;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     internal readonly struct GifXmpApplicationExtension : IGifExtension
     {

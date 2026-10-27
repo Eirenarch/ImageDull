@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder
 {
     /// <summary>
     /// Common interface to represent raw Jpeg components.

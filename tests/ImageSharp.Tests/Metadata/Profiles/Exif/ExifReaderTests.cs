@@ -3,10 +3,10 @@
 
 using System;
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Tests.Metadata.Profiles.Exif
 {
     [Trait("Profile", "Exif")]
     public class ExifReaderTests

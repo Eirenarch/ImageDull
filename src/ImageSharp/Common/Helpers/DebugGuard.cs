@@ -5,7 +5,7 @@ using System;
 using System.Diagnostics;
 
 // TODO: These should just call the guard equivalents
-namespace SixLabors
+namespace ImageDull
 {
     /// <summary>
     /// Provides methods to protect against invalid parameters for a DEBUG build.

@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Advanced;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Helpers
+namespace ImageDull.ImageSharp.Tests.Helpers
 {
     public class ParallelExecutionSettingsTests
     {

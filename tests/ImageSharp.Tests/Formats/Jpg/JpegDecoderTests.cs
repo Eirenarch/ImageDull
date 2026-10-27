@@ -6,19 +6,19 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.Formats.Jpg.Utils;
-using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.Formats.Jpg.Utils;
+using ImageDull.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 
 using Xunit;
 using Xunit.Abstractions;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     // TODO: Scatter test cases into multiple test classes
     [Trait("Format", "Jpg")]

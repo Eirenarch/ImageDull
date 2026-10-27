@@ -5,15 +5,15 @@ using System;
 using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
-using SixLabors.ImageSharp.Tests.Memory;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Tests.Memory;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Transforms
 {
     [Trait("Category", "Processors")]
     public class ResizeTests

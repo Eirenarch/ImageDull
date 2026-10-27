@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats
+namespace ImageDull.ImageSharp.Formats
 {
     /// <summary>
     /// Contains information about the pixels that make up an images visual data.

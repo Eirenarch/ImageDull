@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.PixelFormats.PixelBlenders;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats.PixelBlenders;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats
+namespace ImageDull.ImageSharp.Tests.PixelFormats
 {
     [Trait("Category", "PixelFormats")]
     public class PixelBlenderTests

@@ -3,7 +3,7 @@
 
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossless
+namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
     /// <summary>
     /// A small hash-addressed array to store recently used colors, to be able to recall them with shorter codes.

@@ -3,7 +3,7 @@
 
 using System.Globalization;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Metadata.Profiles.Exif
 {
     internal sealed class ExifLong8 : ExifValue<ulong>
     {

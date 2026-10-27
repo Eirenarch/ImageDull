@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using Xunit;
 
 #pragma warning disable IDE0022 // Use expression body for methods
-namespace SixLabors.ImageSharp.Tests.Helpers
+namespace ImageDull.ImageSharp.Tests.Helpers
 {
     public class RuntimeEnvironmentTests
     {

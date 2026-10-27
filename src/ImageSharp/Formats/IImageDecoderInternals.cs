@@ -3,10 +3,10 @@
 
 using System;
 using System.Threading;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats
+namespace ImageDull.ImageSharp.Formats
 {
     /// <summary>
     /// Abstraction for shared internals for ***DecoderCore implementations to be used with <see cref="ImageDecoderUtilities"/>.

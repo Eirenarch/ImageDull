@@ -4,9 +4,9 @@
 using System;
 using System.Buffers;
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossless
+namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
     internal static class BackwardReferenceEncoder
     {

@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Tga
+namespace ImageDull.ImageSharp.Formats.Tga
 {
     /// <summary>
     /// Detects tga file headers.

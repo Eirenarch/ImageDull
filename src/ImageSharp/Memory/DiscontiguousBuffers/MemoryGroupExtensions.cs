@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     internal static class MemoryGroupExtensions
     {

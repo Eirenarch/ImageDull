@@ -8,15 +8,15 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using PhotoSauce.MagicScaler;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Tests;
 using SkiaSharp;
-using ImageSharpImage = SixLabors.ImageSharp.Image;
-using ImageSharpSize = SixLabors.ImageSharp.Size;
+using ImageSharpImage = ImageDull.ImageSharp.Image;
+using ImageSharpSize = ImageDull.ImageSharp.Size;
 using NetVipsImage = NetVips.Image;
 
-namespace SixLabors.ImageSharp.Benchmarks.LoadResizeSave
+namespace ImageDull.ImageSharp.Benchmarks.LoadResizeSave
 {
     public enum JpegKind
     {

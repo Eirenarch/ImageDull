@@ -6,10 +6,10 @@ using System.Buffers;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <summary>
     /// A stateless class implementing Strategy Pattern for batched pixel-data conversion operations

@@ -1,12 +1,12 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Transforms
 {
     [Trait("Category", "Processors")]
     public class TransformsHelpersTest

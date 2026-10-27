@@ -3,10 +3,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg.Utils
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg.Utils
 {
     /// <summary>
     /// This class contains simplified (inefficient) reference implementations to produce verification data for unit tests

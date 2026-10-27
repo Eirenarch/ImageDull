@@ -8,16 +8,16 @@ using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
-using SixLabors.ImageSharp.ColorSpaces;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Encoder;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.Colorspaces.Conversion;
+using ImageDull.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.Colorspaces.Conversion;
 using Xunit;
 using Xunit.Abstractions;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     public class RgbToYCbCrConverterTests
     {

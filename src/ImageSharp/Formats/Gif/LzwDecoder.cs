@@ -5,10 +5,10 @@ using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     /// <summary>
     /// Decompresses and decodes data using the dynamic LZW algorithms.

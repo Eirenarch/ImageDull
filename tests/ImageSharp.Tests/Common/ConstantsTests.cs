@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Common
+namespace ImageDull.ImageSharp.Tests.Common
 {
     public class ConstantsTests
     {

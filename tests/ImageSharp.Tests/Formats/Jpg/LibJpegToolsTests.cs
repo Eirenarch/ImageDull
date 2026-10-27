@@ -2,12 +2,12 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.Formats.Jpg.Utils;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.Formats.Jpg.Utils;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public class LibJpegToolsTests

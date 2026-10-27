@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <content>
     /// Contains the definition of <see cref="WebSafePalette"/>.

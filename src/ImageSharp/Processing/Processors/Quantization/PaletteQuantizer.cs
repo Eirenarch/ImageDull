@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Quantization
+namespace ImageDull.ImageSharp.Processing.Processors.Quantization
 {
     /// <summary>
     /// Allows the quantization of images pixels using color palettes.

@@ -2,11 +2,11 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.ColorSpaces;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Colorspaces.Conversion
+namespace ImageDull.ImageSharp.Tests.Colorspaces.Conversion
 {
     /// <summary>
     /// Tests <see cref="CieLuv"/>-<see cref="Hsl"/> conversions.

@@ -4,7 +4,7 @@
 using System.Collections.Generic;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public partial class JpegDecoderTests

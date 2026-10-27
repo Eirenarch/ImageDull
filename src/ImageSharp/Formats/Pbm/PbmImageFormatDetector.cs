@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Pbm
+namespace ImageDull.ImageSharp.Formats.Pbm
 {
     /// <summary>
     /// Detects Pbm file headers.

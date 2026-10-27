@@ -1,14 +1,14 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Drawing;
-using SixLabors.ImageSharp.Tests.Processing;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Drawing;
+using ImageDull.ImageSharp.Tests.Processing;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Drawing
+namespace ImageDull.ImageSharp.Tests.Drawing
 {
     public class DrawImageExtensionsTests : BaseImageOperationsExtensionTest
     {

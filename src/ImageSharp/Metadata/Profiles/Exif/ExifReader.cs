@@ -10,9 +10,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Text;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Metadata.Profiles.Exif
 {
     internal class ExifReader : BaseExifReader
     {

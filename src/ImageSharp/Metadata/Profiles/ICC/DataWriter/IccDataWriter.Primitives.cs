@@ -4,7 +4,7 @@
 using System;
 using System.Text;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
+namespace ImageDull.ImageSharp.Metadata.Profiles.Icc
 {
     /// <summary>
     /// Provides methods to write ICC data types

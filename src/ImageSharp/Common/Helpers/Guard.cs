@@ -3,9 +3,9 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp;
+using ImageDull.ImageSharp;
 
-namespace SixLabors
+namespace ImageDull
 {
     internal static partial class Guard
     {

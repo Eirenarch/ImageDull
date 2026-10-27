@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Dithering;
+using ImageDull.ImageSharp.Processing.Processors.Dithering;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Quantization
+namespace ImageDull.ImageSharp.Processing.Processors.Quantization
 {
     /// <summary>
     /// Contains color quantization specific constants.

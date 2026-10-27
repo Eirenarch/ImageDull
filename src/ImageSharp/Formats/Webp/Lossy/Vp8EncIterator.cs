@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossy
+namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
     /// <summary>
     /// Iterator structure to iterate through macroblocks, pointing to the

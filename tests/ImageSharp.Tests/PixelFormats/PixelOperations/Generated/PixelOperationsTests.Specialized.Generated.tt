@@ -1,7 +1,7 @@
 <#@include file="_Common.ttinclude" #>
 <#@ output extension=".cs" #>
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats.PixelOperations
+namespace ImageDull.ImageSharp.Tests.PixelFormats.PixelOperations
 {
     public partial class PixelOperationsTests
     {

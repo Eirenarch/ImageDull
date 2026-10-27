@@ -11,7 +11,7 @@ using System.Runtime.Intrinsics.X86;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities.Tests;
+namespace ImageDull.ImageSharp.Tests.TestUtilities.Tests;
 
 public class FeatureTestRunnerTests
 {

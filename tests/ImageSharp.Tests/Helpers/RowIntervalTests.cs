@@ -3,10 +3,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Helpers
+namespace ImageDull.ImageSharp.Tests.Helpers
 {
     public class RowIntervalTests
     {

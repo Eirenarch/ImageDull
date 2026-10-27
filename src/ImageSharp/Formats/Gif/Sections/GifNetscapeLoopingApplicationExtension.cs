@@ -4,7 +4,7 @@
 using System;
 using System.Buffers.Binary;
 
-namespace SixLabors.ImageSharp.Formats.Gif
+namespace ImageDull.ImageSharp.Formats.Gif
 {
     internal readonly struct GifNetscapeLoopingApplicationExtension : IGifExtension
     {

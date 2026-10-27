@@ -1,16 +1,16 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Buffers;
 using System.Collections.Generic;
 using Microsoft.DotNet.RemoteExecutor;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Memory.Internals;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public abstract class ProcessPixelRowsTestBase
     {

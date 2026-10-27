@@ -2,14 +2,14 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors;
-using SixLabors.ImageSharp.Processing.Processors.Filters;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors;
+using ImageDull.ImageSharp.Processing.Processors.Filters;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Filters
+namespace ImageDull.ImageSharp.Tests.Processing.Filters
 {
     [Trait("Category", "Processors")]
     public class ColorBlindnessTest : BaseImageOperationsExtensionTest

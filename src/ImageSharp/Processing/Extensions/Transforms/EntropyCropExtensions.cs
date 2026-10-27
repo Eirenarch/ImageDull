@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines extensions that allow the application of entropy cropping operations on an <see cref="Image"/>

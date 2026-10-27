@@ -3,14 +3,14 @@
 
 using System;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 #if SUPPORTS_RUNTIME_INTRINSICS
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 #endif
 
-namespace SixLabors.ImageSharp.Tests.Formats.Webp
+namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
     [Trait("Format", "Webp")]
     public class WebpCommonUtilsTests

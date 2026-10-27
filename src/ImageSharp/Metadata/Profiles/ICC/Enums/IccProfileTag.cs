@@ -1,8 +1,8 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Metadata.Profiles.Icc
+namespace ImageDull.ImageSharp.Metadata.Profiles.Icc
 {
     /// <summary>
     /// Enumerates the ICC Profile Tags as defined in ICC.1:2010 version 4.3.0.0

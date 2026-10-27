@@ -9,9 +9,9 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.PixelConversion
+namespace ImageDull.ImageSharp.Benchmarks.General.PixelConversion
 {
     public unsafe class PixelConversion_PackFromRgbPlanes
     {

@@ -4,10 +4,10 @@
 using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Dithering
+namespace ImageDull.ImageSharp.Processing.Processors.Dithering
 {
     /// <summary>
     /// Allows the consumption a palette to dither an image.

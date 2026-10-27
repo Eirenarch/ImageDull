@@ -3,9 +3,9 @@
 
 using System.IO;
 using System.Threading;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats
+namespace ImageDull.ImageSharp.Formats
 {
     /// <summary>
     /// Encapsulates properties and methods required for decoding an image from a stream.

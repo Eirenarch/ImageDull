@@ -1,10 +1,10 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.ColorSpaces.Companding;
+using ImageDull.ImageSharp.ColorSpaces.Companding;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <summary>
     /// Flags responsible to select additional operations which could be efficiently applied in

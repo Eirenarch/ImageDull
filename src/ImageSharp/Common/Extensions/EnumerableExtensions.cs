@@ -4,7 +4,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Encapsulates a series of time saving extension methods to the <see cref="T:System.Collections.IEnumerable"/> interface.

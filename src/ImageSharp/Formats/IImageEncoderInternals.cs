@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
 using System.Threading;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats
+namespace ImageDull.ImageSharp.Formats
 {
     /// <summary>
     /// Abstraction for shared internals for ***DecoderCore implementations to be used with <see cref="ImageEncoderUtilities"/>.

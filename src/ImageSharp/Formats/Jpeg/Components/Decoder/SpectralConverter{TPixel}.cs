@@ -5,11 +5,11 @@ using System;
 using System.Buffers;
 using System.Linq;
 using System.Threading;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder
 {
     /// <inheritdoc/>
     /// <remarks>

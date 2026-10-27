@@ -5,17 +5,17 @@ using System;
 using System.IO;
 using Microsoft.DotNet.RemoteExecutor;
 
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Gif
+namespace ImageDull.ImageSharp.Tests.Formats.Gif
 {
     [Trait("Format", "Gif")]
     [ValidateDisposedMemoryAllocations]

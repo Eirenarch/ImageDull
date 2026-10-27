@@ -5,7 +5,7 @@ using System;
 using System.Text;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Common
+namespace ImageDull.ImageSharp.Tests.Common
 {
     public class EncoderExtensionsTests
     {

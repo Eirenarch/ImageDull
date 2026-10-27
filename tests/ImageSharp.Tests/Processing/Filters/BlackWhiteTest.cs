@@ -1,11 +1,11 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Filters;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Filters;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Filters
+namespace ImageDull.ImageSharp.Tests.Processing.Filters
 {
     [Trait("Category", "Processors")]
     public class BlackWhiteTest : BaseImageOperationsExtensionTest

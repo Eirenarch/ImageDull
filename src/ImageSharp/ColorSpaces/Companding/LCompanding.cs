@@ -3,9 +3,9 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
 
-namespace SixLabors.ImageSharp.ColorSpaces.Companding
+namespace ImageDull.ImageSharp.ColorSpaces.Companding
 {
     /// <summary>
     /// Implements L* companding.

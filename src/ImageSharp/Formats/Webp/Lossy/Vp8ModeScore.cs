@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossy
+namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
     /// <summary>
     /// Class to accumulate score and info during RD-optimization and mode evaluation.

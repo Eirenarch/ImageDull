@@ -5,7 +5,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components
 {
     internal unsafe partial struct Block8x8
     {

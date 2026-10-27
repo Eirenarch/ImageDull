@@ -5,7 +5,7 @@ using System;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Common
+namespace ImageDull.ImageSharp.Tests.Common
 {
     public class NumericsTests
     {

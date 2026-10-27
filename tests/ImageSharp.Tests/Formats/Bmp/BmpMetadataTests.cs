@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.IO;
-using SixLabors.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.Formats.Bmp;
 
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Bmp;
+using static ImageDull.ImageSharp.Tests.TestImages.Bmp;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Bmp
+namespace ImageDull.ImageSharp.Tests.Formats.Bmp
 {
     [Trait("Format", "Bmp")]
     public class BmpMetadataTests

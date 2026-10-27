@@ -3,10 +3,10 @@
 
 using System;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Quantization
+namespace ImageDull.ImageSharp.Processing.Processors.Quantization
 {
     /// <summary>
     /// Encapsulates methods to create a quantized image based upon the given palette.

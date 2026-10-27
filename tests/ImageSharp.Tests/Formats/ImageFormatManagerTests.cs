@@ -5,18 +5,18 @@ using System;
 using System.IO;
 using System.Linq;
 using Moq;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Bmp;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Formats.Pbm;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Formats.Pbm;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Tga;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats
+namespace ImageDull.ImageSharp.Tests.Formats
 {
     public class ImageFormatManagerTests
     {

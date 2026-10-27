@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg
+namespace ImageDull.ImageSharp.Formats.Jpeg
 {
     /// <summary>
     /// Detects Jpeg file headers

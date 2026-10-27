@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public class ZigZagTests

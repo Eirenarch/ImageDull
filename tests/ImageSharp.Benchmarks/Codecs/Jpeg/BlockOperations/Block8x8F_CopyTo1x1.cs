@@ -10,10 +10,10 @@ using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg.BlockOperations
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg.BlockOperations
 {
     public unsafe class Block8x8F_CopyTo1x1
     {

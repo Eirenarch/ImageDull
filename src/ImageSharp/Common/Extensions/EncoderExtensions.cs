@@ -5,7 +5,7 @@
 using System;
 using System.Text;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Extension methods for the <see cref="Encoder"/> type.

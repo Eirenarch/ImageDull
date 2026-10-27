@@ -4,12 +4,12 @@
 using System.Globalization;
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks
+namespace ImageDull.ImageSharp.Benchmarks
 {
     [Config(typeof(Config.MultiFramework))]
     public abstract class Resize<TPixel>

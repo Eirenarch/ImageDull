@@ -3,9 +3,9 @@
 
 using System;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Advanced
+namespace ImageDull.ImageSharp.Advanced
 {
     /// <summary>
     /// Defines execution settings for methods in <see cref="ParallelRowIterator"/>.

@@ -1,14 +1,14 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Extensions.Transforms;
-using SixLabors.ImageSharp.Processing.Processors.Transforms;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Extensions.Transforms;
+using ImageDull.ImageSharp.Processing.Processors.Transforms;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Transforms
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Transforms
 {
     [Trait("Category", "Processors")]
     [GroupOutput("Transforms")]

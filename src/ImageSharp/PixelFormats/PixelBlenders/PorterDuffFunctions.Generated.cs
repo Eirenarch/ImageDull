@@ -6,7 +6,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.PixelFormats.PixelBlenders
+namespace ImageDull.ImageSharp.PixelFormats.PixelBlenders
 {
     internal static partial class PorterDuffFunctions
     {

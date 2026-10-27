@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     /// <summary>
     /// Options for allocating buffers.

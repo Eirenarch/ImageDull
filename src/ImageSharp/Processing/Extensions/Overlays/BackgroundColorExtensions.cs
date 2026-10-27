@@ -1,9 +1,9 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors.Overlays;
+using ImageDull.ImageSharp.Processing.Processors.Overlays;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines extension methods to replace the background color of an <see cref="Image"/>

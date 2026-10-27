@@ -3,9 +3,9 @@
 
 using System.Globalization;
 using System.Numerics;
-using SixLabors.ImageSharp.Metadata.Profiles.Icc;
+using ImageDull.ImageSharp.Metadata.Profiles.Icc;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     internal static class IccTestDataTagDataEntry
     {

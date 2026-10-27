@@ -1,13 +1,13 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
-using SixLabors.ImageSharp.Tests.Formats.Jpg.Utils;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Tests.Formats.Jpg.Utils;
 
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public partial class ReferenceImplementationsTests

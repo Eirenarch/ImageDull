@@ -3,17 +3,17 @@
 
 using System;
 using System.Numerics;
-using SixLabors.ImageSharp.ColorSpaces;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Tests.Colorspaces.Conversion;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Tests.Colorspaces.Conversion;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg
 {
     [Trait("Format", "Jpg")]
     public class JpegColorConverterTests

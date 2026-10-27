@@ -8,14 +8,14 @@ using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
-using SixLabors.ImageSharp.Compression.Zlib;
-using SixLabors.ImageSharp.Formats.Png.Chunks;
-using SixLabors.ImageSharp.Formats.Png.Filters;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Compression.Zlib;
+using ImageDull.ImageSharp.Formats.Png.Chunks;
+using ImageDull.ImageSharp.Formats.Png.Filters;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Performs the png encoding operation.

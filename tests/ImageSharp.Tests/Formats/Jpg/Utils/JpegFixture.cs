@@ -5,15 +5,15 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 using Xunit.Abstractions;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Jpg.Utils
+namespace ImageDull.ImageSharp.Tests.Formats.Jpg.Utils
 {
     public class JpegFixture : MeasureFixture
     {

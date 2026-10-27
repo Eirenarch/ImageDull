@@ -3,12 +3,12 @@
 
 using System;
 using System.Buffers;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Formats.Webp.Lossless;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Formats.Webp.Lossless;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Webp
+namespace ImageDull.ImageSharp.Formats.Webp
 {
     /// <summary>
     /// Methods for encoding the alpha data of a VP8 image.

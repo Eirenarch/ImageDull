@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 // Port of BCL internal utility:
@@ -8,7 +8,7 @@ using System;
 using System.Runtime.ConstrainedExecution;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Memory.Internals
+namespace ImageDull.ImageSharp.Memory.Internals
 {
     /// <summary>
     /// Schedules a callback roughly every gen 2 GC (you may see a Gen 0 an Gen 1 but only once)

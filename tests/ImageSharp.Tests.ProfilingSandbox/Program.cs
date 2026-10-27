@@ -4,17 +4,17 @@
 using System;
 using System.Reflection;
 using System.Threading;
-using SixLabors.ImageSharp.Memory.Internals;
-using SixLabors.ImageSharp.Tests.Formats.Jpg;
-using SixLabors.ImageSharp.Tests.PixelFormats.PixelOperations;
-using SixLabors.ImageSharp.Tests.ProfilingBenchmarks;
+using ImageDull.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Tests.Formats.Jpg;
+using ImageDull.ImageSharp.Tests.PixelFormats.PixelOperations;
+using ImageDull.ImageSharp.Tests.ProfilingBenchmarks;
 using Xunit.Abstractions;
 
 // in this file, comments are used for disabling stuff for local execution
 #pragma warning disable SA1515
 #pragma warning disable SA1512
 
-namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
+namespace ImageDull.ImageSharp.Tests.ProfilingSandbox
 {
     public class Program
     {

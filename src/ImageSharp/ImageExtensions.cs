@@ -7,10 +7,10 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Formats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Formats;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Extension methods for the <see cref="Image"/> type.

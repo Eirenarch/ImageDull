@@ -3,7 +3,7 @@
 
 using System.Diagnostics;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossless
+namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
     [DebuggerDisplay("Mode: {Mode}, Len: {Len}, BgraOrDistance: {BgraOrDistance}")]
     internal sealed class PixOrCopy

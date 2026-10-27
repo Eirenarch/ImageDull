@@ -3,11 +3,11 @@
 
 using System;
 using System.Linq;
-using SixLabors.ImageSharp.Formats.Webp.Lossless;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Formats.Webp.Lossless;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.WebP
+namespace ImageDull.ImageSharp.Tests.Formats.WebP
 {
     public class Vp8LHistogramTests
     {

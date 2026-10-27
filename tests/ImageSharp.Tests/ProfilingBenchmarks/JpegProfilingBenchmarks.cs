@@ -5,9 +5,9 @@ using System;
 using System.IO;
 using System.Linq;
 using System.Numerics;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 using Xunit.Abstractions;
@@ -15,7 +15,7 @@ using Xunit.Abstractions;
 // in this file, comments are used for disabling stuff for local execution
 #pragma warning disable SA1515
 
-namespace SixLabors.ImageSharp.Tests.ProfilingBenchmarks
+namespace ImageDull.ImageSharp.Tests.ProfilingBenchmarks
 {
     public class JpegProfilingBenchmarks : MeasureFixture
     {

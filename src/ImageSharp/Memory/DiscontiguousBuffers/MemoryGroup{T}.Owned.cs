@@ -6,9 +6,9 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Memory
+namespace ImageDull.ImageSharp.Memory
 {
     internal abstract partial class MemoryGroup<T>
     {

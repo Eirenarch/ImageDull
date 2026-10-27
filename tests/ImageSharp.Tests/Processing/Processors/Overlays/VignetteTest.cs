@@ -1,10 +1,10 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Overlays
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Overlays
 {
     [Trait("Category", "Processors")]
     [GroupOutput("Overlays")]

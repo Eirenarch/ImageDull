@@ -1,11 +1,11 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 using System;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Memory
+namespace ImageDull.ImageSharp.Tests.Memory
 {
     public class BufferAreaTests
     {

@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Quantization
+namespace ImageDull.ImageSharp.Processing.Processors.Quantization
 {
     /// <summary>
     /// Provides an abstraction to enumerate pixel regions within a multi-framed <see cref="Image{TPixel}"/>.

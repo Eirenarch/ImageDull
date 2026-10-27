@@ -4,10 +4,10 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.ColorSpaces
+namespace ImageDull.ImageSharp.ColorSpaces
 {
     /// <summary>
     /// Represents an RGB color with specified <see cref="RgbWorkingSpace"/> working space.

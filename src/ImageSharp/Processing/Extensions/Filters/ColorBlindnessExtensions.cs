@@ -1,10 +1,10 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Processing.Processors;
-using SixLabors.ImageSharp.Processing.Processors.Filters;
+using ImageDull.ImageSharp.Processing.Processors;
+using ImageDull.ImageSharp.Processing.Processors.Filters;
 
-namespace SixLabors.ImageSharp.Processing
+namespace ImageDull.ImageSharp.Processing
 {
     /// <summary>
     /// Defines extensions that simulate the effects of various color blindness disorders on an <see cref="Image"/>

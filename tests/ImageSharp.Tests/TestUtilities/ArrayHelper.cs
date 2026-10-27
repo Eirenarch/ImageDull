@@ -3,7 +3,7 @@
 
 using System.Linq;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public static class ArrayHelper
     {

@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     public class GraphicsOptionsComparer : IEqualityComparer<GraphicsOptions>
     {

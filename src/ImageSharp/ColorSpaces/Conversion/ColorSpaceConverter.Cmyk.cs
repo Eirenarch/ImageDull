@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.ColorSpaces.Conversion
+namespace ImageDull.ImageSharp.ColorSpaces.Conversion
 {
     /// <content>
     /// Allows conversion to <see cref="Cmyk"/>.

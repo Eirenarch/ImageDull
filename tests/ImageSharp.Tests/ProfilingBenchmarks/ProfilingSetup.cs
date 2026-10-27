@@ -3,7 +3,7 @@
 
 // Uncomment to enable local profiling benchmarks. DO NOT PUSH TO MAIN!
 // #define PROFILING
-namespace SixLabors.ImageSharp.Tests.ProfilingBenchmarks
+namespace ImageDull.ImageSharp.Tests.ProfilingBenchmarks
 {
     public static class ProfilingSetup
     {

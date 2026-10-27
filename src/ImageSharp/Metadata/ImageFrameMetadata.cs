@@ -2,13 +2,13 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
-using SixLabors.ImageSharp.Metadata.Profiles.Icc;
-using SixLabors.ImageSharp.Metadata.Profiles.Iptc;
-using SixLabors.ImageSharp.Metadata.Profiles.Xmp;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.Metadata.Profiles.Icc;
+using ImageDull.ImageSharp.Metadata.Profiles.Iptc;
+using ImageDull.ImageSharp.Metadata.Profiles.Xmp;
 
-namespace SixLabors.ImageSharp.Metadata
+namespace ImageDull.ImageSharp.Metadata
 {
     /// <summary>
     /// Encapsulates the metadata of an image frame.

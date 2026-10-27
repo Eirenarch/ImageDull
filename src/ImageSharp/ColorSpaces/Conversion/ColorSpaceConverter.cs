@@ -3,7 +3,7 @@
 
 using System.Numerics;
 
-namespace SixLabors.ImageSharp.ColorSpaces.Conversion
+namespace ImageDull.ImageSharp.ColorSpaces.Conversion
 {
     /// <summary>
     /// Provides methods to allow the conversion of color values between different color spaces.

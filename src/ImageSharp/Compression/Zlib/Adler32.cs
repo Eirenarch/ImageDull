@@ -10,7 +10,7 @@ using System.Runtime.Intrinsics.X86;
 #endif
 
 #pragma warning disable IDE0007 // Use implicit type
-namespace SixLabors.ImageSharp.Compression.Zlib
+namespace ImageDull.ImageSharp.Compression.Zlib
 {
     /// <summary>
     /// Calculates the 32 bit Adler checksum of a given buffer according to

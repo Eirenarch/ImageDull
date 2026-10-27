@@ -5,7 +5,7 @@ using System;
 using System.Runtime.CompilerServices;
 
 // ReSharper disable CompareOfFloatsByEqualityOperator
-namespace SixLabors.ImageSharp.ColorSpaces.Conversion
+namespace ImageDull.ImageSharp.ColorSpaces.Conversion
 {
     /// <summary>
     /// Represents the coordinates of CIEXY chromaticity space.

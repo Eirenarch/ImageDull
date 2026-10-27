@@ -4,13 +4,13 @@
 using System;
 using System.IO;
 using Microsoft.DotNet.RemoteExecutor;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public class LargeImageIntegrationTests
     {

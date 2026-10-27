@@ -10,11 +10,11 @@ using System.Text;
 using System.Threading;
 using CommandLine;
 using CommandLine.Text;
-using SixLabors.ImageSharp.Benchmarks.LoadResizeSave;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Benchmarks.LoadResizeSave;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory.Internals;
 
-namespace SixLabors.ImageSharp.Tests.ProfilingSandbox
+namespace ImageDull.ImageSharp.Tests.ProfilingSandbox
 {
     // See ImageSharp.Benchmarks/LoadResizeSave/README.md
     internal class LoadResizeSaveParallelMemoryStress

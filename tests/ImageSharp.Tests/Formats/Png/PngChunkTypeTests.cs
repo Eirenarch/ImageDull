@@ -3,10 +3,10 @@
 
 using System.Buffers.Binary;
 using System.Text;
-using SixLabors.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Png;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Png
+namespace ImageDull.ImageSharp.Tests.Formats.Png
 {
     [Trait("Format", "Png")]
     public class PngChunkTypeTests

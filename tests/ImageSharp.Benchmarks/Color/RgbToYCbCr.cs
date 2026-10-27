@@ -5,9 +5,9 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
 
-namespace SixLabors.ImageSharp.Benchmarks
+namespace ImageDull.ImageSharp.Benchmarks
 {
     public partial class RgbToYCbCr
     {

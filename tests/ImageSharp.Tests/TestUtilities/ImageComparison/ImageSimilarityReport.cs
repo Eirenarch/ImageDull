@@ -5,9 +5,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison
+namespace ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison
 {
     public class ImageSimilarityReport
     {

@@ -1,15 +1,15 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors.Dithering;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors.Dithering;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Processing.Processors.Binarization
+namespace ImageDull.ImageSharp.Tests.Processing.Processors.Binarization
 {
     [Trait("Category", "Processors")]
     public class BinaryDitherTests

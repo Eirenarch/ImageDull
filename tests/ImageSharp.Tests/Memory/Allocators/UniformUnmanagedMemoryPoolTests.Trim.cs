@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -8,10 +8,10 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using Microsoft.DotNet.RemoteExecutor;
-using SixLabors.ImageSharp.Memory.Internals;
+using ImageDull.ImageSharp.Memory.Internals;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.Allocators
+namespace ImageDull.ImageSharp.Tests.Memory.Allocators
 {
     public partial class UniformUnmanagedMemoryPoolTests
     {

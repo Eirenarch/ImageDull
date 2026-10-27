@@ -4,11 +4,11 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Processing.Processors.Filters
+namespace ImageDull.ImageSharp.Processing.Processors.Filters
 {
     /// <summary>
     /// Provides methods that accept a <see cref="ColorMatrix"/> matrix to apply free-form filters to images.

@@ -3,9 +3,9 @@
 
 using System;
 using System.IO;
-using SixLabors.ImageSharp.IO;
+using ImageDull.ImageSharp.IO;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     internal class EofHitCounter : IDisposable
     {

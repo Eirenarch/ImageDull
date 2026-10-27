@@ -2,10 +2,10 @@
 // Licensed under the Apache License, Version 2.0.
 
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
 
-namespace SixLabors.ImageSharp.Benchmarks.Processing
+namespace ImageDull.ImageSharp.Benchmarks.Processing
 {
     [Config(typeof(Config.MultiFramework))]
     public class BokehBlur

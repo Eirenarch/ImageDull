@@ -3,7 +3,7 @@
 
 using System.Buffers;
 
-namespace SixLabors.ImageSharp.Formats.Png
+namespace ImageDull.ImageSharp.Formats.Png
 {
     /// <summary>
     /// Stores header information about a chunk.

@@ -5,10 +5,10 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.Tuples;
+using ImageDull.ImageSharp.Tuples;
 
 // ReSharper disable MemberHidesStaticFromOuterClass
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     internal static partial class SimdUtils
     {

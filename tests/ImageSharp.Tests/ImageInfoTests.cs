@@ -1,12 +1,12 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Metadata;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public class ImageInfoTests
     {

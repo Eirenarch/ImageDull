@@ -4,13 +4,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Formats.Gif
+namespace ImageDull.ImageSharp.Tests.Formats.Gif
 {
     [Trait("Format", "Gif")]
     public class GifMetadataTests

@@ -8,7 +8,7 @@ using System.Globalization;
 using System.IO;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     /// <summary>
     /// RemoteExecutor can only execute static methods, which can only consume string arguments,

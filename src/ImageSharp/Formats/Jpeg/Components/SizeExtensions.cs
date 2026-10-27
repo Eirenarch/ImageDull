@@ -4,7 +4,7 @@
 using System;
 using System.Numerics;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components
 {
     /// <summary>
     /// Extension methods for <see cref="Size"/>

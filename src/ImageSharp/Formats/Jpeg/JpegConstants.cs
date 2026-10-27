@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Formats.Jpeg.Components.Decoder;
+using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg
+namespace ImageDull.ImageSharp.Formats.Jpeg
 {
     /// <summary>
     /// Contains jpeg constant values defined in the specification.

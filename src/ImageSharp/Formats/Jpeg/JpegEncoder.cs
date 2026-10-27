@@ -4,9 +4,9 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg
+namespace ImageDull.ImageSharp.Formats.Jpeg
 {
     /// <summary>
     /// Encoder for writing the data image to a stream in jpeg format.

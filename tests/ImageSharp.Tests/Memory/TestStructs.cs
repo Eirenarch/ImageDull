@@ -4,7 +4,7 @@
 using System;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory
+namespace ImageDull.ImageSharp.Tests.Memory
 {
     public static class TestStructs
     {

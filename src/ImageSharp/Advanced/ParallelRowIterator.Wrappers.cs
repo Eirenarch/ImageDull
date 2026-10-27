@@ -5,9 +5,9 @@ using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.Advanced
+namespace ImageDull.ImageSharp.Advanced
 {
     /// <content>
     /// Utility methods for batched processing of pixel row intervals.

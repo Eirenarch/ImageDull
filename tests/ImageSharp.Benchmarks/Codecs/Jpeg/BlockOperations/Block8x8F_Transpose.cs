@@ -2,9 +2,9 @@
 // Licensed under the Apache License, Version 2.0.
 
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg.Components;
+using ImageDull.ImageSharp.Formats.Jpeg.Components;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg.BlockOperations
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg.BlockOperations
 {
     [Config(typeof(Config.HwIntrinsics_SSE_AVX))]
     public class Block8x8F_Transpose

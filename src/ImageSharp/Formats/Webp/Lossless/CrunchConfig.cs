@@ -3,7 +3,7 @@
 
 using System.Collections.Generic;
 
-namespace SixLabors.ImageSharp.Formats.Webp.Lossless
+namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
     internal class CrunchConfig
     {

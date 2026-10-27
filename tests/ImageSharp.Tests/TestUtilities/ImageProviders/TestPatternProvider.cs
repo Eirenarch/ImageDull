@@ -3,11 +3,11 @@
 
 using System;
 using System.Collections.Generic;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     public abstract partial class TestImageProvider<TPixel> : IXunitSerializable
         where TPixel : unmanaged, IPixel<TPixel>

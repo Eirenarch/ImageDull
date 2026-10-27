@@ -4,13 +4,13 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing.Processors.Quantization;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities.ReferenceCodecs
+namespace ImageDull.ImageSharp.Tests.TestUtilities.ReferenceCodecs
 {
     /// <summary>
     /// A Png encoder that uses the ImageSharp core encoder but the default configuration.

@@ -1,10 +1,10 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Metadata;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Extension methods for the <see cref="ImageMetadata"/> type.

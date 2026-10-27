@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Provides information about the .NET runtime installation.

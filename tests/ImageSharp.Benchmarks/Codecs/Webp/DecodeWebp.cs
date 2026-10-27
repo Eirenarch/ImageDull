@@ -4,11 +4,11 @@
 using System.IO;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs
+namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
     [MarkdownExporter]
     [HtmlExporter]

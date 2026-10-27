@@ -1,15 +1,15 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.Metadata.Profiles.Icc;
-using SixLabors.ImageSharp.Metadata.Profiles.Xmp;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Metadata.Profiles.Icc;
+using ImageDull.ImageSharp.Metadata.Profiles.Xmp;
 using Xunit;
-using ExifProfile = SixLabors.ImageSharp.Metadata.Profiles.Exif.ExifProfile;
-using ExifTag = SixLabors.ImageSharp.Metadata.Profiles.Exif.ExifTag;
+using ExifProfile = ImageDull.ImageSharp.Metadata.Profiles.Exif.ExifProfile;
+using ExifTag = ImageDull.ImageSharp.Metadata.Profiles.Exif.ExifTag;
 
-namespace SixLabors.ImageSharp.Tests.Metadata
+namespace ImageDull.ImageSharp.Tests.Metadata
 {
     /// <summary>
     /// Tests the <see cref="ImageFrameMetadataTests"/> class.

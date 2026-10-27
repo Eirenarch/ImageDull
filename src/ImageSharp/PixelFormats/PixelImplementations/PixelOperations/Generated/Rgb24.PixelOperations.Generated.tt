@@ -1,6 +1,6 @@
 <#@include file="_Common.ttinclude" #>
 <#@ output extension=".cs" #>
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <content>
     /// Provides optimized overrides for bulk operations.

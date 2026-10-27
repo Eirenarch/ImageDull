@@ -3,10 +3,10 @@
 
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Benchmarks.ColorSpaces.Bulk
+namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class ToVector4_Rgb24 : ToVector4<Rgb24>

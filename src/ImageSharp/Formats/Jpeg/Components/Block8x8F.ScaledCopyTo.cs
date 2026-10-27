@@ -3,11 +3,11 @@
 
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
 // ReSharper disable UseObjectOrCollectionInitializer
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components
 {
     internal partial struct Block8x8F
     {

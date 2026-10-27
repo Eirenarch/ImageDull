@@ -1,4 +1,4 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
@@ -6,7 +6,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Threading;
 
-namespace SixLabors.ImageSharp.Memory.Internals
+namespace ImageDull.ImageSharp.Memory.Internals
 {
     /// <summary>
     /// Encapsulates the functionality around allocating and releasing unmanaged memory. NOT a <see cref="SafeHandle"/>.

@@ -9,10 +9,10 @@ using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
-using SixLabors.ImageSharp.Advanced;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Advanced;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Encoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
 {
     /// <summary>
     /// On-stack worker struct to convert TPixel -> Rgb24 of 8x8 pixel blocks.

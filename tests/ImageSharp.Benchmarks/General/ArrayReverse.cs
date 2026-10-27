@@ -4,7 +4,7 @@
 using System;
 using BenchmarkDotNet.Attributes;
 
-namespace SixLabors.ImageSharp.Benchmarks.General
+namespace ImageDull.ImageSharp.Benchmarks.General
 {
     public class ArrayReverse
     {

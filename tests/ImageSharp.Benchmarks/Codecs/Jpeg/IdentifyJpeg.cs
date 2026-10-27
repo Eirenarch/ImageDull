@@ -3,10 +3,10 @@
 
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class IdentifyJpeg

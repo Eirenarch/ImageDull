@@ -3,9 +3,9 @@
 
 using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.Formats.Bmp;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs
+namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class EncodeBmpMultiple : MultiImageBenchmarkBase.WithImagesPreloaded

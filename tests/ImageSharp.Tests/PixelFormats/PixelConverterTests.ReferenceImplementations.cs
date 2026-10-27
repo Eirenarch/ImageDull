@@ -4,11 +4,11 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats
+namespace ImageDull.ImageSharp.Tests.PixelFormats
 {
     [Trait("Category", "PixelFormats")]
     public abstract partial class PixelConverterTests

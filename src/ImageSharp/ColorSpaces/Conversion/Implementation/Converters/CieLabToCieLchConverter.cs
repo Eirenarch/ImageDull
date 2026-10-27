@@ -4,7 +4,7 @@
 using System;
 using System.Runtime.CompilerServices;
 
-namespace SixLabors.ImageSharp.ColorSpaces.Conversion
+namespace ImageDull.ImageSharp.ColorSpaces.Conversion
 {
     /// <summary>
     /// Converts from <see cref="CieLab"/> to <see cref="CieLch"/>.

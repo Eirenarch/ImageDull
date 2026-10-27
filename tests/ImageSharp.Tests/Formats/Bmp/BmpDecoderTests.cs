@@ -5,18 +5,18 @@ using System;
 using System.IO;
 using Microsoft.DotNet.RemoteExecutor;
 using Microsoft.DotNet.XUnitExtensions;
-using SixLabors.ImageSharp.Formats.Bmp;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.TestUtilities;
-using SixLabors.ImageSharp.Tests.TestUtilities.ImageComparison;
+using ImageDull.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.Tests.TestUtilities.ImageComparison;
 
 using Xunit;
-using static SixLabors.ImageSharp.Tests.TestImages.Bmp;
+using static ImageDull.ImageSharp.Tests.TestImages.Bmp;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests.Formats.Bmp
+namespace ImageDull.ImageSharp.Tests.Formats.Bmp
 {
     [Trait("Format", "Bmp")]
     [ValidateDisposedMemoryAllocations]

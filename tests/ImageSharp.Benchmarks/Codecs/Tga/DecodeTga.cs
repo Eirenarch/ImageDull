@@ -6,11 +6,11 @@ using System.IO;
 using System.Threading;
 using BenchmarkDotNet.Attributes;
 using Pfim;
-using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Tga;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests;
 
-namespace SixLabors.ImageSharp.Benchmarks.Codecs
+namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class DecodeTga

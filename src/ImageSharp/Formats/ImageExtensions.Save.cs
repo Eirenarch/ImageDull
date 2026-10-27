@@ -5,17 +5,17 @@
 using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
-using SixLabors.ImageSharp.Advanced;
+using ImageDull.ImageSharp.Advanced;
 
-using SixLabors.ImageSharp.Formats.Bmp;
-using SixLabors.ImageSharp.Formats.Gif;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Formats.Pbm;
-using SixLabors.ImageSharp.Formats.Png;
-using SixLabors.ImageSharp.Formats.Tga;
-using SixLabors.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.Formats.Gif;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Formats.Pbm;
+using ImageDull.ImageSharp.Formats.Png;
+using ImageDull.ImageSharp.Formats.Tga;
+using ImageDull.ImageSharp.Formats.Webp;
 
-namespace SixLabors.ImageSharp
+namespace ImageDull.ImageSharp
 {
     /// <summary>
     /// Extension methods for the <see cref="Image"/> type.

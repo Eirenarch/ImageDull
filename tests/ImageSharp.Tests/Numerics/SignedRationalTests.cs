@@ -3,7 +3,7 @@
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Tests the <see cref="SignedRational"/> struct.

@@ -4,9 +4,9 @@
 using System;
 using System.Reflection;
 
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
-    using SixLabors.ImageSharp.PixelFormats;
+    using ImageDull.ImageSharp.PixelFormats;
 
     /// <summary>
     /// Triggers passing <see cref="TestImageProvider{TPixel}"/> instances which produce an image of size width * height filled with the requested color.

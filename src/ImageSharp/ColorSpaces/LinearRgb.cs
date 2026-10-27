@@ -4,9 +4,9 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
 
-namespace SixLabors.ImageSharp.ColorSpaces
+namespace ImageDull.ImageSharp.ColorSpaces
 {
     /// <summary>
     /// Represents an linear Rgb color with specified <see cref="RgbWorkingSpace"/> working space

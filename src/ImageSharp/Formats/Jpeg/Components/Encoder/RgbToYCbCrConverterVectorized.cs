@@ -9,9 +9,9 @@ using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
 #endif
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.PixelFormats;
 
-namespace SixLabors.ImageSharp.Formats.Jpeg.Components.Encoder
+namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
 {
     internal static class RgbToYCbCrConverterVectorized
     {

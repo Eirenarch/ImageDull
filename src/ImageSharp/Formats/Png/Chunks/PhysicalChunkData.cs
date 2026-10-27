@@ -1,12 +1,12 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System;
 using System.Buffers.Binary;
-using SixLabors.ImageSharp.Common.Helpers;
-using SixLabors.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Common.Helpers;
+using ImageDull.ImageSharp.Metadata;
 
-namespace SixLabors.ImageSharp.Formats.Png.Chunks
+namespace ImageDull.ImageSharp.Formats.Png.Chunks
 {
     /// <summary>
     /// The pHYs chunk specifies the intended pixel size or aspect ratio for display of the image.

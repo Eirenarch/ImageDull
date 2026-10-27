@@ -4,9 +4,9 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-using SixLabors.ImageSharp.ColorSpaces.Companding;
+using ImageDull.ImageSharp.ColorSpaces.Companding;
 
-namespace SixLabors.ImageSharp.PixelFormats.Utils
+namespace ImageDull.ImageSharp.PixelFormats.Utils
 {
     internal static partial class Vector4Converters
     {

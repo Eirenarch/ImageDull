@@ -7,14 +7,14 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
-using SixLabors.ImageSharp.Formats.Webp;
-using SixLabors.ImageSharp.Metadata;
-using SixLabors.ImageSharp.Metadata.Profiles.Exif;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats.Webp;
+using ImageDull.ImageSharp.Metadata;
+using ImageDull.ImageSharp.Metadata.Profiles.Exif;
+using ImageDull.ImageSharp.PixelFormats;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Tests.Metadata.Profiles.Exif
 {
     [Trait("Profile", "Exif")]
     public class ExifProfileTests

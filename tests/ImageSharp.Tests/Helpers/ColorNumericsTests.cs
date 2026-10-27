@@ -4,7 +4,7 @@
 using System.Numerics;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Helpers
+namespace ImageDull.ImageSharp.Tests.Helpers
 {
     public class ColorNumericsTests
     {

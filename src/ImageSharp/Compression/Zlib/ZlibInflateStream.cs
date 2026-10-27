@@ -4,9 +4,9 @@
 using System;
 using System.IO;
 using System.IO.Compression;
-using SixLabors.ImageSharp.IO;
+using ImageDull.ImageSharp.IO;
 
-namespace SixLabors.ImageSharp.Compression.Zlib
+namespace ImageDull.ImageSharp.Compression.Zlib
 {
     /// <summary>
     /// Provides methods and properties for deframing streams from PNGs.

@@ -4,9 +4,9 @@
 using System;
 using System.Buffers;
 using System.Numerics;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Memory;
 
-namespace SixLabors.ImageSharp.PixelFormats
+namespace ImageDull.ImageSharp.PixelFormats
 {
     /// <summary>
     /// Abstract base class for calling pixel composition functions

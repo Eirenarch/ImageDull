@@ -5,13 +5,13 @@ using System;
 using System.Linq;
 using Microsoft.DotNet.RemoteExecutor;
 using Moq;
-using SixLabors.ImageSharp.Formats.Bmp;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.Memory;
+using ImageDull.ImageSharp.Formats.Bmp;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.Memory;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Tests the configuration class.

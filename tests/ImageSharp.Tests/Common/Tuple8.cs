@@ -3,7 +3,7 @@
 
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Common.Tuples
+namespace ImageDull.ImageSharp.Common.Tuples
 {
     /// <summary>
     /// Contains value type tuples of 8 elements.

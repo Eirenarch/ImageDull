@@ -3,7 +3,7 @@
 
 using System;
 
-namespace SixLabors.ImageSharp.Metadata.Profiles.Exif
+namespace ImageDull.ImageSharp.Metadata.Profiles.Exif
 {
     internal abstract class ExifArrayValue<TValueType> : ExifValue, IExifValue<TValueType[]>
     {

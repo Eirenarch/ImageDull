@@ -5,11 +5,11 @@ using BenchmarkDotNet.Attributes;
 
 using Colourful;
 
-using SixLabors.ImageSharp.ColorSpaces;
-using SixLabors.ImageSharp.ColorSpaces.Conversion;
+using ImageDull.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.ColorSpaces.Conversion;
 using Illuminants = Colourful.Illuminants;
 
-namespace SixLabors.ImageSharp.Benchmarks.ColorSpaces
+namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces
 {
     public class ColorspaceCieXyzToCieLabConvert
     {

@@ -4,7 +4,7 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SixLabors.ImageSharp.Tuples
+namespace ImageDull.ImageSharp.Tuples
 {
     /// <summary>
     /// Contains 8 element value tuples of various types.

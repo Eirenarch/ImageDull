@@ -4,9 +4,9 @@
 using System;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp;
+using ImageDull.ImageSharp;
 
-namespace SixLabors.ImageSharp.Benchmarks.General
+namespace ImageDull.ImageSharp.Benchmarks.General
 {
     /*
                                       Method | Count |     Mean |    Error |   StdDev | Scaled | ScaledSD |

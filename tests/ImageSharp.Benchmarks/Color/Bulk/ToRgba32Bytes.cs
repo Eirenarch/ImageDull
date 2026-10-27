@@ -5,11 +5,11 @@ using System;
 using System.Buffers;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Benchmarks.ColorSpaces.Bulk
+namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
     public abstract class ToRgba32Bytes<TPixel>
         where TPixel : unmanaged, IPixel<TPixel>

@@ -7,7 +7,7 @@ using System.Diagnostics;
 using Microsoft.DotNet.RemoteExecutor;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.TestUtilities
+namespace ImageDull.ImageSharp.Tests.TestUtilities
 {
     /// <summary>
     /// Allows the testing against specific feature sets.

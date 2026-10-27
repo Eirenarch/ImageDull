@@ -1,11 +1,11 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using System.Numerics;
-using SixLabors.ImageSharp.ColorSpaces;
+using ImageDull.ImageSharp.ColorSpaces;
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Colorspaces
+namespace ImageDull.ImageSharp.Tests.Colorspaces
 {
     /// <summary>
     /// Tests the <see cref="CieXyz"/> struct.

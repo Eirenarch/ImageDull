@@ -4,13 +4,13 @@
 using System;
 using System.IO;
 using Moq;
-using SixLabors.ImageSharp.Formats;
-using SixLabors.ImageSharp.IO;
-using SixLabors.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Formats;
+using ImageDull.ImageSharp.IO;
+using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Tests
+namespace ImageDull.ImageSharp.Tests
 {
     /// <summary>
     /// Tests the <see cref="image"/> class.

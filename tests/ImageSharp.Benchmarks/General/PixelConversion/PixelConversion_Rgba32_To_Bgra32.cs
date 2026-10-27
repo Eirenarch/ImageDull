@@ -7,10 +7,10 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using BenchmarkDotNet.Attributes;
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tuples;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tuples;
 
-namespace SixLabors.ImageSharp.Benchmarks.General.PixelConversion
+namespace ImageDull.ImageSharp.Benchmarks.General.PixelConversion
 {
     // [MonoJob]
     // [RyuJitX64Job]

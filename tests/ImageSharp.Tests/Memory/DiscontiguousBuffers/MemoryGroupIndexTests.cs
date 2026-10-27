@@ -1,9 +1,9 @@
-﻿// Copyright (c) Six Labors.
+// Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Memory.DiscontiguousBuffers
+namespace ImageDull.ImageSharp.Tests.Memory.DiscontiguousBuffers
 {
     public class MemoryGroupIndexTests
     {

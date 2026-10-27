@@ -5,13 +5,13 @@ using System;
 using System.Linq;
 using Moq;
 
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Processing.Processors;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Processing.Processors;
 
 using Xunit;
 
-namespace SixLabors.ImageSharp.Tests.Processing
+namespace ImageDull.ImageSharp.Tests.Processing
 {
     /// <summary>
     /// Tests the configuration class.

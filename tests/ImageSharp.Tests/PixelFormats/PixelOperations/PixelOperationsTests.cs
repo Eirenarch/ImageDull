@@ -7,15 +7,15 @@ using System.Linq;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using SixLabors.ImageSharp.ColorSpaces.Companding;
-using SixLabors.ImageSharp.Memory;
-using SixLabors.ImageSharp.PixelFormats;
-using SixLabors.ImageSharp.Tests.Common;
-using SixLabors.ImageSharp.Tests.TestUtilities;
+using ImageDull.ImageSharp.ColorSpaces.Companding;
+using ImageDull.ImageSharp.Memory;
+using ImageDull.ImageSharp.PixelFormats;
+using ImageDull.ImageSharp.Tests.Common;
+using ImageDull.ImageSharp.Tests.TestUtilities;
 using Xunit;
 using Xunit.Abstractions;
 
-namespace SixLabors.ImageSharp.Tests.PixelFormats.PixelOperations
+namespace ImageDull.ImageSharp.Tests.PixelFormats.PixelOperations
 {
     [Trait("Category", "PixelFormats")]
     public partial class PixelOperationsTests

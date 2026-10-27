@@ -4,12 +4,12 @@
 using System;
 using System.IO;
 using BenchmarkDotNet.Attributes;
-using SixLabors.ImageSharp.Formats.Jpeg;
-using SixLabors.ImageSharp.Processing;
-using SixLabors.ImageSharp.Tests;
+using ImageDull.ImageSharp.Formats.Jpeg;
+using ImageDull.ImageSharp.Processing;
+using ImageDull.ImageSharp.Tests;
 
 // ReSharper disable InconsistentNaming
-namespace SixLabors.ImageSharp.Benchmarks.Codecs.Jpeg
+namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
     [Config(typeof(Config.ShortMultiFramework))]
     public class LoadResizeSave_ImageSpecific
