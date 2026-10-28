@@ -6,11 +6,15 @@
     <AssemblyTitle>ImageDull.ImageSharp</AssemblyTitle>
     <RootNamespace>ImageDull.ImageSharp</RootNamespace>
     <PackageId>ImageDull.ImageSharp</PackageId>
+    <Authors>ImageDull contributors</Authors>
+    <Company>ImageDull</Company>
+    <Copyright>Copyright © ImageDull contributors; portions Copyright © Six Labors and contributors</Copyright>
     <PackageLicenseExpression>Apache-2.0</PackageLicenseExpression>
     <RepositoryUrl Condition="'$(RepositoryUrl)' == ''">https://github.com/Eirenarch/ImageDull/</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageTags>Image Resize Crop Gif Jpg Jpeg Bitmap Pbm Png Tga WebP</PackageTags>
     <Description>A cross-platform, 2D image manipulation library for .NET. A fork of ImageSharp</Description>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <Configurations>Debug;Release;Debug-InnerLoop;Release-InnerLoop</Configurations>
   </PropertyGroup>
 
@@ -23,7 +27,9 @@
     <TargetFramework>net8.0</TargetFramework>
   </PropertyGroup>
 
-
+  <ItemGroup>
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
 
   <ItemGroup>
     <Compile Update="Formats\Jpeg\Components\Block8x8F.Generated.cs">
