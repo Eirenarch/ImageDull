@@ -12,7 +12,7 @@ using ImageDull.ImageSharp.Tests;
 // ReSharper disable InconsistentNaming
 namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class LoadResizeSave_Aggregate : MultiImageBenchmarkBase
     {
         protected override IEnumerable<string> InputImageSubfoldersOrFiles =>

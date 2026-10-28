@@ -11,7 +11,7 @@ using ImageDull.ImageSharp.Tests;
 
 namespace ImageDull.ImageSharp.Benchmarks
 {
-    [Config(typeof(Config.MultiFramework))]
+    [Config(typeof(Config))]
     public abstract class Resize<TPixel>
         where TPixel : unmanaged, IPixel<TPixel>
     {

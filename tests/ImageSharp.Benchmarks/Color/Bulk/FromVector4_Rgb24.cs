@@ -6,7 +6,7 @@ using ImageDull.ImageSharp.PixelFormats;
 
 namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class FromVector4_Rgb24 : FromVector4<Rgb24>
     {
     }

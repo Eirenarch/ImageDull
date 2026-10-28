@@ -10,7 +10,7 @@ using ImageDull.ImageSharp.Tests;
 
 namespace ImageDull.ImageSharp.Benchmarks.Processing
 {
-    [Config(typeof(Config.MultiFramework))]
+    [Config(typeof(Config))]
     public class HistogramEqualization
     {
         private Image<Rgba32> image;

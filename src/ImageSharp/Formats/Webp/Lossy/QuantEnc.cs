@@ -4,10 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
@@ -22,7 +20,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         private const int MaxLevel = 2047;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector128<short> MaxCoeff2047 = Vector128.Create((short)MaxLevel);
 
         private static readonly Vector256<short> MaxCoeff2047Vec256 = Vector256.Create((short)MaxLevel);
@@ -38,7 +35,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         private static readonly Vector128<byte> CstHi = Vector128.Create(2, 3, 8, 9, 10, 11, 4, 5, 254, 255, 6, 7, 12, 13, 14, 15);
 
         private static readonly Vector128<byte> Cst8 = Vector128.Create(254, 255, 254, 255, 254, 255, 0, 1, 254, 255, 254, 255, 254, 255, 254, 255);
-#endif
 
         // Diffusion weights. We under-correct a bit (15/16th of the error is actually
         // diffused) to avoid 'rainbow' chessboard pattern of blocks at q~=0.
@@ -536,7 +532,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static int QuantizeBlock(Span<short> input, Span<short> output, ref Vp8Matrix mtx)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 // Load all inputs.
@@ -693,7 +688,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 return Sse2.MoveMask(cmpeq) != 0xffff ? 1 : 0;
             }
             else
-#endif
             {
                 int last = -1;
                 int n;

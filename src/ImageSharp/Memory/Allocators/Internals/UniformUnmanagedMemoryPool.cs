@@ -40,9 +40,7 @@ namespace ImageDull.ImageSharp.Memory.Internals
             if (trimSettings.Enabled)
             {
                 UpdateTimer(trimSettings, this);
-#if NETCOREAPP3_1_OR_GREATER
                 Gen2GcCallback.Register(s => ((UniformUnmanagedMemoryPool)s).Trim(), this);
-#endif
                 this.lastTrimTimestamp = Stopwatch.ElapsedMilliseconds;
             }
         }
@@ -326,14 +324,8 @@ namespace ImageDull.ImageSharp.Memory.Internals
 
         private bool IsHighMemoryPressure()
         {
-#if NETCOREAPP3_1_OR_GREATER
             GCMemoryInfo memoryInfo = GC.GetGCMemoryInfo();
             return memoryInfo.MemoryLoadBytes >= memoryInfo.HighMemoryLoadThresholdBytes * this.trimSettings.HighPressureThresholdRate;
-#else
-            // We don't have high pressure detection triggering full trimming on other platforms,
-            // to counterpart this, the maximum pool size is small.
-            return false;
-#endif
         }
 
         public class TrimSettings

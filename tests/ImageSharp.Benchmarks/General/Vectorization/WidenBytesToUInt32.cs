@@ -9,7 +9,7 @@ using ImageDull.ImageSharp.Tuples;
 
 namespace ImageDull.ImageSharp.Benchmarks.General.Vectorization
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class WidenBytesToUInt32
     {
         private byte[] source;

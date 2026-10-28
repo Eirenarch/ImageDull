@@ -5,9 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics.X86;
-#endif
 using Xunit;
 using Xunit.Abstractions;
 
@@ -55,7 +53,6 @@ public class FeatureTestRunnerTests
             HwIntrinsics.AllowAll);
     }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
     [Fact]
     public void CanLimitHwIntrinsicBaseFeatures()
     {
@@ -82,7 +79,6 @@ public class FeatureTestRunnerTests
             AssertDisabled,
             HwIntrinsics.DisableHWIntrinsic);
     }
-#endif
 
     [Fact]
     public void CanLimitHwIntrinsicFeaturesWithSerializableParam()
@@ -92,9 +88,7 @@ public class FeatureTestRunnerTests
             Assert.NotNull(serializable);
             Assert.NotNull(FeatureTestRunner.DeserializeForXunit<FakeSerializable>(serializable));
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             Assert.False(Sse.IsSupported);
-#endif
         }
 
         FeatureTestRunner.RunWithHwIntrinsicsFeature(

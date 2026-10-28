@@ -4,10 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
@@ -16,11 +14,9 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
     /// </summary>
     internal class Vp8Residual
     {
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector256<byte> Cst2 = Vector256.Create((byte)2);
 
         private static readonly Vector256<byte> Cst67 = Vector256.Create((byte)67);
-#endif
 
         private readonly byte[] scratch = new byte[32];
 
@@ -52,7 +48,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public void SetCoeffs(Span<short> coeffs)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref short coeffsRef = ref MemoryMarshal.GetReference(coeffs);
@@ -74,7 +69,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 this.Last = mask != 0 ? Numerics.Log2(mask) : -1;
             }
             else
-#endif
             {
                 int n;
                 this.Last = -1;
@@ -169,7 +163,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 return LossyUtils.Vp8BitCost(0, (byte)p0);
             }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 Span<byte> ctxs = this.scratch.AsSpan(0, 16);
@@ -217,30 +210,28 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
                 return cost;
             }
-#endif
+
+            int v;
+            for (; n < this.Last; ++n)
             {
-                int v;
-                for (; n < this.Last; ++n)
-                {
-                    v = Math.Abs(this.Coeffs[n]);
-                    int ctx = v >= 2 ? 2 : v;
-                    cost += LevelCost(t.Costs, v);
-                    t = costs[n + 1].Costs[ctx];
-                }
-
-                // Last coefficient is always non-zero
                 v = Math.Abs(this.Coeffs[n]);
+                int ctx = v >= 2 ? 2 : v;
                 cost += LevelCost(t.Costs, v);
-                if (n < 15)
-                {
-                    int b = WebpConstants.Vp8EncBands[n + 1];
-                    int ctx = v == 1 ? 1 : 2;
-                    int lastP0 = this.Prob[b].Probabilities[ctx].Probabilities[0];
-                    cost += LossyUtils.Vp8BitCost(0, (byte)lastP0);
-                }
-
-                return cost;
+                t = costs[n + 1].Costs[ctx];
             }
+
+            // Last coefficient is always non-zero
+            v = Math.Abs(this.Coeffs[n]);
+            cost += LevelCost(t.Costs, v);
+            if (n < 15)
+            {
+                int b = WebpConstants.Vp8EncBands[n + 1];
+                int ctx = v == 1 ? 1 : 2;
+                int lastP0 = this.Prob[b].Probabilities[ctx].Probabilities[0];
+                cost += LossyUtils.Vp8BitCost(0, (byte)lastP0);
+            }
+
+            return cost;
         }
 
         [MethodImpl(InliningOptions.ShortMethod)]

@@ -5,10 +5,8 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.ColorSpaces.Companding
 {
@@ -84,7 +82,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Expand(Span<Vector4> vectors)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && vectors.Length >= 2)
             {
                 CompandAvx2(vectors, ExpandTable);
@@ -96,7 +93,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
                 }
             }
             else
-#endif
             {
                 CompandScalar(vectors, ExpandTable);
             }
@@ -109,7 +105,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void Compress(Span<Vector4> vectors)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && vectors.Length >= 2)
             {
                 CompandAvx2(vectors, CompressTable);
@@ -121,7 +116,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
                 }
             }
             else
-#endif
             {
                 CompandScalar(vectors, CompressTable);
             }
@@ -171,8 +165,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
         public static float Compress(float channel)
             => channel <= 0.0031308F ? 12.92F * channel : (1.055F * MathF.Pow(channel, 0.416666666666667F)) - 0.055F;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
-
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static unsafe void CompandAvx2(Span<Vector4> vectors, float[] table)
         {
@@ -204,7 +196,6 @@ namespace ImageDull.ImageSharp.ColorSpaces.Companding
                 }
             }
         }
-#endif
 
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         private static unsafe void CompandScalar(Span<Vector4> vectors, float[] table)

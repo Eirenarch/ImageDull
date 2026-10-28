@@ -3,12 +3,10 @@
 
 using System;
 using System.Diagnostics;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 using ImageDull.ImageSharp.PixelFormats;
 
 namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
@@ -19,11 +17,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
         {
             get
             {
-#if SUPPORTS_RUNTIME_INTRINSICS
                 return Avx2.IsSupported;
-#else
-                return false;
-#endif
             }
         }
 
@@ -48,17 +42,14 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
             // 8 byte padding to rgb byte span will solve this problem without extra code in converters
             get
             {
-#if SUPPORTS_RUNTIME_INTRINSICS
                 if (IsSupported)
                 {
                     return 8;
                 }
-#endif
+
                 return 0;
             }
         }
-
-#if SUPPORTS_RUNTIME_INTRINSICS
 
         internal static ReadOnlySpan<byte> MoveFirst24BytesToSeparateLanes => new byte[]
         {
@@ -71,7 +62,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
             0, 3, 6, 9, 1, 4, 7, 10, 2, 5, 8, 11, 0xFF, 0xFF, 0xFF, 0xFF,
             0, 3, 6, 9, 1, 4, 7, 10, 2, 5, 8, 11, 0xFF, 0xFF, 0xFF, 0xFF
         };
-#endif
 
         /// <summary>
         /// Converts 8x8 Rgb24 pixel matrix to YCbCr pixel matrices with 4:4:4 subsampling
@@ -85,7 +75,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
         {
             Debug.Assert(IsSupported, "AVX2 is required to run this converter");
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             var f0299 = Vector256.Create(0.299f);
             var f0587 = Vector256.Create(0.587f);
             var f0114 = Vector256.Create(0.114f);
@@ -130,7 +119,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
                 // 128F + ((0.5F * r) - (0.418688F * g) - (0.081312F * b))
                 Unsafe.Add(ref destCrRef, i) = Avx.Add(f128, SimdUtils.HwIntrinsics.MultiplyAdd(SimdUtils.HwIntrinsics.MultiplyAdd(Avx.Multiply(fn0081312F, b), fn0418688, g), f05, r));
             }
-#endif
         }
 
         /// <summary>
@@ -140,7 +128,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
         {
             Debug.Assert(IsSupported, "AVX2 is required to run this converter");
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             var f0299 = Vector256.Create(0.299f);
             var f0587 = Vector256.Create(0.587f);
             var f0114 = Vector256.Create(0.114f);
@@ -231,10 +218,8 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
                 // 128F + ((0.5F * r) - (0.418688F * g) - (0.081312F * b))
                 Unsafe.Add(ref destCrRef, i) = Avx.Add(f128, SimdUtils.HwIntrinsics.MultiplyAdd(SimdUtils.HwIntrinsics.MultiplyAdd(Avx.Multiply(fn0081312F, b), fn0418688, g), f05, r));
             }
-#endif
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         /// <summary>
         /// Scales 16x2 matrix to 8x1 using 2x2 average
         /// </summary>
@@ -254,6 +239,5 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
 
             return Avx2.Permute4x64(avg2x2.AsDouble(), 0b11_01_10_00).AsSingle();
         }
-#endif
     }
 }

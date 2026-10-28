@@ -6,13 +6,11 @@ using System.Buffers;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using System.Runtime.Intrinsics;
+using System.Runtime.Intrinsics.X86;
 using ImageDull.ImageSharp.Formats.Webp.BitReader;
 using ImageDull.ImageSharp.Formats.Webp.Lossless;
 using ImageDull.ImageSharp.Memory;
-#if SUPPORTS_RUNTIME_INTRINSICS
-using System.Runtime.Intrinsics;
-using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Webp
 {
@@ -311,7 +309,6 @@ namespace ImageDull.ImageSharp.Formats.Webp
 
         private static void HorizontalUnfilter(Span<byte> prev, Span<byte> input, Span<byte> dst, int width)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 dst[0] = (byte)(input[0] + (prev.IsEmpty ? 0 : prev[0]));
@@ -345,7 +342,6 @@ namespace ImageDull.ImageSharp.Formats.Webp
                 }
             }
             else
-#endif
             {
                 byte pred = (byte)(prev.IsEmpty ? 0 : prev[0]);
 
@@ -366,7 +362,6 @@ namespace ImageDull.ImageSharp.Formats.Webp
             }
             else
             {
-#if SUPPORTS_RUNTIME_INTRINSICS
                 if (Avx2.IsSupported)
                 {
                     nint i;
@@ -386,7 +381,6 @@ namespace ImageDull.ImageSharp.Formats.Webp
                     }
                 }
                 else
-#endif
                 {
                     for (int i = 0; i < width; i++)
                     {

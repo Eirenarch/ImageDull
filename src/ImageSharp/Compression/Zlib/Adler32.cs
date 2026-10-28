@@ -4,10 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 #pragma warning disable IDE0007 // Use implicit type
 namespace ImageDull.ImageSharp.Compression.Zlib
@@ -29,7 +27,6 @@ namespace ImageDull.ImageSharp.Compression.Zlib
         // NMAX is the largest n such that 255n(n+1)/2 + (n+1)(BASE-1) <= 2^32-1
         private const uint NMAX = 5552;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private const int MinBufferSize = 64;
 
         private const int BlockSize = 1 << 5;
@@ -40,7 +37,6 @@ namespace ImageDull.ImageSharp.Compression.Zlib
             32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20, 19, 18, 17, // tap1
             16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1 // tap2
         };
-#endif
 
         /// <summary>
         /// Calculates the Adler32 checksum with the bytes taken from the span.
@@ -65,7 +61,6 @@ namespace ImageDull.ImageSharp.Compression.Zlib
                 return adler;
             }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && buffer.Length >= MinBufferSize)
             {
                 return CalculateAvx2(adler, buffer);
@@ -77,13 +72,9 @@ namespace ImageDull.ImageSharp.Compression.Zlib
             }
 
             return CalculateScalar(adler, buffer);
-#else
-            return CalculateScalar(adler, buffer);
-#endif
         }
 
         // Based on https://github.com/chromium/chromium/blob/master/third_party/zlib/adler32_simd.c
-#if SUPPORTS_RUNTIME_INTRINSICS
         [MethodImpl(InliningOptions.HotPath | InliningOptions.ShortMethod)]
         private static unsafe uint CalculateSse(uint adler, ReadOnlySpan<byte> buffer)
         {
@@ -290,7 +281,6 @@ namespace ImageDull.ImageSharp.Compression.Zlib
 
             s2 %= BASE;
         }
-#endif
 
         [MethodImpl(InliningOptions.HotPath | InliningOptions.ShortMethod)]
         private static unsafe uint CalculateScalar(uint adler, ReadOnlySpan<byte> buffer)

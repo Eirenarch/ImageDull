@@ -14,7 +14,7 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs
     /// <summary>
     /// Benchmarks saving png files using different quantizers.
     /// </summary>
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class EncodeIndexedPng
     {
         private Stream bmpStream;

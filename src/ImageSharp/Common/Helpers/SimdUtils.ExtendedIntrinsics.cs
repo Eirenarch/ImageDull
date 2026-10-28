@@ -22,11 +22,7 @@ namespace ImageDull.ImageSharp
         public static class ExtendedIntrinsics
         {
             public static bool IsAvailable { get; } =
-#if SUPPORTS_EXTENDED_INTRINSICS
                 Vector.IsHardwareAccelerated;
-#else
-                false;
-#endif
 
             /// <summary>
             /// Widen and convert a vector of <see cref="short"/> values into 2 vectors of <see cref="float"/>-s.

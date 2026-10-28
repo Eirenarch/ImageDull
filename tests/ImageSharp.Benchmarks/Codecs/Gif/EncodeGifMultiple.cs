@@ -9,7 +9,7 @@ using ImageDull.ImageSharp.Processing.Processors.Quantization;
 
 namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class EncodeGifMultiple : MultiImageBenchmarkBase.WithImagesPreloaded
     {
         [Params(InputImageCategory.AllImages)]

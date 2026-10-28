@@ -13,53 +13,17 @@ jobs:
             matrix:
                 options:
                     - os: ubuntu-latest
-                      framework: net5.0
+                      framework: net8.0
                       runtime: -x64
                       codecov: false
                     - os: macos-latest
-                      framework: net5.0
+                      framework: net8.0
                       runtime: -x64
                       codecov: false
                     - os: windows-latest
-                      framework: net5.0
+                      framework: net8.0
                       runtime: -x64
                       codecov: true
-                    - os: ubuntu-latest
-                      framework: netcoreapp3.1
-                      runtime: -x64
-                      codecov: false
-                    - os: macos-latest
-                      framework: netcoreapp3.1
-                      runtime: -x64
-                      codecov: false
-                    - os: windows-latest
-                      framework: netcoreapp3.1
-                      runtime: -x64
-                      codecov: true
-                    - os: windows-latest
-                      framework: netcoreapp2.1
-                      runtime: -x64
-                      codecov: false
-                    - os: windows-latest
-                      framework: netcoreapp2.0
-                      runtime: -x64
-                      codecov: false
-                    - os: windows-latest
-                      framework: net472
-                      runtime: -x64
-                      codecov: false
-                    - os: windows-latest
-                      framework: net472
-                      runtime: -x86
-                      codecov: false
-                    - os: windows-latest
-                      framework: net46
-                      runtime: -x64
-                      codecov: false
-                    - os: windows-latest
-                      framework: net46
-                      runtime: -x86
-                      codecov: false
 
         runs-on: ${{matrix.options.os}}
         if: "!contains(github.event.head_commit.message, '[skip ci]')"
@@ -95,7 +59,6 @@ jobs:
               run: ./ci-test.ps1 "${{matrix.options.os}}" "${{matrix.options.framework}}" "${{matrix.options.runtime}}" "${{matrix.options.codecov}}"
               env:
                   CI: True
-                  XUNIT_PATH: .\tests\SharedInfrastructure.Tests # Required for xunit
 
             - name: Update Codecov
               uses: codecov/codecov-action@v1

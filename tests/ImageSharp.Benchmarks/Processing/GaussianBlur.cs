@@ -7,7 +7,7 @@ using ImageDull.ImageSharp.Processing;
 
 namespace ImageDull.ImageSharp.Benchmarks.Samplers
 {
-    [Config(typeof(Config.MultiFramework))]
+    [Config(typeof(Config))]
     public class GaussianBlur
     {
         [Benchmark]

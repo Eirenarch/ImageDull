@@ -12,7 +12,7 @@ using ImageDull.ImageSharp.PixelFormats;
 
 namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
-    [Config(typeof(Config.ShortCore31))]
+    [Config(typeof(Config.Short))]
     public class ToVector4_Rgba32 : ToVector4<Rgba32>
     {
         [Benchmark]
@@ -51,7 +51,6 @@ namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
             SimdUtils.ExtendedIntrinsics.ByteToNormalizedFloat(sBytes, dFloats);
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [Benchmark]
         public void HwIntrinsics()
         {
@@ -60,7 +59,6 @@ namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 
             SimdUtils.HwIntrinsics.ByteToNormalizedFloat(sBytes, dFloats);
         }
-#endif
 
         // [Benchmark]
         public void ExtendedIntrinsics_BulkConvertByteToNormalizedFloat_2Loops()

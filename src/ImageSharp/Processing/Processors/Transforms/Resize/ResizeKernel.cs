@@ -4,11 +4,9 @@
 using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Processing.Processors.Transforms
 {
@@ -71,7 +69,6 @@ namespace ImageDull.ImageSharp.Processing.Processors.Transforms
         [MethodImpl(InliningOptions.ShortMethod)]
         public Vector4 ConvolveCore(ref Vector4 rowStartRef)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && Fma.IsSupported)
             {
                 float* bufferStart = this.bufferPtr;
@@ -141,7 +138,6 @@ namespace ImageDull.ImageSharp.Processing.Processors.Transforms
                 return *(Vector4*)&result128;
             }
             else
-#endif
             {
                 // Destination color components
                 Vector4 result = Vector4.Zero;

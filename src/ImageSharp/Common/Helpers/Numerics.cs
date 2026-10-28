@@ -5,10 +5,8 @@ using System;
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp
 {
@@ -18,20 +16,8 @@ namespace ImageDull.ImageSharp
     /// </summary>
     internal static class Numerics
     {
-#if SUPPORTS_RUNTIME_INTRINSICS
         public const int BlendAlphaControl = 0b_10_00_10_00;
         private const int ShuffleAlphaControl = 0b_11_11_11_11;
-#endif
-
-#if !SUPPORTS_BITOPERATIONS
-        private static ReadOnlySpan<byte> Log2DeBruijn => new byte[32]
-        {
-            00, 09, 01, 10, 13, 21, 02, 29,
-            11, 14, 16, 18, 22, 25, 03, 30,
-            08, 12, 20, 28, 15, 17, 24, 07,
-            19, 27, 23, 06, 26, 05, 04, 31
-        };
-#endif
 
         /// <summary>
         /// Determine the Greatest CommonDivisor (GCD) of two numbers.
@@ -506,7 +492,6 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void Premultiply(Span<Vector4> vectors)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && vectors.Length >= 2)
             {
                 // Divide by 2 as 4 elements per Vector4 and 8 per Vector256<float>
@@ -528,7 +513,6 @@ namespace ImageDull.ImageSharp
                 }
             }
             else
-#endif
             {
                 ref Vector4 vectorsStart = ref MemoryMarshal.GetReference(vectors);
                 ref Vector4 vectorsEnd = ref Unsafe.Add(ref vectorsStart, vectors.Length);
@@ -549,7 +533,6 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static void UnPremultiply(Span<Vector4> vectors)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && vectors.Length >= 2)
             {
                 // Divide by 2 as 4 elements per Vector4 and 8 per Vector256<float>
@@ -571,7 +554,6 @@ namespace ImageDull.ImageSharp
                 }
             }
             else
-#endif
             {
                 ref Vector4 vectorsStart = ref MemoryMarshal.GetReference(vectors);
                 ref Vector4 vectorsEnd = ref Unsafe.Add(ref vectorsStart, vectors.Length);
@@ -621,7 +603,6 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static unsafe void CubeRootOnXYZ(Span<Vector4> vectors)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse41.IsSupported)
             {
                 ref Vector128<float> vectors128Ref = ref Unsafe.As<Vector4, Vector128<float>>(ref MemoryMarshal.GetReference(vectors));
@@ -672,7 +653,6 @@ namespace ImageDull.ImageSharp
                 }
             }
             else
-#endif
             {
                 ref Vector4 vectorsRef = ref MemoryMarshal.GetReference(vectors);
                 ref Vector4 vectorsEnd = ref Unsafe.Add(ref vectorsRef, vectors.Length);
@@ -721,8 +701,6 @@ namespace ImageDull.ImageSharp
             }
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
-
         /// <summary>
         /// Performs a linear interpolation between two values based on the given weighting.
         /// </summary>
@@ -746,7 +724,6 @@ namespace ImageDull.ImageSharp
                 return Avx.Add(Avx.Multiply(diff, amount), value1);
             }
         }
-#endif
 
         /// <summary>
         /// Performs a linear interpolation between two values based on the given weighting.
@@ -758,8 +735,6 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static float Lerp(float value1, float value2, float amount)
             => ((value2 - value1) * amount) + value1;
-
-#if SUPPORTS_RUNTIME_INTRINSICS
 
         /// <summary>
         /// Accumulates 8-bit integers into <paramref name="accumulator"/> by
@@ -854,7 +829,6 @@ namespace ImageDull.ImageSharp
             // Vector128<int>.ToScalar() isn't optimized pre-net5.0 https://github.com/dotnet/runtime/pull/37882
             return Sse2.ConvertToInt32(vsum);
         }
-#endif
 
         /// <summary>
         /// Calculates floored log of the specified value, base 2.
@@ -863,42 +837,8 @@ namespace ImageDull.ImageSharp
         /// <param name="value">The value.</param>
         public static int Log2(uint value)
         {
-#if SUPPORTS_BITOPERATIONS
             return BitOperations.Log2(value);
-#else
-            return Log2SoftwareFallback(value);
-#endif
         }
-
-#if !SUPPORTS_BITOPERATIONS
-        /// <summary>
-        /// Calculates floored log of the specified value, base 2.
-        /// Note that by convention, input value 0 returns 0 since Log(0) is undefined.
-        /// Bit hacking with deBruijn sequence, extremely fast yet does not use any intrinsics so will work on every platform/runtime.
-        /// </summary>
-        /// <remarks>
-        /// Description of this bit hacking can be found here:
-        /// https://cstheory.stackexchange.com/questions/19524/using-the-de-bruijn-sequence-to-find-the-lceil-log-2-v-rceil-of-an-integer
-        /// </remarks>
-        /// <param name="value">The value.</param>
-        private static int Log2SoftwareFallback(uint value)
-        {
-            // No AggressiveInlining due to large method size
-            // Has conventional contract 0->0 (Log(0) is undefined) by default, no need for if checking
-
-            // Fill trailing zeros with ones, eg 00010010 becomes 00011111
-            value |= value >> 01;
-            value |= value >> 02;
-            value |= value >> 04;
-            value |= value >> 08;
-            value |= value >> 16;
-
-            // uint.MaxValue >> 27 is always in range [0 - 31] so we use Unsafe.AddByteOffset to avoid bounds check
-            return Unsafe.AddByteOffset(
-                ref MemoryMarshal.GetReference(Log2DeBruijn),
-                (IntPtr)(int)((value * 0x07C4ACDDu) >> 27)); // uint|long -> IntPtr cast on 32-bit platforms does expensive overflow checks not needed here
-        }
-#endif
 
         /// <summary>
         /// Fast division with ceiling for <see cref="uint"/> numbers.
@@ -917,24 +857,8 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint RotateLeft(uint value, int offset)
         {
-#if SUPPORTS_BITOPERATIONS
             return BitOperations.RotateLeft(value, offset);
-#else
-            return RotateLeftSoftwareFallback(value, offset);
-#endif
         }
-
-#if !SUPPORTS_BITOPERATIONS
-        /// <summary>
-        /// Rotates the specified value left by the specified number of bits.
-        /// </summary>
-        /// <param name="value">The value to rotate.</param>
-        /// <param name="offset">The number of bits to rotate with.</param>
-        /// <returns>The rotated value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint RotateLeftSoftwareFallback(uint value, int offset)
-            => (value << offset) | (value >> (32 - offset));
-#endif
 
         /// <summary>
         /// Rotates the specified value right by the specified number of bits.
@@ -945,24 +869,8 @@ namespace ImageDull.ImageSharp
         [MethodImpl(MethodImplOptions.AggressiveInlining)]
         public static uint RotateRight(uint value, int offset)
         {
-#if SUPPORTS_BITOPERATIONS
             return BitOperations.RotateRight(value, offset);
-#else
-            return RotateRightSoftwareFallback(value, offset);
-#endif
         }
-
-#if !SUPPORTS_BITOPERATIONS
-        /// <summary>
-        /// Rotates the specified value right by the specified number of bits.
-        /// </summary>
-        /// <param name="value">The value to rotate.</param>
-        /// <param name="offset">The number of bits to rotate with.</param>
-        /// <returns>The rotated value.</returns>
-        [MethodImpl(MethodImplOptions.AggressiveInlining)]
-        public static uint RotateRightSoftwareFallback(uint value, int offset)
-            => (value >> offset) | (value << (32 - offset));
-#endif
 
         /// <summary>
         /// Tells whether input value is outside of the given range.

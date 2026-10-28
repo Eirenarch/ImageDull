@@ -9,7 +9,7 @@ using ImageDull.ImageSharp.Tests;
 
 namespace ImageDull.ImageSharp.Benchmarks
 {
-    [Config(typeof(Config.MultiFramework))]
+    [Config(typeof(Config))]
     public class DetectEdges
     {
         private Image<Rgba32> image;

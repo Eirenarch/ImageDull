@@ -9,7 +9,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
-    [Config(typeof(Config.ShortCore31))]
+    [Config(typeof(Config.Short))]
     public class UnPremultiplyVector4
     {
         private static readonly Vector4[] Vectors = CreateVectors();

@@ -1,7 +1,6 @@
 // Copyright (c) Six Labors.
 // Licensed under the Apache License, Version 2.0.
 
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics;
@@ -71,4 +70,3 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         }
     }
 }
-#endif

@@ -8,7 +8,7 @@ using ImageDull.ImageSharp.PixelFormats;
 
 namespace ImageDull.ImageSharp.Benchmarks.ColorSpaces.Bulk
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class ToVector4_Bgra32 : ToVector4<Bgra32>
     {
         [Benchmark(Baseline = true)]

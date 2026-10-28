@@ -19,64 +19,6 @@ namespace ImageDull.ImageSharp
         {
             public static bool IsAvailable { get; } = HasVector8;
 
-#if !SUPPORTS_EXTENDED_INTRINSICS
-            /// <summary>
-            /// <see cref="ByteToNormalizedFloat"/> as many elements as possible, slicing them down (keeping the remainder).
-            /// </summary>
-            [MethodImpl(InliningOptions.ShortMethod)]
-            internal static void ByteToNormalizedFloatReduce(
-                ref ReadOnlySpan<byte> source,
-                ref Span<float> dest)
-            {
-                DebugGuard.IsTrue(source.Length == dest.Length, nameof(source), "Input spans must be of same length!");
-
-                if (!IsAvailable)
-                {
-                    return;
-                }
-
-                int remainder = Numerics.Modulo8(source.Length);
-                int adjustedCount = source.Length - remainder;
-
-                if (adjustedCount > 0)
-                {
-                    ByteToNormalizedFloat(
-                        source.Slice(0, adjustedCount),
-                        dest.Slice(0, adjustedCount));
-
-                    source = source.Slice(adjustedCount);
-                    dest = dest.Slice(adjustedCount);
-                }
-            }
-
-            /// <summary>
-            /// <see cref="NormalizedFloatToByteSaturate"/> as many elements as possible, slicing them down (keeping the remainder).
-            /// </summary>
-            [MethodImpl(InliningOptions.ShortMethod)]
-            internal static void NormalizedFloatToByteSaturateReduce(
-                ref ReadOnlySpan<float> source,
-                ref Span<byte> dest)
-            {
-                DebugGuard.IsTrue(source.Length == dest.Length, nameof(source), "Input spans must be of same length!");
-
-                if (!IsAvailable)
-                {
-                    return;
-                }
-
-                int remainder = Numerics.Modulo8(source.Length);
-                int adjustedCount = source.Length - remainder;
-
-                if (adjustedCount > 0)
-                {
-                    NormalizedFloatToByteSaturate(source.Slice(0, adjustedCount), dest.Slice(0, adjustedCount));
-
-                    source = source.Slice(adjustedCount);
-                    dest = dest.Slice(adjustedCount);
-                }
-            }
-#endif
-
             /// <summary>
             /// SIMD optimized implementation for <see cref="SimdUtils.ByteToNormalizedFloat"/>.
             /// Works only with span Length divisible by 8.

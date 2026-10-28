@@ -7,7 +7,7 @@ using BenchmarkDotNet.Attributes;
 
 namespace ImageDull.ImageSharp.Benchmarks.General.Vectorization
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class UInt32ToSingle
     {
         private float[] data;

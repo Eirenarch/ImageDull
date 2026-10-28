@@ -6,10 +6,8 @@ using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Png.Filters
 {
@@ -29,19 +27,16 @@ namespace ImageDull.ImageSharp.Formats.Png.Filters
         public static void Decode(Span<byte> scanline, int bytesPerPixel)
         {
             // The Sub filter predicts each pixel as the previous pixel.
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported && bytesPerPixel is 4)
             {
                 DecodeSse2(scanline);
             }
             else
-#endif
             {
                 DecodeScalar(scanline, bytesPerPixel);
             }
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static void DecodeSse2(Span<byte> scanline)
         {
             ref byte scanBaseRef = ref MemoryMarshal.GetReference(scanline);
@@ -64,7 +59,6 @@ namespace ImageDull.ImageSharp.Formats.Png.Filters
                 offset += 4;
             }
         }
-#endif
 
         private static void DecodeScalar(Span<byte> scanline, int bytesPerPixel)
         {
@@ -110,7 +104,6 @@ namespace ImageDull.ImageSharp.Formats.Png.Filters
                 sum += Numerics.Abs(unchecked((sbyte)res));
             }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 Vector256<byte> zero = Vector256<byte>.Zero;
@@ -151,7 +144,6 @@ namespace ImageDull.ImageSharp.Formats.Png.Filters
                     sum += (int)sumAccumulator[i];
                 }
             }
-#endif
 
             for (int xLeft = x - bytesPerPixel; x < scanline.Length; ++xLeft /* Note: ++x happens in the body to avoid one add operation */)
             {

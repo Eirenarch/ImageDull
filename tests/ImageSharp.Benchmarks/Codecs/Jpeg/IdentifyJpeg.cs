@@ -8,7 +8,7 @@ using ImageDull.ImageSharp.Tests;
 
 namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class IdentifyJpeg
     {
         private byte[] jpegBytes;

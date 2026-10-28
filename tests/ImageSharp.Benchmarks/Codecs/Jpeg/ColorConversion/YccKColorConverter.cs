@@ -6,7 +6,7 @@ using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
 
 namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class YccKColorConverter : ColorConversionBenchmark
     {
         public YccKColorConverter()
@@ -30,7 +30,6 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
             new JpegColorConverterBase.FromYccKVector(8).ConvertToRgbInplace(values);
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [Benchmark]
         public void SimdVectorAvx2()
         {
@@ -38,6 +37,5 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 
             new JpegColorConverterBase.FromYccKAvx(8).ConvertToRgbInplace(values);
         }
-#endif
     }
 }

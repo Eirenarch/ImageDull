@@ -8,7 +8,7 @@ using SharpCrc32 = ICSharpCode.SharpZipLib.Checksum.Crc32;
 
 namespace ImageDull.ImageSharp.Benchmarks.General
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class Crc32Benchmark
     {
         private byte[] data;

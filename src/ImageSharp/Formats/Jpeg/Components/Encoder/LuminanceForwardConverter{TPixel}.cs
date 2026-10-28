@@ -5,10 +5,8 @@ using System;
 using System.Diagnostics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 using ImageDull.ImageSharp.Advanced;
 using ImageDull.ImageSharp.PixelFormats;
 
@@ -98,7 +96,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
         {
             Debug.Assert(RgbToYCbCrConverterVectorized.IsSupported, "AVX2 is required to run this converter");
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             ref Vector128<byte> l8ByteSpan = ref Unsafe.As<L8, Vector128<byte>>(ref l8Start);
             ref Vector256<float> destRef = ref yBlock.V0;
 
@@ -107,7 +104,6 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Encoder
             {
                 Unsafe.Add(ref destRef, i) = Avx2.ConvertToVector256Single(Avx2.ConvertToVector256Int32(Unsafe.AddByteOffset(ref l8ByteSpan, bytesPerL8Stride * i)));
             }
-#endif
         }
 
         /// <summary>

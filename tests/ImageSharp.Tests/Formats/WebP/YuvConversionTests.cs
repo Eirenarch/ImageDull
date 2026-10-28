@@ -32,14 +32,11 @@ namespace ImageDull.ImageSharp.Tests.Formats.Webp
         [Fact]
         public void UpSampleYuvToRgb_Works() => RunUpSampleYuvToRgbTest();
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [Fact]
         public void UpSampleYuvToRgb_WithHardwareIntrinsics_Works() => FeatureTestRunner.RunWithHwIntrinsicsFeature(RunUpSampleYuvToRgbTest, HwIntrinsics.AllowAll);
 
         [Fact]
         public void UpSampleYuvToRgb_WithoutSSE2_Works() => FeatureTestRunner.RunWithHwIntrinsicsFeature(RunUpSampleYuvToRgbTest, HwIntrinsics.DisableSSE2);
-
-#endif
 
         [Theory]
         [WithFile(TestImages.Webp.Yuv, PixelTypes.Rgba32)]

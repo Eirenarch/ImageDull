@@ -8,7 +8,7 @@ using ImageDull.ImageSharp.IO;
 
 namespace ImageDull.ImageSharp.Benchmarks.IO
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class BufferedStreams
     {
         private readonly byte[] buffer = CreateTestBytes();

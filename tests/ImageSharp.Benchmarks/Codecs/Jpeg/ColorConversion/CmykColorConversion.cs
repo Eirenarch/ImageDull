@@ -6,7 +6,7 @@ using ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters;
 
 namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class CmykColorConversion : ColorConversionBenchmark
     {
         public CmykColorConversion()
@@ -30,7 +30,6 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
             new JpegColorConverterBase.FromCmykVector(8).ConvertToRgbInplace(values);
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [Benchmark]
         public void SimdVectorAvx()
         {
@@ -38,6 +37,5 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 
             new JpegColorConverterBase.FromCmykAvx(8).ConvertToRgbInplace(values);
         }
-#endif
     }
 }

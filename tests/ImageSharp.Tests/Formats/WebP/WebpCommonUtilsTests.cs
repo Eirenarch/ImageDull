@@ -6,9 +6,7 @@ using System.Runtime.InteropServices;
 using ImageDull.ImageSharp.Formats.Webp;
 using ImageDull.ImageSharp.PixelFormats;
 using Xunit;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using ImageDull.ImageSharp.Tests.TestUtilities;
-#endif
 
 namespace ImageDull.ImageSharp.Tests.Formats.Webp
 {
@@ -21,7 +19,6 @@ namespace ImageDull.ImageSharp.Tests.Formats.Webp
         [Fact]
         public void CheckNonOpaque_WithNoneOpaquePixels_Works() => RunCheckNoneOpaqueWithNoneOpaquePixelsTest();
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [Fact]
         public void CheckNonOpaque_WithOpaquePixels_WithHardwareIntrinsics_Works()
             => FeatureTestRunner.RunWithHwIntrinsicsFeature(RunCheckNoneOpaqueWithOpaquePixelsTest, HwIntrinsics.AllowAll);
@@ -45,7 +42,6 @@ namespace ImageDull.ImageSharp.Tests.Formats.Webp
         [Fact]
         public void CheckNonOpaque_WithNoneOpaquePixels_WithoutAvx2_Works()
             => FeatureTestRunner.RunWithHwIntrinsicsFeature(RunCheckNoneOpaqueWithNoneOpaquePixelsTest, HwIntrinsics.DisableAVX2);
-#endif
 
         private static void RunCheckNoneOpaqueWithNoneOpaquePixelsTest()
         {

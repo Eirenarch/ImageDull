@@ -4,9 +4,7 @@
 using System.Numerics;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics.X86;
-#endif
 
 // ReSharper disable InconsistentNaming
 namespace ImageDull.ImageSharp.Formats.Jpeg.Components
@@ -109,13 +107,11 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components
         /// <param name="block">Input block.</param>
         public static void TransformIDCT(ref Block8x8F block)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx.IsSupported)
             {
                 IDCT8x8_Avx(ref block);
             }
             else
-#endif
             {
                 IDCT_Vector4(ref block);
             }
@@ -131,13 +127,11 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components
         /// <param name="block">Input block.</param>
         public static void TransformFDCT(ref Block8x8F block)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx.IsSupported)
             {
                 FDCT8x8_Avx(ref block);
             }
             else
-#endif
             {
                 FDCT_Vector4(ref block);
             }

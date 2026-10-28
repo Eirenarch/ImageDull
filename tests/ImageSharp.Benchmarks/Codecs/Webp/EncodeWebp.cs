@@ -11,7 +11,7 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
     [MarkdownExporter]
     [HtmlExporter]
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class EncodeWebp
     {
         private Image<Rgba32> webp;

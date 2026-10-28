@@ -5,10 +5,8 @@ using System;
 using System.Buffers;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 using ImageDull.ImageSharp.Memory;
 using ImageDull.ImageSharp.PixelFormats;
 
@@ -23,7 +21,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         private const int YuvHalf = 1 << (YuvFix - 1);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector128<byte> One = Vector128.Create((byte)1);
 
         // These constants are 14b fixed-point version of ITU-R BT.601 constants.
@@ -64,7 +61,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         private static readonly Vector128<byte> PlanarTo24Shuffle7 = Vector128.Create(255, 5, 255, 255, 6, 255, 255, 7, 255, 255, 8, 255, 255, 9, 255, 255);
 
         private static readonly Vector128<byte> PlanarTo24Shuffle8 = Vector128.Create(10, 255, 255, 11, 255, 255, 12, 255, 255, 13, 255, 255, 14, 255, 255, 15);
-#endif
 
         // UpSample from YUV to RGB.
         // Given samples laid out in a square as:
@@ -75,13 +71,11 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         //  ([3*a +   b + 9*c + 3*d      a + 3*b + 3*c + 9*d]   [8 8]) / 16
         public static void UpSample(Span<byte> topY, Span<byte> bottomY, Span<byte> topU, Span<byte> topV, Span<byte> curU, Span<byte> curV, Span<byte> topDst, Span<byte> bottomDst, int len, byte[] uvBuffer)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse41.IsSupported)
             {
                 UpSampleSse41(topY, bottomY, topU, topV, curU, curV, topDst, bottomDst, len, uvBuffer);
             }
             else
-#endif
             {
                 UpSampleScalar(topY, bottomY, topU, topV, curU, curV, topDst, bottomDst, len);
             }
@@ -141,7 +135,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             }
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         // We compute (9*a + 3*b + 3*c + d + 8) / 16 as follows
         // u = (9*a + 3*b + 3*c + d + 8) / 16
         //   = (a + (a + 3*b + 3*c + d) / 8 + 1) / 2
@@ -306,7 +299,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             Unsafe.As<byte, Vector128<byte>>(ref output0Ref) = t1;
             Unsafe.As<byte, Vector128<byte>>(ref output1Ref) = t2;
         }
-#endif
 
         /// <summary>
         /// Converts the RGB values of the image to YUV.
@@ -612,8 +604,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             bgr[0] = (byte)YuvToB(y, u);
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
-
         [MethodImpl(InliningOptions.ShortMethod)]
         private static void ConvertYuvToBgrSse41(Span<byte> topY, Span<byte> topDst, Span<byte> ru, Span<byte> rv, int curX, int step) => YuvToBgrSse41(topY.Slice(curX), ru, rv, topDst.Slice(curX * step));
 
@@ -778,8 +768,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             g = Sse2.ShiftRightArithmetic(g4.AsInt16(), 6); // range: [-10953, 27710]
             b = Sse2.ShiftRightLogical(b2.AsInt16(), 6); // range: [0, 34238]
         }
-
-#endif
 
         [MethodImpl(InliningOptions.ShortMethod)]
         public static int YuvToB(int y, int u) => Clip8(MultHi(y, 19077) + MultHi(u, 33050) - 17685);

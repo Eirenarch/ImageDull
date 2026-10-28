@@ -108,9 +108,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         /// </summary>
         private static IEnumerable<JpegColorConverterBase> GetYCbCrConverters(int precision)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             yield return new FromYCbCrAvx(precision);
-#endif
             yield return new FromYCbCrVector(precision);
             yield return new FromYCbCrScalar(precision);
         }
@@ -120,9 +118,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         /// </summary>
         private static IEnumerable<JpegColorConverterBase> GetYccKConverters(int precision)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             yield return new FromYccKAvx(precision);
-#endif
             yield return new FromYccKVector(precision);
             yield return new FromYccKScalar(precision);
         }
@@ -132,9 +128,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         /// </summary>
         private static IEnumerable<JpegColorConverterBase> GetCmykConverters(int precision)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             yield return new FromCmykAvx(precision);
-#endif
             yield return new FromCmykVector(precision);
             yield return new FromCmykScalar(precision);
         }
@@ -144,9 +138,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         /// </summary>
         private static IEnumerable<JpegColorConverterBase> GetGrayScaleConverters(int precision)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             yield return new FromGrayscaleAvx(precision);
-#endif
             yield return new FromGrayScaleVector(precision);
             yield return new FromGrayscaleScalar(precision);
         }
@@ -156,9 +148,7 @@ namespace ImageDull.ImageSharp.Formats.Jpeg.Components.Decoder.ColorConverters
         /// </summary>
         private static IEnumerable<JpegColorConverterBase> GetRgbConverters(int precision)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             yield return new FromRgbAvx(precision);
-#endif
             yield return new FromRgbVector(precision);
             yield return new FromRgbScalar(precision);
         }

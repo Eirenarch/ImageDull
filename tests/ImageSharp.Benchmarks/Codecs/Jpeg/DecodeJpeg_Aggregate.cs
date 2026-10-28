@@ -14,7 +14,7 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
     /// An expensive Jpeg benchmark, running on a wide range of input images,
     /// showing aggregate results.
     /// </summary>
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class DecodeJpeg_Aggregate : MultiImageBenchmarkBase
     {
         protected override IEnumerable<string> InputImageSubfoldersOrFiles =>

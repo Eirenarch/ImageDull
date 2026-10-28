@@ -25,9 +25,7 @@ namespace ImageDull.ImageSharp
         {
             VerifyShuffle4SpanInput(source, dest);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             HwIntrinsics.Shuffle4Reduce(ref source, ref dest, control);
-#endif
 
             // Deal with the remainder:
             if (source.Length > 0)
@@ -52,9 +50,7 @@ namespace ImageDull.ImageSharp
         {
             VerifyShuffle4SpanInput(source, dest);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             HwIntrinsics.Shuffle4Reduce(ref source, ref dest, shuffle.Control);
-#endif
 
             // Deal with the remainder:
             if (source.Length > 0)
@@ -80,9 +76,7 @@ namespace ImageDull.ImageSharp
             // Source length should be smaller than dest length, and divisible by 3.
             VerifyShuffle3SpanInput(source, dest);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             HwIntrinsics.Shuffle3Reduce(ref source, ref dest, shuffle.Control);
-#endif
 
             // Deal with the remainder:
             if (source.Length > 0)
@@ -107,9 +101,7 @@ namespace ImageDull.ImageSharp
         {
             VerifyPad3Shuffle4SpanInput(source, dest);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             HwIntrinsics.Pad3Shuffle4Reduce(ref source, ref dest, shuffle.Control);
-#endif
 
             // Deal with the remainder:
             if (source.Length > 0)
@@ -134,9 +126,7 @@ namespace ImageDull.ImageSharp
         {
             VerifyShuffle4Slice3SpanInput(source, dest);
 
-#if SUPPORTS_RUNTIME_INTRINSICS
             HwIntrinsics.Shuffle4Slice3Reduce(ref source, ref dest, shuffle.Control);
-#endif
 
             // Deal with the remainder:
             if (source.Length > 0)

@@ -5,17 +5,14 @@ using System;
 using System.Buffers.Binary;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 // ReSharper disable InconsistentNaming
 namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
     internal static class LossyUtils
     {
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector128<byte> Mean16x4Mask = Vector128.Create((short)0x00ff).AsByte();
 
         private static readonly Vector128<byte> SignBit = Vector128.Create((byte)0x80);
@@ -36,13 +33,10 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         private static readonly Vector128<short> K2 = Vector128.Create((short)-30068);
 
-#endif
-
         // Note: method name in libwebp reference implementation is called VP8SSE16x16.
         [MethodImpl(InliningOptions.ShortMethod)]
         public static int Vp8_Sse16X16(Span<byte> a, Span<byte> b)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 return Vp8_Sse16xN_Avx2(a, b, 4);
@@ -52,17 +46,14 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             {
                 return Vp8_Sse16xN_Sse2(a, b, 8);
             }
-#endif
-            {
-                return Vp8_SseNxN(a, b, 16, 16);
-            }
+
+            return Vp8_SseNxN(a, b, 16, 16);
         }
 
         // Note: method name in libwebp reference implementation is called VP8SSE16x8.
         [MethodImpl(InliningOptions.ShortMethod)]
         public static int Vp8_Sse16X8(Span<byte> a, Span<byte> b)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 return Vp8_Sse16xN_Avx2(a, b, 2);
@@ -72,17 +63,14 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             {
                 return Vp8_Sse16xN_Sse2(a, b, 4);
             }
-#endif
-            {
-                return Vp8_SseNxN(a, b, 16, 8);
-            }
+
+            return Vp8_SseNxN(a, b, 16, 8);
         }
 
         // Note: method name in libwebp reference implementation is called VP8SSE4x4.
         [MethodImpl(InliningOptions.ShortMethod)]
         public static int Vp8_Sse4X4(Span<byte> a, Span<byte> b)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 // Load values.
@@ -151,10 +139,8 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
                 return Numerics.ReduceSum(sum);
             }
-#endif
-            {
-                return Vp8_SseNxN(a, b, 4, 4);
-            }
+
+            return Vp8_SseNxN(a, b, 4, 4);
         }
 
         [MethodImpl(InliningOptions.ShortMethod)]
@@ -178,7 +164,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             return count;
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [MethodImpl(InliningOptions.ShortMethod)]
         private static int Vp8_Sse16xN_Sse2(Span<byte> a, Span<byte> b, int numPairs)
         {
@@ -274,7 +259,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
             return Avx2.Add(sum1, sum2);
         }
-#endif
 
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void Vp8Copy4X4(Span<byte> src, Span<byte> dst) => Copy(src, dst, 4, 4);
@@ -312,14 +296,12 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static int Vp8Disto4X4(Span<byte> a, Span<byte> b, Span<ushort> w, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse41.IsSupported)
             {
                 int diffSum = TTransformSse41(a, b, w);
                 return Math.Abs(diffSum) >> 5;
             }
             else
-#endif
             {
                 int sum1 = TTransform(a, w, scratch);
                 int sum2 = TTransform(b, w, scratch);
@@ -836,7 +818,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             return sum;
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         /// <summary>
         /// Hadamard transform
         /// Returns the weighted sum of the absolute value of transformed coefficients.
@@ -967,13 +948,11 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             // a02 a12 a22 a32   b02 b12 b22 b32
             // a03 a13 a23 a33   b03 b13 b23 b33
         }
-#endif
 
         // Transforms (Paragraph 14.4).
         // Does two transforms.
         public static void TransformTwo(Span<short> src, Span<byte> dst, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // This implementation makes use of 16-bit fixed point versions of two
@@ -1117,7 +1096,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, Vector64<byte>>(ref Unsafe.Add(ref outputRef, WebpConstants.Bps * 3)) = dst3.GetLower();
             }
             else
-#endif
             {
                 TransformOne(src, dst, scratch);
                 TransformOne(src.Slice(16), dst.Slice(4), scratch);
@@ -1126,7 +1104,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void TransformOne(Span<short> src, Span<byte> dst, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Load and concatenate the transform coefficients.
@@ -1242,7 +1219,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, int>(ref Unsafe.Add(ref outputRef, WebpConstants.Bps * 3)) = output3;
             }
             else
-#endif
             {
                 Span<int> tmp = scratch.Slice(0, 16);
                 int tmpOffset = 0;
@@ -1349,7 +1325,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         // Simple In-loop filtering (Paragraph 15.2)
         public static void SimpleVFilter16(Span<byte> p, int offset, int stride, int thresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Load.
@@ -1368,7 +1343,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, Vector128<sbyte>>(ref outputRef) = q0.AsSByte();
             }
             else
-#endif
             {
                 int thresh2 = (2 * thresh) + 1;
                 int end = 16 + offset;
@@ -1384,7 +1358,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void SimpleHFilter16(Span<byte> p, int offset, int stride, int thresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Beginning of p1
@@ -1395,7 +1368,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Store16x4(p1, p0, q0, q1, ref pRef, ref Unsafe.Add(ref pRef, 8 * stride), stride);
             }
             else
-#endif
             {
                 int thresh2 = (2 * thresh) + 1;
                 int end = offset + (16 * stride);
@@ -1411,7 +1383,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void SimpleVFilter16i(Span<byte> p, int offset, int stride, int thresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 for (int k = 3; k > 0; k--)
@@ -1421,7 +1392,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 }
             }
             else
-#endif
             {
                 for (int k = 3; k > 0; k--)
                 {
@@ -1433,7 +1403,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void SimpleHFilter16i(Span<byte> p, int offset, int stride, int thresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 for (int k = 3; k > 0; k--)
@@ -1443,7 +1412,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 }
             }
             else
-#endif
             {
                 for (int k = 3; k > 0; k--)
                 {
@@ -1457,7 +1425,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void VFilter16(Span<byte> p, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte pRef = ref MemoryMarshal.GetReference(p);
@@ -1492,7 +1459,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, Vector128<int>>(ref Unsafe.Add(ref outputRef, offset + (2 * stride))) = q2.AsInt32();
             }
             else
-#endif
             {
                 FilterLoop26(p, offset, stride, 1, 16, thresh, ithresh, hevThresh);
             }
@@ -1501,7 +1467,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void HFilter16(Span<byte> p, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte pRef = ref MemoryMarshal.GetReference(p);
@@ -1525,7 +1490,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Store16x4(q0, q1, q2, q3, ref Unsafe.Add(ref pRef, offset), ref Unsafe.Add(ref pRef, offset + (8 * stride)), stride);
             }
             else
-#endif
             {
                 FilterLoop26(p, offset, 1, stride, 16, thresh, ithresh, hevThresh);
             }
@@ -1533,7 +1497,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void VFilter16i(Span<byte> p, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte pRef = ref MemoryMarshal.GetReference(p);
@@ -1579,7 +1542,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 }
             }
             else
-#endif
             {
                 for (int k = 3; k > 0; k--)
                 {
@@ -1591,7 +1553,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void HFilter16i(Span<byte> p, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte pRef = ref MemoryMarshal.GetReference(p);
@@ -1628,7 +1589,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 }
             }
             else
-#endif
             {
                 for (int k = 3; k > 0; k--)
                 {
@@ -1642,7 +1602,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void VFilter8(Span<byte> u, Span<byte> v, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Load uv h-edges.
@@ -1678,7 +1637,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 StoreUv(q2, ref uRef, ref vRef, offset + (2 * stride));
             }
             else
-#endif
             {
                 FilterLoop26(u, offset, stride, 1, 8, thresh, ithresh, hevThresh);
                 FilterLoop26(v, offset, stride, 1, 8, thresh, ithresh, hevThresh);
@@ -1688,7 +1646,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void HFilter8(Span<byte> u, Span<byte> v, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte uRef = ref MemoryMarshal.GetReference(u);
@@ -1712,7 +1669,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Store16x4(q0, q1, q2, q3, ref Unsafe.Add(ref uRef, offset), ref Unsafe.Add(ref vRef, offset), stride);
             }
             else
-#endif
             {
                 FilterLoop26(u, offset, 1, stride, 8, thresh, ithresh, hevThresh);
                 FilterLoop26(v, offset, 1, stride, 8, thresh, ithresh, hevThresh);
@@ -1722,7 +1678,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void VFilter8i(Span<byte> u, Span<byte> v, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Load uv h-edges.
@@ -1758,7 +1713,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 StoreUv(q1, ref uRef, ref vRef, offset + stride);
             }
             else
-#endif
             {
                 int offset4mulstride = offset + (4 * stride);
                 FilterLoop24(u, offset4mulstride, stride, 1, 8, thresh, ithresh, hevThresh);
@@ -1769,7 +1723,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         public static void HFilter8i(Span<byte> u, Span<byte> v, int offset, int stride, int thresh, int ithresh, int hevThresh)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte uRef = ref MemoryMarshal.GetReference(u);
@@ -1797,7 +1750,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Store16x4(p1, p0, q0, q1, ref Unsafe.Add(ref uRef, offset), ref Unsafe.Add(ref vRef, offset), stride);
             }
             else
-#endif
             {
                 int offsetPlus4 = offset + 4;
                 FilterLoop24(u, offsetPlus4, 1, stride, 8, thresh, ithresh, hevThresh);
@@ -1807,7 +1759,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void Mean16x4(Span<byte> input, Span<uint> dc)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Ssse3.IsSupported)
             {
                 Vector128<byte> a0 = Unsafe.As<byte, Vector128<byte>>(ref MemoryMarshal.GetReference(input));
@@ -1836,7 +1787,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<uint, Vector128<uint>>(ref outputRef) = wide;
             }
             else
-#endif
             {
                 for (int k = 0; k < 4; k++)
                 {
@@ -1974,7 +1924,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             p[offset] = WebpLookupTables.Clip1(q0 - a1);
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         // Applies filter on 2 pixels (p0 and q0)
         private static void DoFilter2Sse2(ref Vector128<byte> p1, ref Vector128<byte> p0, ref Vector128<byte> q0, ref Vector128<byte> q1, int thresh)
         {
@@ -2108,7 +2057,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             // not_hev <= t1 && not_hev <= t2
             return Sse2.CompareEqual(tMaxH, Vector128<byte>.Zero);
         }
-#endif
 
         // Applies filter on 4 pixels (p1, p0, q0 and q1)
         private static void DoFilter4(Span<byte> p, int offset, int step)
@@ -2188,7 +2136,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                    WebpLookupTables.Abs0(q2 - q1) <= it && WebpLookupTables.Abs0(q1 - q0) <= it;
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static Vector128<byte> NeedsFilter(Vector128<byte> p1, Vector128<byte> p0, Vector128<byte> q0, Vector128<byte> q1, int thresh)
         {
             var mthresh = Vector128.Create((byte)thresh);
@@ -2381,7 +2328,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         [MethodImpl(InliningOptions.ShortMethod)]
         private static Vector128<byte> Abs(Vector128<byte> p, Vector128<byte> q)
             => Sse2.Or(Sse2.SubtractSaturate(q, p), Sse2.SubtractSaturate(p, q));
-#endif
 
         [MethodImpl(InliningOptions.ShortMethod)]
         private static bool Hev(Span<byte> p, int offset, int step, int thresh)

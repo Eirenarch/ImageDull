@@ -11,7 +11,7 @@ using ImageDull.ImageSharp.Tests;
 // ReSharper disable InconsistentNaming
 namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class LoadResizeSave_ImageSpecific
     {
         private readonly Configuration configuration = new Configuration(new JpegConfigurationModule());

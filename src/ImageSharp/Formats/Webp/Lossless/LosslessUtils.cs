@@ -4,11 +4,9 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-using ImageDull.ImageSharp.Memory;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
+using ImageDull.ImageSharp.Memory;
 
 namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 {
@@ -27,7 +25,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 
         private const double Log2Reciprocal = 1.44269504088896338700465094007086;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector256<byte> AddGreenToBlueAndRedMaskAvx2 = Vector256.Create(1, 255, 1, 255, 5, 255, 5, 255, 9, 255, 9, 255, 13, 255, 13, 255, 17, 255, 17, 255, 21, 255, 21, 255, 25, 255, 25, 255, 29, 255, 29, 255);
 
         private static readonly Vector128<byte> AddGreenToBlueAndRedMaskSsse3 = Vector128.Create(1, 255, 1, 255, 5, 255, 5, 255, 9, 255, 9, 255, 13, 255, 13, 255);
@@ -55,7 +52,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         private static readonly Vector256<byte> TransformColorInverseAlphaGreenMask256 = Vector256.Create(0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255, 0, 255);
 
         private static readonly byte TransformColorInverseShuffleMask = SimdUtils.Shuffle.MmShuffle(2, 2, 0, 0);
-#endif
 
         /// <summary>
         /// Returns the exact index where array1 and array2 are different. For an index
@@ -126,7 +122,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         /// <param name="pixelData">The pixel data to apply the transformation.</param>
         public static void AddGreenToBlueAndRed(Span<uint> pixelData)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 int numPixels = pixelData.Length;
@@ -184,7 +179,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 }
             }
             else
-#endif
             {
                 AddGreenToBlueAndRedScalar(pixelData);
             }
@@ -206,7 +200,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 
         public static void SubtractGreenFromBlueAndRed(Span<uint> pixelData)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 int numPixels = pixelData.Length;
@@ -264,7 +257,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 }
             }
             else
-#endif
             {
                 SubtractGreenFromBlueAndRedScalar(pixelData);
             }
@@ -397,7 +389,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         /// <param name="numPixels">The number of pixels to process.</param>
         public static void TransformColor(Vp8LMultipliers m, Span<uint> pixelData, int numPixels)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && numPixels >= 8)
             {
                 Vector256<int> multsrb = MkCst32(Cst5b(m.GreenToRed), Cst5b(m.GreenToBlue));
@@ -454,7 +445,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 }
             }
             else
-#endif
             {
                 TransformColorScalar(m, pixelData, numPixels);
             }
@@ -485,7 +475,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         /// <param name="pixelData">The pixel data to apply the inverse transform on.</param>
         public static void TransformColorInverse(Vp8LMultipliers m, Span<uint> pixelData)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported && pixelData.Length >= 8)
             {
                 Vector256<int> multsrb = MkCst32(Cst5b(m.GreenToRed), Cst5b(m.GreenToBlue));
@@ -544,7 +533,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 }
             }
             else
-#endif
             {
                 TransformColorInverseScalar(m, pixelData);
             }
@@ -761,7 +749,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         /// <returns>Shanon entropy.</returns>
         public static float CombinedShannonEntropy(Span<int> x, Span<int> y)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Avx2.IsSupported)
             {
                 double retVal = 0.0d;
@@ -914,7 +901,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 return (float)retVal;
             }
             else
-#endif
             {
                 double retVal = 0.0d;
                 uint sumX = 0, sumXY = 0;
@@ -1414,7 +1400,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
 
         private static uint ClampedAddSubtractFull(uint c0, uint c1, uint c2)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 Vector128<byte> c0Vec = Sse2.UnpackLow(Sse2.ConvertScalarToVector128UInt32(c0).AsByte(), Vector128<byte>.Zero);
@@ -1422,32 +1407,29 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 Vector128<byte> c2Vec = Sse2.UnpackLow(Sse2.ConvertScalarToVector128UInt32(c2).AsByte(), Vector128<byte>.Zero);
                 Vector128<short> v1 = Sse2.Add(c0Vec.AsInt16(), c1Vec.AsInt16());
                 Vector128<short> v2 = Sse2.Subtract(v1, c2Vec.AsInt16());
-                Vector128<byte> b = Sse2.PackUnsignedSaturate(v2, v2);
-                uint output = Sse2.ConvertToUInt32(b.AsUInt32());
+                Vector128<byte> packed = Sse2.PackUnsignedSaturate(v2, v2);
+                uint output = Sse2.ConvertToUInt32(packed.AsUInt32());
                 return output;
             }
-#endif
-            {
-                int a = AddSubtractComponentFull(
-                    (int)(c0 >> 24),
-                    (int)(c1 >> 24),
-                    (int)(c2 >> 24));
-                int r = AddSubtractComponentFull(
-                    (int)((c0 >> 16) & 0xff),
-                    (int)((c1 >> 16) & 0xff),
-                    (int)((c2 >> 16) & 0xff));
-                int g = AddSubtractComponentFull(
-                    (int)((c0 >> 8) & 0xff),
-                    (int)((c1 >> 8) & 0xff),
-                    (int)((c2 >> 8) & 0xff));
-                int b = AddSubtractComponentFull((int)(c0 & 0xff), (int)(c1 & 0xff), (int)(c2 & 0xff));
-                return ((uint)a << 24) | ((uint)r << 16) | ((uint)g << 8) | (uint)b;
-            }
+
+            int a = AddSubtractComponentFull(
+                (int)(c0 >> 24),
+                (int)(c1 >> 24),
+                (int)(c2 >> 24));
+            int r = AddSubtractComponentFull(
+                (int)((c0 >> 16) & 0xff),
+                (int)((c1 >> 16) & 0xff),
+                (int)((c2 >> 16) & 0xff));
+            int g = AddSubtractComponentFull(
+                (int)((c0 >> 8) & 0xff),
+                (int)((c1 >> 8) & 0xff),
+                (int)((c2 >> 8) & 0xff));
+            int b = AddSubtractComponentFull((int)(c0 & 0xff), (int)(c1 & 0xff), (int)(c2 & 0xff));
+            return ((uint)a << 24) | ((uint)r << 16) | ((uint)g << 8) | (uint)b;
         }
 
         private static uint ClampedAddSubtractHalf(uint c0, uint c1, uint c2)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 Vector128<byte> c0Vec = Sse2.UnpackLow(Sse2.ConvertScalarToVector128UInt32(c0).AsByte(), Vector128<byte>.Zero);
@@ -1464,15 +1446,13 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 uint output = Sse2.ConvertToUInt32(a5.AsUInt32());
                 return output;
             }
-#endif
-            {
-                uint ave = Average2(c0, c1);
-                int a = AddSubtractComponentHalf((int)(ave >> 24), (int)(c2 >> 24));
-                int r = AddSubtractComponentHalf((int)((ave >> 16) & 0xff), (int)((c2 >> 16) & 0xff));
-                int g = AddSubtractComponentHalf((int)((ave >> 8) & 0xff), (int)((c2 >> 8) & 0xff));
-                int b = AddSubtractComponentHalf((int)(ave & 0xff), (int)(c2 & 0xff));
-                return ((uint)a << 24) | ((uint)r << 16) | ((uint)g << 8) | (uint)b;
-            }
+
+            uint ave = Average2(c0, c1);
+            int a = AddSubtractComponentHalf((int)(ave >> 24), (int)(c2 >> 24));
+            int r = AddSubtractComponentHalf((int)((ave >> 16) & 0xff), (int)((c2 >> 16) & 0xff));
+            int g = AddSubtractComponentHalf((int)((ave >> 8) & 0xff), (int)((c2 >> 8) & 0xff));
+            int b = AddSubtractComponentHalf((int)(ave & 0xff), (int)(c2 & 0xff));
+            return ((uint)a << 24) | ((uint)r << 16) | ((uint)g << 8) | (uint)b;
         }
 
         [MethodImpl(InliningOptions.ShortMethod)]
@@ -1484,17 +1464,14 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
         [MethodImpl(InliningOptions.ShortMethod)]
         private static uint Clip255(uint a) => a < 256 ? a : ~a >> 24;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         [MethodImpl(InliningOptions.ShortMethod)]
         private static Vector128<int> MkCst16(int hi, int lo) => Vector128.Create((hi << 16) | (lo & 0xffff));
 
         [MethodImpl(InliningOptions.ShortMethod)]
         private static Vector256<int> MkCst32(int hi, int lo) => Vector256.Create((hi << 16) | (lo & 0xffff));
-#endif
 
         private static uint Select(uint a, uint b, uint c, Span<short> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 Span<short> output = scratch;
@@ -1518,7 +1495,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossless
                 }
             }
             else
-#endif
             {
                 int paMinusPb =
                     Sub3((int)(a >> 24), (int)(b >> 24), (int)(c >> 24)) +

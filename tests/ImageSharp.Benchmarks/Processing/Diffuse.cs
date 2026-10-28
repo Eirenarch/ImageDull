@@ -7,7 +7,7 @@ using ImageDull.ImageSharp.Processing;
 
 namespace ImageDull.ImageSharp.Benchmarks.Processing
 {
-    [Config(typeof(Config.MultiFramework))]
+    [Config(typeof(Config))]
     public class Diffuse
     {
         [Benchmark]

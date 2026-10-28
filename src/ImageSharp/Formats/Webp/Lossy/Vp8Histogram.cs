@@ -4,10 +4,8 @@
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
@@ -24,9 +22,7 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         /// </summary>
         private const int MaxCoeffThresh = 31;
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static readonly Vector256<short> MaxCoeffThreshVec = Vector256.Create((short)MaxCoeffThresh);
-#endif
 
         private int maxValue;
 
@@ -61,7 +57,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Vp8Encoding.FTransform(reference.Slice(WebpLookupTables.Vp8DspScan[j]), pred.Slice(WebpLookupTables.Vp8DspScan[j]), this.output, this.scratch);
 
                 // Convert coefficients to bin.
-#if SUPPORTS_RUNTIME_INTRINSICS
                 if (Avx2.IsSupported)
                 {
                     // Load.
@@ -85,7 +80,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                     }
                 }
                 else
-#endif
                 {
                     for (int k = 0; k < 16; ++k)
                     {

@@ -7,7 +7,6 @@ using BenchmarkDotNet.Diagnostics.Windows;
 #endif
 using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Diagnosers;
-using BenchmarkDotNet.Environments;
 using BenchmarkDotNet.Jobs;
 using BenchmarkDotNet.Reports;
 
@@ -29,26 +28,10 @@ namespace ImageDull.ImageSharp.Benchmarks
             this.SummaryStyle = SummaryStyle.Default.WithMaxParameterColumnWidth(50);
         }
 
-        public class MultiFramework : Config
+        public class Short : Config
         {
-            public MultiFramework() => this.AddJob(
-                    Job.Default.WithRuntime(ClrRuntime.Net472),
-                    Job.Default.WithRuntime(CoreRuntime.Core31),
-                    Job.Default.WithRuntime(CoreRuntime.Core50).WithArguments(new Argument[] { new MsBuildArgument("/p:DebugType=portable") }));
-        }
-
-        public class ShortMultiFramework : Config
-        {
-            public ShortMultiFramework() => this.AddJob(
-                    Job.Default.WithRuntime(ClrRuntime.Net472).WithLaunchCount(1).WithWarmupCount(3).WithIterationCount(3),
-                    Job.Default.WithRuntime(CoreRuntime.Core31).WithLaunchCount(1).WithWarmupCount(3).WithIterationCount(3),
-                    Job.Default.WithRuntime(CoreRuntime.Core50).WithLaunchCount(1).WithWarmupCount(3).WithIterationCount(3).WithArguments(new Argument[] { new MsBuildArgument("/p:DebugType=portable") }));
-        }
-
-        public class ShortCore31 : Config
-        {
-            public ShortCore31()
-                => this.AddJob(Job.Default.WithRuntime(CoreRuntime.Core31).WithLaunchCount(1).WithWarmupCount(3).WithIterationCount(3));
+            public Short()
+                => this.AddJob(Job.Default.WithLaunchCount(1).WithWarmupCount(3).WithIterationCount(3));
         }
 
 #if OS_WINDOWS

@@ -13,7 +13,7 @@ namespace ImageDull.ImageSharp.Benchmarks.Codecs.Jpeg
     /// <summary>
     /// Image-specific Jpeg benchmarks
     /// </summary>
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class DecodeJpeg_ImageSpecific
     {
         private byte[] jpegBytes;

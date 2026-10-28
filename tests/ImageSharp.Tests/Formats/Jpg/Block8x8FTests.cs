@@ -4,9 +4,7 @@
 // Uncomment this to turn unit tests into benchmarks:
 // #define BENCHMARKING
 using System;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics.X86;
-#endif
 using ImageDull.ImageSharp.Formats.Jpeg.Components;
 using ImageDull.ImageSharp.Tests.Formats.Jpg.Utils;
 using ImageDull.ImageSharp.Tests.TestUtilities;

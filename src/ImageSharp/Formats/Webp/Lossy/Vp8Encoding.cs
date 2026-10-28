@@ -5,10 +5,8 @@ using System;
 using System.Buffers.Binary;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-#if SUPPORTS_RUNTIME_INTRINSICS
 using System.Runtime.Intrinsics;
 using System.Runtime.Intrinsics.X86;
-#endif
 
 namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 {
@@ -65,7 +63,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static readonly int[] Vp8I4ModeOffsets = { I4DC4, I4TM4, I4VE4, I4HE4, I4RD4, I4VR4, I4LD4, I4VL4, I4HD4, I4HU4 };
 
-#if SUPPORTS_RUNTIME_INTRINSICS
 #pragma warning disable SA1310 // Field names should not contain underscore
         private static readonly Vector128<short> K1 = Vector128.Create((short)20091).AsInt16();
 
@@ -99,7 +96,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         private static readonly byte MmShuffle1032 = SimdUtils.Shuffle.MmShuffle(1, 0, 3, 2);
 #pragma warning restore SA1310 // Field names should not contain underscore
-#endif
 
         static Vp8Encoding()
         {
@@ -113,7 +109,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
         // Does two inverse transforms.
         public static void ITransformTwo(Span<byte> reference, Span<short> input, Span<byte> dst, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // This implementation makes use of 16-bit fixed point versions of two
@@ -216,7 +211,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, Vector64<byte>>(ref Unsafe.Add(ref outputRef, WebpConstants.Bps * 3)) = ref3.GetLower();
             }
             else
-#endif
             {
                 ITransformOne(reference, input, dst, scratch);
                 ITransformOne(reference.Slice(4), input.Slice(16), dst.Slice(4), scratch);
@@ -225,7 +219,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void ITransformOne(Span<byte> reference, Span<short> input, Span<byte> dst, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 // Load and concatenate the transform coefficients (we'll do two inverse
@@ -304,7 +297,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 Unsafe.As<byte, int>(ref Unsafe.Add(ref outputRef, WebpConstants.Bps * 3)) = output3;
             }
             else
-#endif
             {
                 int i;
                 Span<int> tmp = scratch.Slice(0, 16);
@@ -341,7 +333,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             }
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         private static void InverseTransformVerticalPass(Vector128<long> in0, Vector128<long> in2, Vector128<long> in1, Vector128<long> in3, out Vector128<short> tmp0, out Vector128<short> tmp1, out Vector128<short> tmp2, out Vector128<short> tmp3)
         {
             Vector128<short> a = Sse2.Add(in0.AsInt16(), in2.AsInt16());
@@ -398,11 +389,9 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             shifted2 = Sse2.ShiftRightArithmetic(tmp2, 3);
             shifted3 = Sse2.ShiftRightArithmetic(tmp3, 3);
         }
-#endif
 
         public static void FTransform2(Span<byte> src, Span<byte> reference, Span<short> output, Span<short> output2, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte srcRef = ref MemoryMarshal.GetReference(src);
@@ -455,7 +444,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 FTransformPass2SSE2(v01h, v32h, output2);
             }
             else
-#endif
             {
                 FTransform(src, reference, output, scratch);
                 FTransform(src.Slice(4), reference.Slice(4), output2, scratch);
@@ -464,7 +452,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
 
         public static void FTransform(Span<byte> src, Span<byte> reference, Span<short> output, Span<int> scratch)
         {
-#if SUPPORTS_RUNTIME_INTRINSICS
             if (Sse2.IsSupported)
             {
                 ref byte srcRef = ref MemoryMarshal.GetReference(src);
@@ -512,7 +499,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
                 FTransformPass2SSE2(v01, v32, output);
             }
             else
-#endif
             {
                 int i;
                 Span<int> tmp = scratch.Slice(0, 16);
@@ -556,7 +542,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             }
         }
 
-#if SUPPORTS_RUNTIME_INTRINSICS
         public static void FTransformPass1SSE2(Vector128<short> row01, Vector128<short> row23, out Vector128<int> out01, out Vector128<int> out32)
         {
             // *in01 = 00 01 10 11 02 03 12 13
@@ -640,7 +625,6 @@ namespace ImageDull.ImageSharp.Formats.Webp.Lossy
             Unsafe.As<short, Vector128<short>>(ref outputRef) = d0g1.AsInt16();
             Unsafe.As<short, Vector128<short>>(ref Unsafe.Add(ref outputRef, 8)) = d2f3.AsInt16();
         }
-#endif
 
         public static void FTransformWht(Span<short> input, Span<short> output, Span<int> scratch)
         {

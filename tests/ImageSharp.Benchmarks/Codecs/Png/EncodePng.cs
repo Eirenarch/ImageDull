@@ -9,7 +9,7 @@ using ImageDull.ImageSharp.Tests;
 
 namespace ImageDull.ImageSharp.Benchmarks.Codecs
 {
-    [Config(typeof(Config.ShortMultiFramework))]
+    [Config(typeof(Config.Short))]
     public class EncodePng
     {
         private Stream bmpStream;
