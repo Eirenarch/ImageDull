@@ -13,7 +13,7 @@
   <!--
   Allow "InternalsVisibleTo" usage in src props file.
   Usage:
-  <InternalsVisibleTo Include="[ASSEMBLY_NAME]" Key="$(SixLaborsPublicKey)" />
+  <InternalsVisibleTo Include="[ASSEMBLY_NAME]" />
   -->
   <PropertyGroup>
     <GeneratedInternalsVisibleToFile Condition="'$(GeneratedInternalsVisibleToFile)' == ''">$(IntermediateOutputPath)$(MSBuildProjectName).InternalsVisibleTo$(DefaultLanguageSourceExtension)</GeneratedInternalsVisibleToFile>
@@ -36,14 +36,7 @@
           Outputs="$(GeneratedInternalsVisibleToFile)">
     <CreateItem
       Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute"
-      AdditionalMetadata="_Parameter1=%(InternalsVisibleTo.Identity)"
-      Condition="'%(InternalsVisibleTo.Key)' == ''">
-      <Output TaskParameter="Include" ItemName="InternalsVisibleToAttribute" />
-    </CreateItem>
-    <CreateItem
-      Include="System.Runtime.CompilerServices.InternalsVisibleToAttribute"
-      AdditionalMetadata="_Parameter1=%(InternalsVisibleTo.Identity), PublicKey=%(InternalsVisibleTo.Key)"
-      Condition="'%(InternalsVisibleTo.Key)' != ''">
+      AdditionalMetadata="_Parameter1=%(InternalsVisibleTo.Identity)">
       <Output TaskParameter="Include" ItemName="InternalsVisibleToAttribute" />
     </CreateItem>
 

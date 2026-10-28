@@ -91,7 +91,6 @@
 *.ppt               binary
 *.pptx              binary
 *.pvr               binary
-*.snk               binary
 *.ttc               binary
 *.ttf               binary
 *.woff              binary
